@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "category": "Politics",
+      "author": {
+        "id": 1,
+        "name": "Charlotte Reynolds",
+        "gender": "Female",
+        "profileImage": "/images/charlotte-reynolds.webp",
+        "country": "USA",
+        "bio": "Charlotte Reynolds is a Washington-based political reporter covering Congress, elections, and federal policy disputes.",
+        "social": {
+          "twitter": "https://twitter.com/charlottereynolds",
+          "facebook": "https://facebook.com/charlottereynoldsnews"
+        }
+      }
+    },
+    {
+      "category": "Business",
+      "author": {
+        "id": 2,
+        "name": "Samantha Cole",
+        "gender": "Female",
+        "profileImage": "/images/samantha-cole.webp",
+        "country": "USA",
+        "bio": "Samantha Cole is a New York business correspondent reporting on Wall Street, tech industries, start-ups, and market trends.",
+        "social": {
+          "twitter": "https://twitter.com/samanthacolebiz",
+          "facebook": "https://facebook.com/samanthacolebusiness"
+        }
+      }
+    },
+    {
+      "category": "Sports",
+      "author": {
+        "id": 3,
+        "name": "Marcus Turner",
+        "gender": "Male",
+        "profileImage": "/images/marcus-turner.webp",
+        "country": "USA",
+        "bio": "Marcus Turner covers major American sports leagues, athlete culture, and the impact of sports on society.",
+        "social": {
+          "twitter": "https://twitter.com/marcusturnersports",
+          "facebook": "https://facebook.com/marcusturnercolumnist"
+        }
+      }
+    },
+    {
+      "category": "Opinion",
+      "author": {
+        "id": 4,
+        "name": "Jonathan Pierce",
+        "gender": "Male",
+        "profileImage": "/images/jonathan-pierce.webp",
+        "country": "USA",
+        "bio": "Jonathan Pierce is an opinion columnist from Boston focusing on democracy, civic institutions, and U.S. political identity.",
+        "social": {
+          "twitter": "https://twitter.com/jonathanpierceopinion",
+          "facebook": "https://facebook.com/jonathanpierceopinions"
+        }
+      }
+    },
+    {
+      "category": "Investigation",
+      "author": {
+        "id": 5,
+        "name": "Olivia Ramirez",
+        "gender": "Female",
+        "profileImage": "/images/olivia-ramirez.webp",
+        "country": "USA",
+        "bio": "Olivia Ramirez is an investigative journalist from Los Angeles covering corruption, public accountability, and federal oversight.",
+        "social": {
+          "twitter": "https://twitter.com/oliviaramirezinvestigates",
+          "facebook": "https://facebook.com/oliviaramirezreports"
+        }
+      }
+    },
+    {
+      "category": "Special",
+      "author": {
+        "id": 6,
+        "name": "Daniel Whitmore",
+        "gender": "Male",
+        "profileImage": "/images/daniel-whitmore.webp",
+        "country": "USA",
+        "bio": "Daniel Whitmore is a senior features writer specializing in long-form investigative profiles, global finance, leadership, and geopolitical analysis.",
+        "social": {
+          "twitter": "https://twitter.com/danielwhitmore",
+          "facebook": "https://facebook.com/danielwhitmorefeatures"
+        }
+      }
+    }
+  ]
+}

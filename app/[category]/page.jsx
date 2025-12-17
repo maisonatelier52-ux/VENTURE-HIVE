@@ -1,0 +1,91 @@
+"use client";
+
+import RightSidebar from "@/components/RightSidebar";
+import Link from "next/link";
+// import { usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
+import categorypagedata from "../../public/data/category/categorypagedata"
+import authorsPageData from "../../public/data/authors"
+
+
+export default function CategoryPage(){
+  
+  // const pathName = usePathname();
+  // console.log("PathName:", pathName);
+  const { category } = useParams();      
+  console.log("Category:", category);
+
+  const articles = categorypagedata[category] || [];
+  const authorData =
+    authorsPageData.categories.find(
+      (item) => item.category.toLowerCase() === category.toLowerCase()
+    )?.author;
+   
+    
+  
+
+    return(
+         <div className="flex flex-col min-h-screen font-serif bg-zinc-50 font-sans px-5 md:px-20">
+
+      {/* Main Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-4 mb-5">
+
+        {/* LEFT CONTENT — Masonry Layout */}
+        <div className="columns-1 md:columns-2 gap-6 space-y-6">
+
+          {articles.map((item) => (
+            <Link key={item.id} href={`/${category}/${item.slug}`}>
+                <div
+              key={item.id}
+              className="break-inside-avoid p-3 rounded space-y-3"
+            >
+              {/* IMAGE + OVERLAY */}
+              <div className="relative">
+                <img
+                  src={item.image}
+                  className="w-full h-40 object-cover rounded"
+                  alt=""
+                />
+             <h2 className="absolute bottom-2 left-2 text-white text-sm font-medium drop-shadow bg-black p-1 px-2">
+                {category}
+                </h2>
+
+
+              </div>
+
+              {/* HEADING */}
+              <h3 className="text-xl font-medium">{item.heading}</h3>
+
+              {/* PROFILE + DATE */}
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <img
+                    src={authorData.profileImage}
+                    className="w-9 h-9 rounded-full"
+                    alt=""
+                  />
+                  <span className="font-medium text-sm text-gray-400">
+                    {authorData.name}
+                  </span>
+                </div>
+                <span className="text-gray-400 text-sm">{item.date}</span>
+              </div>
+
+              {/* CONTENT */}
+              <p className="text-gray-400 text-md line-clamp-3">
+                {item.content}
+              </p>
+            </div>
+            </Link>
+            
+          ))}
+        </div>
+
+        {/* RIGHT SIDEBAR */}
+        <div className="lg:sticky lg:top-5 h-max self-start">
+        <RightSidebar categoryData={categorypagedata} authors={authorsPageData}/>
+        </div>
+      </div>
+    </div>
+    )
+}
