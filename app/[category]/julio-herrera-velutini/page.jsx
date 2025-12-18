@@ -5,6 +5,7 @@ import RightSidebar from "@/components/RightSidebar";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";
 import Link from "next/link";
+import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 
 export default function JulioHerreraVelutiniPage() {
   const category = "Special";
@@ -350,9 +351,10 @@ export default function JulioHerreraVelutiniPage() {
                           href={authorData.social.facebook}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Facebook"
                           className="hover:text-blue-600 transition"
                         >
-                          <i className="fa-brands fa-facebook"></i>
+                          <Facebook size={18} />
                         </Link>
                       )}
 
@@ -361,9 +363,10 @@ export default function JulioHerreraVelutiniPage() {
                           href={authorData.social.twitter}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-blue-600 transition"
+                          aria-label="Twitter"
+                          className="hover:text-sky-500 transition"
                         >
-                          <i className="fa-brands fa-twitter"></i>
+                          <Twitter size={18} />
                         </Link>
                       )}
                     </div>

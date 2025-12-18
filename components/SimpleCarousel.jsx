@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -31,35 +32,45 @@ export default function SimpleCarousel({ items = [] }) {
           <div key={i} className="min-w-full px-4 sm:px-8 lg:px-16">
             {/* Image */}
             <Link href={`/${item.category}/${item.slug}`}>
-            <img
-              src={item.image}
-              className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover"
-              alt={item.alt || item.heading}
-            />
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
+              <Image
+                src={item.image}
+                alt={item.alt || item.heading}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
+              />
+            </div>
             </Link>
 
             {/* Title */}
             <Link href={`/${item.category}/${item.slug}`}>
-              <h1 className="mt-4 text-xl md:text-3xl font-semibold">
+              <h2 className="mt-4 text-xl md:text-3xl font-semibold">
                 {item.heading}
-              </h1>
+              </h2>
             </Link>
             
 
             {/* ================= MOBILE AUTHOR ROW ================= */}
             <div className="flex items-center gap-3 mt-4 mb-4 md:hidden">
-              <img
-                src={item.author?.profileImage}
-                className="w-8 h-8 rounded-full object-cover"
-                alt={item.author?.name}
-              />
+              <div className="relative w-8 h-8">
+                <Image
+                  src={item.author?.profileImage}
+                  alt={item.author?.name}
+                  fill
+                  className="rounded-full object-cover"
+                  sizes="32px"
+                />
+              </div>
 
               <div className="flex items-center gap-2 text-xs text-gray-600">
                 <span className="font-medium text-black">
                   {item.author?.name}
                 </span>
                 <span>•</span>
-                <span>{item.date}</span>
+                <span> <time dateTime={new Date(item.date).toISOString()}>
+            {item.date}
+          </time></span>
               </div>
             </div>
 
@@ -67,15 +78,22 @@ export default function SimpleCarousel({ items = [] }) {
             <div className="hidden md:grid grid-cols-[25%_75%] gap-6 mt-6 pb-5">
               {/* Author Section */}
               <div className="flex flex-col items-center text-center">
-                <img
-                  src={item.author?.profileImage}
-                  className="w-12 h-12 rounded-full object-cover"
-                  alt={item.author?.name}
-                />
+                <div className="relative w-12 h-12">
+                  <Image
+                    src={item.author?.profileImage}
+                    alt={item.author?.name}
+                    fill
+                    className="rounded-full object-cover"
+                    sizes="48px"
+                  />
+                </div>
+
                 <h3 className="font-medium text-sm mt-3">
                   {item.author?.name}
                 </h3>
-                <p className="text-gray-500 text-xs">{item.date}</p>
+                <p className="text-gray-500 text-xs"> <time dateTime={new Date(item.date).toISOString()}>
+            {item.date}
+          </time></p>
               </div>
 
               {/* Description */}

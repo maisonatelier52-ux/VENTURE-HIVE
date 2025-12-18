@@ -1,5 +1,7 @@
 import Link from "next/link";
 import categoryData from "../public/data/category/categorypagedata";
+import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
+import Image from "next/image";
 
 export default function FooterComponent() {
 
@@ -62,11 +64,15 @@ export default function FooterComponent() {
                 href={`/${item.category}/${item.slug}`}
                 className="flex gap-4"
               >
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-20 h-20 object-cover"
-                />
+                <div className="relative w-50 h-20">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
+                </div>
                 <p className="text-sm">
                   {item.heading.slice(0, 60)}
                 </p>
@@ -119,16 +125,51 @@ export default function FooterComponent() {
       {/* ===== BOTTOM SECTION ===== */}
       <div className="text-center mt-10">
 
-        <h1 className="text-4xl font-medium tracking-wide">
+       <p className="text-4xl font-medium">
           VENTURE HIVE
-        </h1>
+        </p>
 
         <div className="flex items-center justify-center gap-4 mt-6">
           <span className="text-2xl">~</span>
-          <i className="fa-brands fa-facebook text-md"></i>
-          <i className="fa-brands fa-twitter text-md"></i>
-          <i className="fa-brands fa-google text-md"></i>
-          <i className="fa-brands fa-instagram text-md"></i>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-blue-600 transition"
+          >
+            <Facebook size={18} />
+          </a>
+
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="hover:text-sky-500 transition"
+          >
+            <Twitter size={18} />
+          </a>
+
+          <a
+            href="https://www.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google"
+            className="hover:text-red-500 transition"
+          >
+            <Globe size={18} />
+          </a>
+
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-pink-600 transition"
+          >
+            <Instagram size={18} />
+          </a>
           <span className="text-2xl">~</span>
         </div>
 

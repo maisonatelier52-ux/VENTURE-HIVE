@@ -6,6 +6,7 @@ import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors"
 import Link from "next/link";
 import ArticleJsonLd from "@/components/ArticleJsonLd";
+import { Facebook, Twitter, Instagram, Globe } from "lucide-react";
 
 function page() { 
   const { category, slug } = useParams();  
@@ -188,10 +189,21 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
         <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
           <span className="text-2xl">~</span>
-         <span className="w-6 h-6 border border-blue-900 rotate-45 flex items-center justify-center bg-blue-900"><i className="fa-brands fa-facebook text-white text-lg -rotate-45"></i></span>
-          <span className="w-6 h-6 border border-blue-300 rotate-45 flex items-center justify-center bg-blue-300"><i className="fa-brands fa-twitter text-md text-white"></i></span>
-           <span className="w-6 h-6 border border-orange-500 rotate-45 flex items-center justify-center bg-orange-500"><i className="fa-brands fa-google text-md text-white"></i></span>
-            <span className="w-6 h-6 border border-red-700 rotate-45 flex items-center justify-center bg-red-700"><i className="fa-brands fa-instagram text-md text-white"></i></span>
+        <a href="https://facebook.com" target="_blank" className="w-6 h-6 rotate-45 bg-blue-900 flex items-center justify-center">
+          <Facebook size={14} className="text-white -rotate-45" />
+        </a>
+
+        <a href="https://twitter.com" target="_blank" className="w-6 h-6 rotate-45 bg-blue-300 flex items-center justify-center">
+          <Twitter size={14} className="text-white -rotate-45" />
+        </a>
+
+        <a href="https://google.com" target="_blank" className="w-6 h-6 rotate-45 bg-orange-500 flex items-center justify-center">
+          <Globe size={14} className="text-white -rotate-45" />
+        </a>
+
+        <a href="https://instagram.com" target="_blank" className="w-6 h-6 rotate-45 bg-red-700 flex items-center justify-center">
+          <Instagram size={14} className="text-white -rotate-45" />
+          </a>
           <span className="text-2xl">~</span>
         </div>
 
@@ -234,12 +246,17 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
       {/* Social Icons */}
       <div className="flex items-center gap-4 text-lg text-gray-800">
-       <Link href={authorData.social.facebook} target="_blank" rel="noopener noreferrer">
-          <button className="hover:text-blue-600 cursor-pointer transition"><i className="fa-brands fa-facebook"></i></button>
-          </Link>
-          <Link href={authorData.social.twitter} target="_blank" rel="noopener noreferrer">
-          <button className="hover:text-blue-600 cursor-pointer transition"><i className="fa-brands fa-twitter"></i></button>
-          </Link>
+      <a href={authorData.social.facebook} target="_blank" className="hover:text-blue-600">
+          <Facebook size={18} />
+        </a>
+
+        <a href={authorData.social.twitter} target="_blank" className="hover:text-sky-500">
+          <Twitter size={18} />
+        </a>
+
+        <a href="https://google.com" target="_blank" className="hover:text-red-500">
+          <Globe size={18} />
+        </a>
         <button><i className="fa-brands fa-google"></i></button>
       </div>
 

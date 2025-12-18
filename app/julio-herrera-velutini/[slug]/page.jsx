@@ -9,6 +9,7 @@ import RightSidebar from "@/components/RightSidebar";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";
 import pillarContents from "../../../public/data/special/pillarContents.json";
+import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 
 export default function SpecialSlugPage() {
   const { slug } = useParams();
@@ -169,14 +170,15 @@ export default function SpecialSlugPage() {
                     </p>
 
                     <div className="flex items-center gap-4 text-lg text-gray-800">
-                      {authorData.social.facebook && (
+                     {authorData.social.facebook && (
                         <Link
                           href={authorData.social.facebook}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Facebook"
                           className="hover:text-blue-600 transition"
                         >
-                          <i className="fa-brands fa-facebook"></i>
+                          <Facebook size={18} />
                         </Link>
                       )}
 
@@ -185,9 +187,10 @@ export default function SpecialSlugPage() {
                           href={authorData.social.twitter}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-blue-600 transition"
+                          aria-label="Twitter"
+                          className="hover:text-sky-500 transition"
                         >
-                          <i className="fa-brands fa-twitter"></i>
+                          <Twitter size={18} />
                         </Link>
                       )}
                     </div>

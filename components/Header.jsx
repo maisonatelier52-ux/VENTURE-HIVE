@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import categoryData from "../public/data/category/categorypagedata";
+import { Facebook, Twitter, Clock, Globe } from "lucide-react";
 
 export default function HeaderComponent() {
   const [open, setOpen] = useState(false);
@@ -26,22 +27,22 @@ export default function HeaderComponent() {
                       flex flex-col md:flex-row justify-between items-center gap-2">
        
         <h6 className="flex items-center gap-2 text-black text-sm md:text-base">
-          <i className="fa-regular fa-clock"></i>
+          <Clock size={18} />
           <span>{getFormattedDate()}</span>
         </h6>
 
         <div className="flex items-center gap-4 text-black text-lg">
-          <i className="fa-brands fa-facebook"></i>
-          <i className="fa-brands fa-twitter"></i>
-          <i className="fa-brands fa-google"></i>
+          <Facebook size={18} />
+          <Twitter size={18} />
+           <Globe size={18} />
         </div>
       </div>
 
       {/* ================= HEADING ================= */}
       <div className="text-center py-6 px-4">
-        <h1 className="text-4xl md:text-6xl tracking-wide font-medium">
+        <p className="text-4xl md:text-6xl font-medium">
           VENTURE HIVE
-        </h1>
+        </p>
         <p className="text-xs md:text-base mt-1">
           INSIGHT / ANALYSIS / IMPACT
         </p>

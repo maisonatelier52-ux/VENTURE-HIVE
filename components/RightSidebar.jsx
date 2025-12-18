@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -224,10 +225,15 @@ function handleSearchInput(e) {
               </p>
             </div>
 
-            <img
-              src={item.image}
-              className="w-20 h-16 object-cover rounded"
-            />
+            <div className="relative w-20 h-16">
+              <Image
+                src={item.image}
+                alt={item.heading}
+                fill
+                className="object-cover rounded"
+                sizes="80px"
+              />
+            </div>
           </div>
           </Link>
         ))}
@@ -282,11 +288,15 @@ function handleSearchInput(e) {
 
             {trendingArticle && (
               <div className="space-y-3">
-                <img
-                  src={trendingArticle.image}
-                  className="w-full h-auto object-cover rounded"
-                  alt={trendingArticle.heading}
-                />
+                <div className="relative w-full aspect-[16/9]">
+                  <Image
+                    src={trendingArticle.image}
+                    alt={trendingArticle.heading}
+                    fill
+                    className="object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                </div>
                 <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`}>
                  <h3 className="text-md font-semibold">
                   {trendingArticle.heading.length > 80
@@ -309,11 +319,15 @@ function handleSearchInput(e) {
               {smallTrending.slice(0, 2).map((item, i) => (
                 <Link href={`/${item.category}/${item.slug}`} key={i}>
                   <div className="flex items-start gap-4 mb-3">
-                    <img
-                      src={item.image}
-                      alt={item.heading}
-                      className="w-20 h-20 object-cover rounded"
-                    />
+                    <div className="relative w-50 h-20">
+                      <Image
+                        src={item.image}
+                        alt={item.heading}
+                        fill
+                        className="object-cover rounded"
+                        sizes="80px"
+                      />
+                    </div>
 
                     <div className="flex flex-col">
                       <h3 className="text-sm font-semibold">
@@ -332,11 +346,15 @@ function handleSearchInput(e) {
               {/* 🔹 STATIC SPECIAL ARTICLE (3RD ITEM) */}
               <Link href={staticSpecialArticle.href}>
                 <div className="flex items-start gap-4 mb-3">
-                  <img
-                    src={staticSpecialArticle.image}
-                    alt={staticSpecialArticle.title}
-                    className="w-20 h-20 object-cover rounded"
-                  />
+                  <div className="relative w-50 h-20">
+                    <Image
+                      src={staticSpecialArticle.image}
+                      alt={staticSpecialArticle.title}
+                      fill
+                      className="object-cover rounded"
+                      sizes="80px"
+                    />
+                  </div>
 
                   <div className="flex flex-col">
                     <h3 className="text-sm font-semibold">
