@@ -191,14 +191,19 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
           </div>
 
-       <div className="flex justify-center items-center p-5">
-        <div className="bg-blue-100 flex flex-row items-center justify-between p-2 gap-4">
+     <div className="flex justify-center items-center p-5">
+        <div
+          className="bg-blue-100 flex flex-wrap justify-center md:justify-betweenitems-center gap-2 md:gap-4p-3 max-w-3xl w-full">
           {article.hashTags.map((tag, index) => (
-            <h6 key={index}>#{tag}</h6>
+            <span
+              key={index}
+              className="text-xs md:text-sm px-3 py-1 rounded-full text-gray-700whitespace-nowrap">
+              #{tag}
+            </span>
           ))}
-           
         </div>
-        </div>
+      </div>
+
 
         <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
           <span className="text-2xl">~</span>
