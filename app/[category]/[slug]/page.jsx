@@ -104,7 +104,11 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
                     sizes="28px"
                   />
                 </div>
-                <span className="font-medium text-xs text-gray-600">{authorData.name.toUpperCase()}</span>
+              <Link href={`/authors`} title={authorData.name}>
+                <span className="font-medium text-xs text-gray-600 hover:text-blue-600 hover:underline transition cursor-pointer">
+                  {authorData.name.toUpperCase()}
+                </span>
+              </Link>
               </div>
 
               <span className="text-gray-600 text-xs">{category.toUpperCase()}</span>

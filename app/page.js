@@ -296,7 +296,7 @@ Object.keys(categoryData).forEach((cat) => {
 
                         {/* Author */}
                         <div className="flex items-center gap-2">
-                         <Image
+                          <Image
                             src={item.author?.profileImage}
                             alt={item.author?.name}
                             width={24}
@@ -306,19 +306,16 @@ Object.keys(categoryData).forEach((cat) => {
                           <span>{item.author?.name}</span>
                         </div>
 
-                        {/* Category */}
-                        <div className="text-center text-xs uppercase tracking-wide">
-                          {item.category}
-                        </div>
-
-                        {/* Date */}
-                        <div className="text-right text-xs pe-5">
+                        {/* Date (center, replaces category) */}
+                        <div className="text-center text-xs tracking-wide">
                           <time dateTime={new Date(item.date).toISOString()}>
                             {item.date}
                           </time>
                         </div>
+                       
 
                       </div>
+
                     </div>
 
                   </div>

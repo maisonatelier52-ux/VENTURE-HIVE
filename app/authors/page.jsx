@@ -2,21 +2,37 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import RightSidebar from "../../components/RightSidebar";
+import Image from "next/image";
 
+import RightSidebar from "../../components/RightSidebar";
 import authorsData from "../../public/data/authors.json";
 import categoryData from "../../public/data/category/categorypagedata";
-import Image from "next/image";
+import specialPillars from "../../public/data/special/pillarContents.json";
 
 export default function AuthorsPage() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
 
   // Build author → articles mapping
   const authorArticles = authorsData.categories.map(({ category, author }) => {
-    const posts = categoryData[category.toLowerCase()] || [];
+    const normalizedCategory = category.toLowerCase();
+
+    let posts = [];
+
+    // 🔥 SPECIAL CATEGORY HANDLING
+    if (normalizedCategory === "special") {
+      posts = specialPillars.map((item) => ({
+        slug: item.slug,
+        heading: item.hero?.title,
+        image: item.hero?.imageSrc,
+        date: item.subtitle?.meta || "Special Feature",
+      }));
+    } else {
+      posts = categoryData[normalizedCategory] || [];
+    }
+
     return {
       ...author,
-      category: category.toLowerCase(),
+      category: normalizedCategory,
       posts,
     };
   });
@@ -51,7 +67,9 @@ export default function AuthorsPage() {
                       />
                     </div>
                     <div>
-                      <h2 className="text-lg font-semibold">{author.name}</h2>
+                      <h2 className="text-lg font-semibold">
+                        {author.name}
+                      </h2>
                       <p className="text-xs text-gray-500 uppercase">
                         {author.category}
                       </p>
@@ -106,9 +124,15 @@ export default function AuthorsPage() {
                 {selectedAuthor.posts.map((post) => (
                   <Link
                     key={post.slug}
-                    href={`/${selectedAuthor.category}/${post.slug}`}
+                    href={
+                      selectedAuthor.category === "special"
+                        ? `/julio-herrera-velutini/${post.slug}`
+                        : `/${selectedAuthor.category}/${post.slug}`
+                    }
+                    title={post.heading}
                     className="block border-b pb-4 hover:bg-gray-50 p-2 rounded"
                   >
+
                     <div className="flex gap-4">
                       <div className="relative w-28 h-20">
                         <Image
@@ -146,3 +170,4 @@ export default function AuthorsPage() {
     </div>
   );
 }
+
