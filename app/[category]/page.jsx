@@ -3,7 +3,7 @@
 import RightSidebar from "../../components/RightSidebar";
 import Link from "next/link";
 // import { usePathname } from "next/navigation";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import categorypagedata from "../../public/data/category/categorypagedata"
 import authorsPageData from "../../public/data/authors"
 import Image from "next/image";
@@ -14,7 +14,6 @@ export default function CategoryPage(){
   // const pathName = usePathname();
   // console.log("PathName:", pathName);
   const { category } = useParams();      
-  console.log("Category:", category);
 
   const articles = categorypagedata[category] || [];
   const authorData =
@@ -22,6 +21,9 @@ export default function CategoryPage(){
       (item) => item.category.toLowerCase() === category.toLowerCase()
     )?.author;
    
+    if (!categorypagedata[category]) {
+    notFound(); 
+  }
     
   
 
