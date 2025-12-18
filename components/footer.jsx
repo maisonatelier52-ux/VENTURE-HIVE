@@ -42,12 +42,9 @@ export default function FooterComponent() {
             investigations, and opinion with integrity and clarity.
           </p>
 
-          <Link
-            href="/about"
-            className="inline-block mt-3 text-xs underline underline-offset-4 hover:text-blue-600 transition"
-          >
-            Read more
-          </Link>
+        <Link href="/about">
+          <span aria-label="Read more about Venture Hive" className="text-xs underline underline-offset-4 hover:text-blue-600 transition">Read more</span>
+        </Link>
         </div>
 
         {/* ================= LATEST ================= */}
@@ -109,11 +106,8 @@ export default function FooterComponent() {
             uses, and protects your information while you browse our site.
           </p>
 
-          <Link
-            href="/privacy-policy"
-            className="inline-block mt-3 text-xs underline underline-offset-4 hover:text-blue-600 transition"
-          >
-            Read more
+          <Link href="/privacy-policy">
+            <span aria-label="Read Venture Hive privacy policy" className="text-xs underline underline-offset-4 hover:text-blue-600 transition">Read more</span>
           </Link>
         </div>
 
