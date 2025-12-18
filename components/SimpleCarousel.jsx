@@ -27,7 +27,6 @@ export default function SimpleCarousel({ items = [] }) {
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {items.map((item, i) => (
-          console.log("items",item),
           
           <div key={i} className="min-w-full px-4 sm:px-8 lg:px-16">
             {/* Image */}
@@ -37,6 +36,8 @@ export default function SimpleCarousel({ items = [] }) {
                 src={item.image}
                 alt={item.alt || item.heading}
                 fill
+                priority={i === 0}
+                fetchPriority={i === 0 ? "high" : "auto"}
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 1200px"
               />
