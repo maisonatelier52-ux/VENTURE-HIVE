@@ -257,7 +257,6 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
         <a href="https://google.com" target="_blank" className="hover:text-red-500">
           <Globe size={18} />
         </a>
-        <button><i className="fa-brands fa-google"></i></button>
       </div>
 
     </div>
