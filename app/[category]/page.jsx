@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import categorypagedata from "../../public/data/category/categorypagedata"
 import authorsPageData from "../../public/data/authors"
+import Image from "next/image";
 
 
 export default function CategoryPage(){
@@ -41,11 +42,15 @@ export default function CategoryPage(){
             >
               {/* IMAGE + OVERLAY */}
               <div className="relative">
-                <img
-                  src={item.image}
-                  className="w-full h-40 object-cover rounded"
-                  alt=""
-                />
+               <div className="relative w-full h-40">
+                  <Image
+                    src={item.image}
+                    alt={item.heading}
+                    fill
+                    className="object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
              <h2 className="absolute bottom-2 left-2 text-white text-sm font-medium drop-shadow bg-black p-1 px-2">
                 {category}
                 </h2>
@@ -59,11 +64,15 @@ export default function CategoryPage(){
               {/* PROFILE + DATE */}
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <img
-                    src={authorData.profileImage}
-                    className="w-9 h-9 rounded-full"
-                    alt=""
-                  />
+                 <div className="relative w-9 h-9">
+                    <Image
+                      src={authorData.profileImage}
+                      alt={authorData.name}
+                      fill
+                      className="rounded-full object-cover"
+                      sizes="36px"
+                    />
+                  </div>
                   <span className="font-medium text-sm text-gray-400">
                     {authorData.name}
                   </span>

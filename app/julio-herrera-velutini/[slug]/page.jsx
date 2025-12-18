@@ -152,11 +152,15 @@ export default function SpecialSlugPage() {
 
                   {/* Image */}
                   <div className="w-full md:w-1/4 h-48 md:h-auto overflow-hidden">
-                    <img
-                      src={authorData.profileImage}
-                      alt={authorData.name}
-                      className="w-full h-full object-cover"
-                    />
+                     <div className="relative w-full h-full">
+                      <Image
+                        src={authorData.profileImage}
+                        alt={authorData.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
+                    </div>
                   </div>
 
                   {/* Text */}

@@ -6,6 +6,7 @@ import RightSidebar from "@/components/RightSidebar";
 
 import authorsData from "@/public/data/authors.json";
 import categoryData from "@/public/data/category/categorypagedata";
+import Image from "next/image";
 
 export default function AuthorsPage() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
@@ -40,11 +41,15 @@ export default function AuthorsPage() {
                   className="cursor-pointer border rounded p-5 bg-white hover:shadow transition"
                 >
                   <div className="flex items-center gap-4">
-                    <img
-                      src={author.profileImage}
-                      className="w-16 h-16 rounded-full object-cover"
-                      alt={author.name}
-                    />
+                    <div className="relative w-16 h-16">
+                      <Image
+                        src={author.profileImage}
+                        alt={author.name}
+                        fill
+                        className="rounded-full object-cover"
+                        sizes="64px"
+                      />
+                    </div>
                     <div>
                       <h2 className="text-lg font-semibold">{author.name}</h2>
                       <p className="text-xs text-gray-500 uppercase">
@@ -77,11 +82,15 @@ export default function AuthorsPage() {
 
               {/* AUTHOR HEADER */}
               <div className="flex gap-6 items-center mb-8">
-                <img
-                  src={selectedAuthor.profileImage}
-                  className="w-24 h-24 rounded-full"
-                  alt={selectedAuthor.name}
-                />
+                <div className="relative w-24 h-24">
+                  <Image
+                    src={selectedAuthor.profileImage}
+                    alt={selectedAuthor.name}
+                    fill
+                    className="rounded-full object-cover"
+                    sizes="96px"
+                  />
+                </div>
                 <div>
                   <h2 className="text-2xl font-semibold">
                     {selectedAuthor.name}
@@ -101,11 +110,15 @@ export default function AuthorsPage() {
                     className="block border-b pb-4 hover:bg-gray-50 p-2 rounded"
                   >
                     <div className="flex gap-4">
-                      <img
-                        src={post.image}
-                        className="w-28 h-20 object-cover rounded"
-                        alt={post.heading}
-                      />
+                      <div className="relative w-28 h-20">
+                        <Image
+                          src={post.image}
+                          alt={post.heading}
+                          fill
+                          className="object-cover rounded"
+                          sizes="112px"
+                        />
+                      </div>
                       <div>
                         <h3 className="font-semibold">
                           {post.heading}

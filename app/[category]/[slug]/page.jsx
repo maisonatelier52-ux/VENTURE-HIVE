@@ -7,6 +7,7 @@ import authorsPageData from "../../../public/data/authors"
 import Link from "next/link";
 import ArticleJsonLd from "@/components/ArticleJsonLd";
 import { Facebook, Twitter, Instagram, Globe } from "lucide-react";
+import Image from "next/image";
 
 function page() { 
   const { category, slug } = useParams();  
@@ -74,11 +75,15 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
           <div className="flex flex-col items-center text-center space-y-4">
 
             {/* IMAGE */}
-            <img
-              src={article.image}
-              className="w-full max-w-3xl object-cover"
-              alt="detail bg image"
-            />
+            <div className="relative w-full max-w-3xl aspect-[16/9]">
+              <Image
+                src={article.image}
+                alt="detail bg image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
 
             {/* HEADING */}
             <h1 className="text-2xl md:text-3xl font-semibold max-w-3xl">
@@ -90,11 +95,15 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
               {/* Profile */}
               <div className="flex items-center gap-2">
-                <img
-                  src={authorData.profileImage}
-                  className="w-7 h-7 rounded-full"
-                  alt=""
-                />
+               <div className="relative w-7 h-7">
+                  <Image
+                    src={authorData.profileImage}
+                    alt={authorData.name}
+                    fill
+                    className="rounded-full object-cover"
+                    sizes="28px"
+                  />
+                </div>
                 <span className="font-medium text-xs text-gray-600">{authorData.name.toUpperCase()}</span>
               </div>
 
@@ -122,11 +131,15 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
                 {article.para3}
                </p>
 
-              <img
+             <div className="relative w-full aspect-[16/9]">
+              <Image
                 src={article.deatilImage}
-                className="w-full object-cover rounded"
                 alt="detailpage image"
+                fill
+                className="object-cover rounded"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
+            </div>
 
               <p className="text-justify">
                  {article.para4}
@@ -222,11 +235,15 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
         overflow-hidden
       "
     >
-      <img
-        src={authorData.profileImage}
-        alt="Profile photo"
-        className="w-full h-full object-fit"
-      />
+      <div className="relative w-full h-full">
+        <Image
+          src={authorData.profileImage}
+          alt={authorData.name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 25vw"
+        />
+      </div>
     </div>
 
     {/* Right Column (Text + Icons) */}
@@ -310,11 +327,16 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
         <Link href={`/${category}/${prevPost.slug}`} className="flex gap-4 items-start">
 
           <div className="w-1/4">
-            <img
-              src={prevPost.image}
-              className="w-full h-24 object-cover rounded"
-              alt="Preview"
-            />
+            <div className="relative w-full h-24">
+              <Image
+                src={prevPost.image}
+                alt="Preview"
+                fill
+                className="object-cover rounded"
+                sizes="25vw"
+              />
+            </div>
+
           </div>
 
           <div className="w-3/4">
@@ -343,11 +365,15 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
           {/* IMAGE */}
           <div className="w-1/4">
-            <img
-              src={nextPost.image}
-              className="w-full h-24 object-cover rounded"
-              alt="Next Post"
-            />
+            <div className="relative w-full h-24">
+              <Image
+                src={nextPost.image}
+                alt="Next Post"
+                fill
+                className="object-cover rounded"
+                sizes="25vw"
+              />
+            </div>
           </div>
 
           {/* TEXT */}
