@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors"
 import Link from "next/link";
+import ArticleJsonLd from "@/components/ArticleJsonLd";
 
 function page() { 
   const { category, slug } = useParams();  
@@ -470,6 +471,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
     <RightSidebar categoryData={categorypagedata} authors={authorsPageData}/>
   </div>
       </div>
+       <ArticleJsonLd article={article} />
         
     </div>
   );

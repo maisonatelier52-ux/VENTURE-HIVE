@@ -1,11 +1,44 @@
-"use client";
 import RightSidebar from "@/components/RightSidebar";
 import SimpleCarousel from "@/components/SimpleCarousel";
 import Image from "next/image";
 import categorypagedata from '../public/data/category/categorypagedata';
 import authors from '../public/data/authors.json';
 import Link from "next/link";
-{/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> */}
+import JsonLd from "@/components/JsonLd";
+
+
+export const metadata = {
+  title: "VENTURE HIVE – Independent News, Analysis & Investigative Journalism",
+  description:
+    "VENTURE HIVE delivers trusted journalism across politics, business, investigations, sports, and opinion with depth, clarity, and integrity.",
+  alternates: {
+    canonical: "https://venture-hive.com/",
+  },
+  openGraph: {
+    title: "VENTURE HIVE – Independent News & Investigative Journalism",
+    description:
+      "Breaking news, investigations, and expert analysis across politics, business, and global affairs.",
+    url: "https://venture-hive.com/",
+    siteName: "VENTURE HIVE",
+    images: [
+      {
+        url: "https://venture-hive.com/images/og-home.webp",
+        width: 1200,
+        height: 630,
+        alt: "VENTURE HIVE News",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VENTURE HIVE – Independent Journalism",
+    description:
+      "Trusted reporting and deep analysis across politics, business, investigations, and opinion.",
+    images: ["https://venture-hive.com/images/og-home.webp"],
+  },
+};
+
 
 export default function Home() {
  const categoryData = categorypagedata;
@@ -156,7 +189,13 @@ Object.keys(categoryData).forEach((cat) => {
 
   
   return (
+    
     <div className="flex flex-col min-h-screen font-serif bg-zinc-50 font-sans px-5 md:px-20">
+
+      <h1 className="sr-only">
+  VENTURE HIVE – Independent News, Analysis & Investigative Journalism
+</h1>
+
 
       {/* Recent Articles List */}
       <div  className="
@@ -180,10 +219,13 @@ Object.keys(categoryData).forEach((cat) => {
     "
   >
     <div className="flex items-start gap-4 px-2">
-      <img
+      <Image
         src={item.image}
         alt={item.heading}
+        width={80}
+        height={80}
         className="w-20 h-20 object-cover rounded"
+        sizes="80px"
       />
 
       <div className="flex flex-col">
@@ -194,7 +236,10 @@ Object.keys(categoryData).forEach((cat) => {
         </h4>
 
         <div className="flex items-center gap-4 text-xs text-gray-500 mt-1">
-          <span>{item.date}</span>
+          <time dateTime={new Date(item.date).toISOString()}>
+            {item.date}
+          </time>
+          {/* <span>{item.date}</span> */}
           <span>{item.category.toUpperCase().slice(0, 10)}</span>
         </div>
       </div>
@@ -223,31 +268,37 @@ Object.keys(categoryData).forEach((cat) => {
                   <div className="grid grid-cols-[25%_75%] gap-6 items-start">
 
                     {/* Thumbnail */}
-                    <img
-                      src={item.image}
-                      alt={item.heading}
-                      className="w-full h-36 object-cover rounded"
-                    />
+                    <div className="relative w-full h-36">
+                      <Image
+                        src={item.image}
+                        alt={item.heading}
+                        fill
+                        className="object-cover rounded"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
+                    </div>
 
                     {/* Content */}
                     <div className="flex flex-col">
 
                       {/* Heading */}
-                      <h2 className="text-xl font-semibold mb-2">
+                      <h3 className="text-xl font-semibold mb-2">
                         {item.heading.length > 60 
                           ? item.heading.slice(0, 60) + "..." 
                           : item.heading}
-                      </h2>
+                      </h3>
 
                       {/* Bottom Info */}
                       <div className="grid grid-cols-3 items-center text-sm text-gray-600">
 
                         {/* Author */}
                         <div className="flex items-center gap-2">
-                          <img
+                         <Image
                             src={item.author?.profileImage}
                             alt={item.author?.name}
-                            className="w-6 h-6 rounded-full"
+                            width={24}
+                            height={24}
+                            className="rounded-full"
                           />
                           <span>{item.author?.name}</span>
                         </div>
@@ -259,7 +310,9 @@ Object.keys(categoryData).forEach((cat) => {
 
                         {/* Date */}
                         <div className="text-right text-xs pe-5">
-                          {item.date}
+                          <time dateTime={new Date(item.date).toISOString()}>
+                            {item.date}
+                          </time>
                         </div>
 
                       </div>
@@ -276,6 +329,7 @@ Object.keys(categoryData).forEach((cat) => {
       <RightSidebar  categoryData={categorypagedata} authors={authorsPageData}/>
 
       </div>
+      <JsonLd />
 
     </div>
   );
