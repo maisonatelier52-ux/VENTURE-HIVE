@@ -26,10 +26,10 @@ export default function HeaderComponent() {
       <div className="w-full border border-t-0 border-s-0 border-e-0 border-gray-500 p-4
                       flex flex-col md:flex-row justify-between items-center gap-2">
        
-        <h6 className="flex items-center gap-2 text-black text-sm md:text-base">
+        <p className="flex items-center gap-2 text-black text-sm md:text-base">
           <Clock size={18} />
           <span>{getFormattedDate()}</span>
-        </h6>
+        </p>
 
         <div className="flex items-center gap-4 text-black text-lg">
           <Facebook size={18} />

@@ -46,9 +46,9 @@ export default function SimpleCarousel({ items = [] }) {
 
             {/* Title */}
             <Link href={`/${item.category}/${item.slug}`}>
-              <h2 className="mt-4 text-xl md:text-3xl font-semibold">
+              <h3 className="mt-4 text-xl md:text-3xl font-semibold">
                 {item.heading}
-              </h2>
+              </h3>
             </Link>
             
 

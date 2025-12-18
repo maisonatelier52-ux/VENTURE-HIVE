@@ -197,6 +197,7 @@ Object.keys(categoryData).forEach((cat) => {
 </h1>
 
 
+    <h2 className="sr-only">Latest Articles</h2>
       {/* Recent Articles List */}
       <div  className="
        flex gap-6 py-5
@@ -229,11 +230,11 @@ Object.keys(categoryData).forEach((cat) => {
       />
 
       <div className="flex flex-col">
-        <h4 className="text-base md:text-md font-medium leading-snug">
+        <h3 className="text-base text-sm md:text-md font-medium leading-snug">
           {item.heading.length > 50
             ? item.heading.slice(0, 40) + "..."
             : item.heading}
-        </h4>
+        </h3>
 
         <div className="flex items-center gap-4 text-xs text-gray-500 mt-1">
           <time dateTime={new Date(item.date).toISOString()}>
