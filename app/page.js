@@ -1,10 +1,10 @@
-import RightSidebar from "@/components/RightSidebar";
-import SimpleCarousel from "@/components/SimpleCarousel";
+import RightSidebar from "../components/RightSidebar";
+import SimpleCarousel from "../components/SimpleCarousel";
 import Image from "next/image";
 import categorypagedata from '../public/data/category/categorypagedata';
 import authors from '../public/data/authors.json';
 import Link from "next/link";
-import JsonLd from "@/components/JsonLd";
+import JsonLd from "../components/JsonLd";
 
 
 export const metadata = {

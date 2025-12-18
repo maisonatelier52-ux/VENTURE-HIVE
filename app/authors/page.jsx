@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "../../components/RightSidebar";
 
-import authorsData from "@/public/data/authors.json";
-import categoryData from "@/public/data/category/categorypagedata";
+import authorsData from "../../public/data/authors.json";
+import categoryData from "../../public/data/category/categorypagedata";
 import Image from "next/image";
 
 export default function AuthorsPage() {

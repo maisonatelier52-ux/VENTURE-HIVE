@@ -1,11 +1,11 @@
 "use client";
-import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "../../../components/RightSidebar";
 import React from "react";
 import { useParams } from "next/navigation";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors"
 import Link from "next/link";
-import ArticleJsonLd from "@/components/ArticleJsonLd";
+import ArticleJsonLd from "../../../components/ArticleJsonLd";
 import { Facebook, Twitter, Instagram, Globe } from "lucide-react";
 import Image from "next/image";
 

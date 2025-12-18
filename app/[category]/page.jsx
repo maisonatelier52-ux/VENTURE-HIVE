@@ -1,6 +1,6 @@
 "use client";
 
-import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "../../components/RightSidebar";
 import Link from "next/link";
 // import { usePathname } from "next/navigation";
 import { useParams } from "next/navigation";

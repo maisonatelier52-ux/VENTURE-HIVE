@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "../../../components/RightSidebar";
 
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";

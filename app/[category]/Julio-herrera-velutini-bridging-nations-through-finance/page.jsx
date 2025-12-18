@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "../../../components/RightSidebar";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";
 import Link from "next/link";
