@@ -30,7 +30,7 @@ export default function SimpleCarousel({ items = [] }) {
           
           <div key={i} className="min-w-full px-4 sm:px-8 lg:px-16">
             {/* Image */}
-            <Link href={`/${item.category}/${item.slug}`}>
+            <Link href={`/${item.category}/${item.slug}`}  title={item.heading}>
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
               <Image
                 src={item.image}
@@ -45,7 +45,7 @@ export default function SimpleCarousel({ items = [] }) {
             </Link>
 
             {/* Title */}
-            <Link href={`/${item.category}/${item.slug}`}>
+            <Link href={`/${item.category}/${item.slug}`} title={item.heading}>
               <h3 className="mt-4 text-xl md:text-3xl font-semibold">
                 {item.heading}
               </h3>

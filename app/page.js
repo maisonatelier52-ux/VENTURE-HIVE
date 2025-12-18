@@ -209,6 +209,7 @@ Object.keys(categoryData).forEach((cat) => {
 {recentFour.map((item, i) => (
   <Link
     href={`/${item.category}/${item.slug}`}
+    title={item.heading}
     key={i}
     className="
       snap-start
@@ -263,6 +264,7 @@ Object.keys(categoryData).forEach((cat) => {
               {fourCategoryPosts.map((item, i) => (
                 <Link 
                   href={`/${item.category}/${item.slug}`} 
+                  title={item.heading}
                   key={i} 
                   className="block"
                 >

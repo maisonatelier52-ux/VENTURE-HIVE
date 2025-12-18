@@ -32,9 +32,30 @@ export default function HeaderComponent() {
         </p>
 
         <div className="flex items-center gap-4 text-black text-lg">
-          <Facebook size={18} />
-          <Twitter size={18} />
-           <Globe size={18} />
+          <a
+            href="https://www.facebook.com"
+            title="Visit Venture Hive on Facebook"
+            aria-label="Facebook"
+          >
+            <Facebook size={18} />
+          </a>
+
+          <a
+            href="https://www.twitter.com"
+            title="Visit Venture Hive on Twitter"
+            aria-label="Twitter"
+          >
+            <Twitter size={18} />
+          </a>
+
+          <a
+            href="https://www.google.com"
+            title="Visit Venture Hive on Google"
+            aria-label="Google"
+          >
+            <Globe size={18} />
+          </a>
+
         </div>
       </div>
 
@@ -70,6 +91,7 @@ export default function HeaderComponent() {
           <nav className="md:hidden flex flex-col divide-y bg-white">
             <Link
               href="/"
+              title="Venture Hive home page"
               className="px-4 py-3 hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
@@ -80,6 +102,7 @@ export default function HeaderComponent() {
               <Link
                 key={cat}
                 href={`/${cat}`}
+                title={`${cat} news and analysis on Venture Hive`}
                 className="px-4 py-3 hover:bg-gray-100 uppercase"
                 onClick={() => setOpen(false)}
               >
@@ -97,7 +120,7 @@ export default function HeaderComponent() {
         <hr className="border-t-2 border-black" />
 
         <nav className="flex flex-wrap justify-center gap-10 py-3 text-base">
-          <Link href="/" className="hover:text-blue-600 transition">
+          <Link href="/" className="hover:text-blue-600 transition" title="Venture Hive home page">
             • HOME
           </Link>
 
@@ -105,6 +128,7 @@ export default function HeaderComponent() {
             <Link
               key={cat}
               href={`/${cat}`}
+              title={`${cat} news and analysis on Venture Hive`}
               className="hover:text-blue-600 transition"
             >
               • {cat.toUpperCase()}

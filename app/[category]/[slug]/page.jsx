@@ -303,6 +303,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
           .map((item, index) => (
             <Link
               href={`/${category}/${item.slug}`}
+              title={item.heading}
               key={item.id}
               className="flex items-start gap-4 border-b border-gray-300 pb-3"
             >
@@ -329,7 +330,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
       </h2>
 
       {prevPost ? (
-        <Link href={`/${category}/${prevPost.slug}`} className="flex gap-4 items-start">
+        <Link href={`/${category}/${prevPost.slug}`} title={prevPost.heading} className="flex gap-4 items-start">
 
           <div className="w-1/4">
             <div className="relative w-full h-24">
@@ -366,7 +367,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
       </h2>
 
       {nextPost ? (
-        <Link href={`/${category}/${nextPost.slug}`} className="flex gap-4 items-start">
+        <Link href={`/${category}/${nextPost.slug}`} title={nextPost.heading} className="flex gap-4 items-start">
 
           {/* IMAGE */}
           <div className="w-1/4">

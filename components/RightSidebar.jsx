@@ -207,7 +207,9 @@ function handleSearchInput(e) {
 
       <div className="space-y-6">
         {popularArticles.map((item, i) => (
-          <Link href={`/${item.category}/${item.slug}`} key={i}>
+          <Link href={`/${item.category}/${item.slug}`}
+           title={item.heading}
+           key={i}>
           <div
            
             className="grid grid-cols-[30px_1fr_90px] gap-3 pb-4 border-b"
@@ -265,6 +267,7 @@ function handleSearchInput(e) {
                 <Link
                   key={item.slug}
                   href={`/${item.category}/${item.slug}`}
+                   title={item.heading}
                   className="block px-3 py-2 hover:bg-gray-100 text-sm"
                   onClick={() => {
                     setResults([]);
@@ -297,7 +300,7 @@ function handleSearchInput(e) {
                     sizes="(max-width: 768px) 100vw, 400px"
                   />
                 </div>
-                <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`}>
+                <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`} title={trendingArticle.heading}>
                  <h3 className="text-md font-semibold">
                   {trendingArticle.heading.length > 80
                     ? trendingArticle.heading.slice(0, 80) + "..."
@@ -317,7 +320,7 @@ function handleSearchInput(e) {
 
               {/* 🔹 ONLY FIRST 2 DYNAMIC ITEMS */}
               {smallTrending.slice(0, 2).map((item, i) => (
-                <Link href={`/${item.category}/${item.slug}`} key={i}>
+                <Link href={`/${item.category}/${item.slug}`} title={item.heading} key={i}>
                   <div className="flex items-start gap-4 mb-3">
                     <div className="relative w-50 h-20">
                       <Image
@@ -344,7 +347,7 @@ function handleSearchInput(e) {
               ))}
 
               {/* 🔹 STATIC SPECIAL ARTICLE (3RD ITEM) */}
-              <Link href={staticSpecialArticle.href}>
+              <Link href={staticSpecialArticle.href} title={staticSpecialArticle.title}>
                 <div className="flex items-start gap-4 mb-3">
                   <div className="relative w-50 h-20">
                     <Image
@@ -381,6 +384,7 @@ function handleSearchInput(e) {
                 <Link 
                   key={cat} 
                   href={`/${cat}`}
+                   title={`${cat} news and analysis on Venture Hive`}
                   className="p-2 bg-blue-200 rounded cursor-pointer hover:bg-blue-300 transition"
                 >
                   {cat.charAt(0).toUpperCase() + cat.slice(1)}

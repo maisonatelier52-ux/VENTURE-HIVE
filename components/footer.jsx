@@ -42,7 +42,7 @@ export default function FooterComponent() {
             investigations, and opinion with integrity and clarity.
           </p>
 
-       <Link href="/about">
+       <Link href="/about"  title="Read more about Venture Hive">
         <span className="text-xs underline">
           Read more <span className="sr-only">about Venture Hive</span>
         </span>
@@ -61,6 +61,7 @@ export default function FooterComponent() {
               <Link
                 key={item.slug}
                 href={`/${item.category}/${item.slug}`}
+                title={item.heading}
                 className="flex gap-4"
               >
                 <div className="relative w-50 h-20">
@@ -89,7 +90,9 @@ export default function FooterComponent() {
 
           <div className="grid grid-cols-2 gap-y-4 mt-6 text-sm">
             {Object.keys(categoryData).map((cat) => (
-              <Link key={cat} href={`/${cat}`}>
+              <Link key={cat} 
+              href={`/${cat}`} 
+              title={`${cat} news and analysis on Venture Hive`}>
                 <p>› {cat}</p>
               </Link>
             ))}
@@ -108,7 +111,7 @@ export default function FooterComponent() {
             uses, and protects your information while you browse our site.
           </p>
 
-       <Link href="/privacy-policy">
+       <Link href="/privacy-policy" title="Read more about Venture Hive privacy policy">
         <span className="text-xs underline">
           Read more <span className="sr-only">about our privacy policy</span>
         </span>
@@ -129,11 +132,12 @@ export default function FooterComponent() {
 
         <div className="flex items-center justify-center gap-4 mt-6">
           <span className="text-2xl">~</span>
-          <a
+         <a
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
+            title="Visit Venture Hive on Facebook"
             className="hover:text-blue-600 transition"
           >
             <Facebook size={18} />
@@ -144,6 +148,7 @@ export default function FooterComponent() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
+            title="Visit Venture Hive on Twitter"
             className="hover:text-sky-500 transition"
           >
             <Twitter size={18} />
@@ -154,6 +159,7 @@ export default function FooterComponent() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Google"
+            title="Visit Venture Hive on Google"
             className="hover:text-red-500 transition"
           >
             <Globe size={18} />
@@ -164,6 +170,7 @@ export default function FooterComponent() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
+            title="Visit Venture Hive on Instagram"
             className="hover:text-pink-600 transition"
           >
             <Instagram size={18} />

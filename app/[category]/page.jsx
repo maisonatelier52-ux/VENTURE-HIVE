@@ -37,7 +37,7 @@ export default function CategoryPage(){
         <div className="columns-1 md:columns-2 gap-6 space-y-6">
 
           {articles.map((item) => (
-            <Link key={item.id} href={`/${category}/${item.slug}`}>
+            <Link key={item.id} href={`/${category}/${item.slug}`} title={item.heading}>
                 <div
               key={item.id}
               className="break-inside-avoid p-3 rounded space-y-3"
