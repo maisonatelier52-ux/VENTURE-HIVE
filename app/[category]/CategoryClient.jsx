@@ -24,8 +24,8 @@ export default function CategoryClient({ category }) {
         {/* LEFT COLUMN */}
         <div>
             {/* ✅ SEO REQUIRED H1 */}
-            <h1 className="text-2xl md:text-3xl font-semibold mb-3 capitalize">
-            {category} News & Analysis from Venture Hive
+            < h1 className="text-2xl md:text-3xl font-semibold mb-3 capitalize">
+            {`${category} – News & Analysis from Venture Hive`}
             </h1>
 
             <p className="text-gray-600 text-sm mb-6 max-w-3xl">
