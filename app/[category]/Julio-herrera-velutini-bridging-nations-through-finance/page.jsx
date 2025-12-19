@@ -7,6 +7,7 @@ import authorsPageData from "../../../public/data/authors";
 import Link from "next/link";
 import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 
+
 export default function JulioHerreraVelutiniPage() {
   const category = "Special";
 
@@ -16,6 +17,7 @@ export default function JulioHerreraVelutiniPage() {
     )?.author;
 
   return (
+      
     <div className="min-h-screen font-serif text-gray-900 px-5 md:px-20">
 
       {/* Newspaper texture */}
