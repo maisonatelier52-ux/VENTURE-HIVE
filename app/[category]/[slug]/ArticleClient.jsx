@@ -215,21 +215,49 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
         <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
           <span className="text-2xl">~</span>
-        <a href="https://facebook.com" target="_blank" className="w-6 h-6 rotate-45 bg-blue-900 flex items-center justify-center">
-          <Facebook size={14} className="text-white -rotate-45" />
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Share on facebook"
+            aria-label="Share on facebook"
+            className="w-6 h-6 rotate-45 bg-blue-900 flex items-center justify-center"
+        >
+            <Facebook size={14} className="text-white -rotate-45" />
+        </a>
+        <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Share on Twitter"
+            aria-label="Share on Twitter"
+            className="w-6 h-6 rotate-45 bg-blue-300 flex items-center justify-center"
+        >
+            <Twitter size={14} className="text-white -rotate-45" />
         </a>
 
-        <a href="https://twitter.com" target="_blank" className="w-6 h-6 rotate-45 bg-blue-300 flex items-center justify-center">
-          <Twitter size={14} className="text-white -rotate-45" />
+        <a
+            href="https://google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Visit Website"
+            aria-label="Visit Website"
+            className="w-6 h-6 rotate-45 bg-orange-500 flex items-center justify-center"
+        >
+            <Globe size={14} className="text-white -rotate-45" />
         </a>
 
-        <a href="https://google.com" target="_blank" className="w-6 h-6 rotate-45 bg-orange-500 flex items-center justify-center">
-          <Globe size={14} className="text-white -rotate-45" />
+        <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Follow on Instagram"
+            aria-label="Follow on Instagram"
+            className="w-6 h-6 rotate-45 bg-red-700 flex items-center justify-center"
+        >
+            <Instagram size={14} className="text-white -rotate-45" />
         </a>
 
-        <a href="https://instagram.com" target="_blank" className="w-6 h-6 rotate-45 bg-red-700 flex items-center justify-center">
-          <Instagram size={14} className="text-white -rotate-45" />
-          </a>
           <span className="text-2xl">~</span>
         </div>
 
