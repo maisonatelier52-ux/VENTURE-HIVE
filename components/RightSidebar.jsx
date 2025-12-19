@@ -201,7 +201,7 @@ function handleSearchInput(e) {
 
   return (
     <div>
-      <h2 className="text-lg font-medium border-b pb-2 mb-4">
+      <h2 className="text-lg font-medium border-b pb-2 mb-2">
         • POPULAR ARTICLES
       </h2>
 
@@ -212,7 +212,7 @@ function handleSearchInput(e) {
            key={i}>
           <div
            
-            className="grid grid-cols-[30px_1fr_90px] gap-3 pb-4 border-b"
+            className="grid grid-cols-[30px_1fr_90px] gap-3 pb-4 border-b pt-2"
           >
             <span className="text-xl font-medium">{i + 1}.</span>
 

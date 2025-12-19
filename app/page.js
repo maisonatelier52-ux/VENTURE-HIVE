@@ -262,39 +262,71 @@ Object.keys(categoryData).forEach((cat) => {
             <h2 className="font-medium text-4xl text-center p-3 py-8">RECENT POSTS</h2>
             <div className="space-y-8">
               {fourCategoryPosts.map((item, i) => (
-                <Link 
-                  href={`/${item.category}/${item.slug}`} 
+                <Link
+                  href={`/${item.category}/${item.slug}`}
                   title={item.heading}
-                  key={i} 
+                  key={i}
                   className="block"
                 >
-                  <div className="grid grid-cols-[25%_75%] gap-6 items-start">
+                  {/* MOBILE: horizontal | DESKTOP: existing grid */}
+                  <div className="flex sm:grid sm:grid-cols-[25%_75%] gap-4 sm:gap-6 items-start">
 
-                    {/* Thumbnail */}
-                    <div className="relative w-full h-36">
+                    {/* IMAGE */}
+                    <div className="relative w-32 h-24 sm:w-full sm:h-36 shrink-0">
                       <Image
                         src={item.image}
                         alt={item.heading}
                         fill
                         className="object-cover rounded"
-                        sizes="(max-width: 768px) 100vw, 25vw"
+                        sizes="(max-width: 640px) 128px, 25vw"
                       />
                     </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col">
+                    {/* CONTENT */}
+                    <div className="flex flex-col justify-between">
 
-                      {/* Heading */}
-                      <h3 className="text-xl font-semibold mb-2">
-                        {item.heading.length > 60 
-                          ? item.heading.slice(0, 60) + "..." 
+                      {/* TITLE */}
+                      <h3 className="text-sm sm:text-xl font-semibold leading-snug mb-2">
+                        {item.heading.length > 60
+                          ? item.heading.slice(0, 60) + "..."
                           : item.heading}
                       </h3>
+                  
+                     {/* MOBILE META (author left, date right) */}
+                    <div className="sm:hidden flex items-center text-xs text-gray-600 mt-2">
 
-                      {/* Bottom Info */}
-                      <div className="grid grid-cols-3 items-center text-sm text-gray-600">
+                      {/* Author */}
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src={item.author?.profileImage}
+                          alt={item.author?.name}
+                          width={22}
+                          height={22}
+                          className="rounded-full"
+                        />
+                        <span className="font-medium whitespace-nowrap">
+                          {item.author?.name}
+                        </span>
+                      </div>
 
-                        {/* Author */}
+                      {/* Dot */}
+                      <span className="mx-2 text-gray-400">•</span>
+
+                      {/* Date */}
+                      <time
+                        className="whitespace-nowrap tracking-wide"
+                        dateTime={new Date(item.date).toISOString()}
+                      >
+                        {item.date}
+                      </time>
+
+                    </div>
+
+
+
+                      {/* DESKTOP META (UNCHANGED) */}
+                      <div className="hidden sm:grid grid-cols-3 items-center text-sm text-gray-600">
+
                         <div className="flex items-center gap-2">
                           <Image
                             src={item.author?.profileImage}
@@ -306,22 +338,21 @@ Object.keys(categoryData).forEach((cat) => {
                           <span>{item.author?.name}</span>
                         </div>
 
-                        {/* Date (center, replaces category) */}
                         <div className="text-center text-xs tracking-wide">
                           <time dateTime={new Date(item.date).toISOString()}>
                             {item.date}
                           </time>
                         </div>
-                       
 
                       </div>
 
                     </div>
-
                   </div>
                 </Link>
               ))}
             </div>
+
+
 
 
         

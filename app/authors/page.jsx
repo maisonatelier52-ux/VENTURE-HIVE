@@ -15,10 +15,8 @@ export default function AuthorsPage() {
   // Build author → articles mapping
   const authorArticles = authorsData.categories.map(({ category, author }) => {
     const normalizedCategory = category.toLowerCase();
-
     let posts = [];
 
-    // 🔥 SPECIAL CATEGORY HANDLING
     if (normalizedCategory === "special") {
       posts = specialPillars.map((item) => ({
         slug: item.slug,
@@ -38,18 +36,19 @@ export default function AuthorsPage() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-50 px-5 md:px-20">
+    <div className="flex flex-col min-h-screen bg-zinc-50 px-4 sm:px-6 md:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-6 mb-10">
+        
         {/* LEFT CONTENT */}
         <div>
           {/* PAGE TITLE */}
-          <h1 className="text-3xl font-semibold mb-6 text-center">
+          <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
             {selectedAuthor ? "Author Articles" : "Our Contributors"}
           </h1>
 
           {/* ================= ALL AUTHORS ================= */}
           {!selectedAuthor && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {authorArticles.map((author) => (
                 <div
                   key={author.id}
@@ -57,13 +56,13 @@ export default function AuthorsPage() {
                   className="cursor-pointer border rounded p-5 bg-white hover:shadow transition"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16">
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
                       <Image
                         src={author.profileImage}
                         alt={author.name}
                         fill
                         className="rounded-full object-cover"
-                        sizes="64px"
+                        sizes="(max-width: 640px) 56px, 64px"
                       />
                     </div>
                     <div>
@@ -91,26 +90,27 @@ export default function AuthorsPage() {
           {/* ================= AUTHOR ARTICLES ================= */}
           {selectedAuthor && (
             <>
+              {/* BACK BUTTON */}
               <button
                 onClick={() => setSelectedAuthor(null)}
-                className="text-sm mb-6 text-blue-600 hover:underline"
+                className="text-sm mb-4 sm:mb-6 text-blue-600 hover:underline inline-flex items-center"
               >
                 ← Back to all authors
               </button>
 
               {/* AUTHOR HEADER */}
-              <div className="flex gap-6 items-center mb-8">
-                <div className="relative w-24 h-24">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mb-8">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 shrink-0">
                   <Image
                     src={selectedAuthor.profileImage}
                     alt={selectedAuthor.name}
                     fill
                     className="rounded-full object-cover"
-                    sizes="96px"
+                    sizes="(max-width: 640px) 80px, 96px"
                   />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold">
+                  <h2 className="text-xl sm:text-2xl font-semibold">
                     {selectedAuthor.name}
                   </h2>
                   <p className="text-gray-500 text-sm mt-1">
@@ -130,21 +130,24 @@ export default function AuthorsPage() {
                         : `/${selectedAuthor.category}/${post.slug}`
                     }
                     title={post.heading}
-                    className="block border-b pb-4 hover:bg-gray-50 p-2 rounded"
+                    className="block border-b pb-4 hover:bg-gray-50 p-3 rounded transition"
                   >
-
-                    <div className="flex gap-4">
-                      <div className="relative w-28 h-20">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                      
+                      {/* ARTICLE IMAGE */}
+                      <div className="relative w-full sm:w-28 h-44 sm:h-20 shrink-0">
                         <Image
                           src={post.image}
                           alt={post.heading}
                           fill
                           className="object-cover rounded"
-                          sizes="112px"
+                          sizes="(max-width: 640px) 100vw, 112px"
                         />
                       </div>
+
+                      {/* ARTICLE CONTENT */}
                       <div>
-                        <h3 className="font-semibold">
+                        <h3 className="font-semibold text-sm sm:text-base">
                           {post.heading}
                         </h3>
                         <p className="text-xs text-gray-500 mt-1">
@@ -170,4 +173,3 @@ export default function AuthorsPage() {
     </div>
   );
 }
-

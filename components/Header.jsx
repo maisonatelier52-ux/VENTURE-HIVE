@@ -65,7 +65,7 @@ export default function HeaderComponent() {
           VENTURE HIVE
         </p>
         <p className="text-xs md:text-base mt-1">
-          INSIGHT / ANALYSIS / IMPACT
+          CLARITY IN A NOISY WORLD
         </p>
       </div>
 
