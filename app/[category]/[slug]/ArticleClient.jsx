@@ -76,7 +76,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
             <div className="relative w-full max-w-3xl aspect-[16/9]">
               <Image
                 src={article.image}
-                alt="detail bg image"
+                alt={article.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -142,7 +142,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
              <div className="relative w-full aspect-[16/9]">
               <Image
                 src={article.deatilImage}
-                alt={article.alt || article.heading}
+                alt={article.detailAlt || article.heading}
                 fill
                 className="object-cover rounded"
                 sizes="(max-width: 768px) 100vw, 800px"
@@ -276,17 +276,39 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 
       {/* Social Icons */}
       <div className="flex items-center gap-4 text-lg text-gray-800">
-      <a href={authorData.social.facebook} target="_blank" className="hover:text-blue-600">
-          <Facebook size={18} />
+     <a
+        href={authorData.social.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`Visit ${authorData.name} on Facebook`}
+        aria-label={`Visit ${authorData.name} on Facebook`}
+        className="hover:text-blue-600"
+        >
+        <Facebook size={18} />
         </a>
 
-        <a href={authorData.social.twitter} target="_blank" className="hover:text-sky-500">
-          <Twitter size={18} />
+        <a
+        href={authorData.social.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`Visit ${authorData.name} on Twitter`}
+        aria-label={`Visit ${authorData.name} on Twitter`}
+        className="hover:text-sky-500"
+        >
+        <Twitter size={18} />
         </a>
 
-        <a href="https://google.com" target="_blank" className="hover:text-red-500">
-          <Globe size={18} />
+        <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`Visit ${authorData.name}'s Website`}
+        aria-label={`Visit ${authorData.name}'s Website`}
+        className="hover:text-red-500"
+        >
+        <Globe size={18} />
         </a>
+
       </div>
 
     </div>
