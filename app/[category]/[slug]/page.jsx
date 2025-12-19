@@ -550,7 +550,7 @@ export async function generateMetadata({ params }) {
   if (!article) return {};
 
   return {
-    title: `${article.metaTitle} | Venture Hive`,
+    title: article.metaTitle,
     description: article.metaDescription,
     alternates: {
       canonical: `https://venture-hive.com/${category}/${slug}`,
