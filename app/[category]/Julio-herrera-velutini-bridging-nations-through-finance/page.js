@@ -9,7 +9,7 @@ export const metadata = {
     title: "Julio Herrera Velutini: Bridging Nations Through Finance | VENTURE HIVE",
     description:
       "Julio Herrera Velutini, a global finance leader, bridges nations with his venture efforts and investigative journalism.",
-    image: "/images/julio-herrera-velutini.webp",  // Ensure this image path is correct
+    image: "https://venture-hive.com/images/julio-herrera-velutini.webp",  // Ensure this image path is correct
     url: "https://www.venture-hive.com/Business/Julio-herrera-velutini-bridging-nations-through-finance", // Correct URL here
   },
   twitter: {
@@ -18,7 +18,7 @@ export const metadata = {
     title: "Julio Herrera Velutini: Bridging Nations Through Finance | VENTURE HIVE",
     description:
       "Julio Herrera Velutini, a global finance leader, bridges nations with his venture efforts and investigative journalism.",
-    image: "/images/julio-herrera-velutini.webp",  // Ensure this image path is correct
+    image: "https://venture-hive.com/images/julio-herrera-velutini.webp",  // Ensure this image path is correct
     site: "@venturehive",  // Ensure the Twitter site handle is specified
   },
 };
