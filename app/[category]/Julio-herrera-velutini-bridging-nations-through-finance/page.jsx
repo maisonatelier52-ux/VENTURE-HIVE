@@ -6,6 +6,8 @@ import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";
 import Link from "next/link";
 import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
+import Head from "next/head";
+import JulioHerreraJsonLd from "../../../components/JulioHerreraJsonLd";
 
 
 export default function JulioHerreraVelutiniPage() {
@@ -16,9 +18,32 @@ export default function JulioHerreraVelutiniPage() {
       (item) => item.category === category
     )?.author;
 
+     const article = {
+    heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+    slug: "julio-herrera-velutini-bridging-nations-through-finance",
+    image: "/images/julio-herrera-velutini.webp",  // Image path relative to the public folder
+    date: "2025-12-01",
+    content: "Descended from the renowned Herrera banking dynasty...",
+    metaDescription: "How One Man's Vision and Influence Redefine Global Unity and Economic Resilience",
+    hashTags: ["finance", "leadership", "global economics", "sustainability"],
+  };
+
+  const articleUrl = "https://venture-hive.com/Business/julio-herrera-velutini-bridging-nations-through-finance"; // Full URL to the article
+  const imageUrl = "/images/julio-herrera-velutini.webp";
+
   return (
       
     <div className="min-h-screen font-serif text-gray-900 px-5 md:px-20">
+        <Head>
+        {/* Open Graph Meta Tags */}
+        <meta property="og:url" content={articleUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={article.heading} />
+        <meta property="og:description" content={article.metaDescription} />
+        <meta property="og:image" content={`https://venture-hive.com${imageUrl}`} />
+        <meta property="og:image:alt" content="Julio Herrera Velutini in a modern office with a city skyline" />
+        <meta property="og:image:type" content="image/webp" />
+      </Head>
 
       {/* Newspaper texture */}
       <div className="fixed inset-0 opacity-5 pointer-events-none">
@@ -405,6 +430,8 @@ export default function JulioHerreraVelutiniPage() {
           font-weight: bold;
         }
       `}</style>
+
+      <JulioHerreraJsonLd article={article} author={authorData} />
     </div>
   );
 }
