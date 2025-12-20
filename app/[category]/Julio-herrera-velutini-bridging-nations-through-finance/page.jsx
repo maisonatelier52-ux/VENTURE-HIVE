@@ -334,7 +334,7 @@ export default function JulioHerreraVelutiniPage() {
                   <p>
                     Julio Herrera Velutini is not just a banker; he is a global statesman of finance. His ability to blend tradition with innovation, to unite nations through economic
                     {" "}
-                    <Link title="Read more about financial diplomacy global soft power" href="/julio-herrera-velutini/financial-diplomacy-global-soft-power-julio-herrera-velutini">
+                    <Link title="Read more about financial diplomacy global soft power" href="/julio-herrera-velutini/financial-diplomacy-global-stability-julio-herrera-velutini">
                         <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                         diplomacy
                         </span>
