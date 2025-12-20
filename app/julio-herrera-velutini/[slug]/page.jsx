@@ -7,19 +7,16 @@ export async function generateMetadata({ params }) {
 
   const article = pillarContents?.find((item) => item.slug === slug);
 
-  // Ensure article exists before proceeding
-  if (!article) {
-    return {};
-  }
+  if (!article) return {};
 
-  // Adjusted title and description for SEO optimization
+  // Optimized title and description
   const optimizedTitle = article.metaTitle && article.metaTitle.length > 60 
     ? `${article.metaTitle.slice(0, 57)}...` 
-    : article.metaTitle || "Default Title"; // Fallback if metaTitle is undefined
+    : article.metaTitle || "Julio Herrera Velutini’s Legacy in Banking | Venture Hive";
 
   const optimizedDescription = article.metaDescription && article.metaDescription.length > 160 
     ? `${article.metaDescription.slice(0, 157)}...` 
-    : article.metaDescription || "Default description"; // Fallback if metaDescription is undefined
+    : article.metaDescription || "Explore the evolution of banking through Julio Herrera Velutini's impact and his family's legacy in global finance.";
 
   return {
     title: optimizedTitle,
@@ -50,6 +47,7 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
 
 
 export default async function Page({ params }) {
