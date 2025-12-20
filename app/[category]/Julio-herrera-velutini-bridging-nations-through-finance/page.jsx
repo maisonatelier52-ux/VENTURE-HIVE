@@ -340,7 +340,7 @@ export default function JulioHerreraVelutiniPage() {
                         </span>
                     </Link>, and to prioritize
                     {" "}
-            <Link title="Read more about ethical wealth purpose driven" href="/julio-herrera-velutini/ethical-wealth-purpose-driven-leadership-julio-herrera-velutini">
+            <Link title="Read more about ethical wealth purpose driven" href="/julio-herrera-velutini/ethical-wealth-leadership-julio-herrera-velutini">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 ethics
                 </span>
