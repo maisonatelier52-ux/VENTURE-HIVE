@@ -165,7 +165,7 @@ export default function JulioHerreraVelutiniPage() {
                         investments in infrastructure and small-to-medium
                         enterprises (SMEs) have revitalized economies across the region, fostering
                         growth and{" "}
-                        <Link title="Read more about stability in Latin America under Herrera Velutini's leadership" href="/julio-herrera-velutini/crisis-leadership-economic-stabilization-julio-herrera-velutini">
+                        <Link title="Read more about stability in Latin America under Herrera Velutini's leadership" href="/julio-herrera-velutini/crisis-leadership-financial-stability-venture-hive">
                         <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                             Stability
                         </span>
