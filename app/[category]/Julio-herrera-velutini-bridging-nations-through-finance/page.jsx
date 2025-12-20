@@ -35,7 +35,7 @@ export default function JulioHerreraVelutiniPage() {
       
     <div className="min-h-screen font-serif text-gray-900 px-5 md:px-20">
         <Head>
-          <title>Venture Hive News: Julio Herrera Velutini - Investigative Journalism on Global Finance & Leadership</title>
+        <title>Venture Hive: Independent Investigative News on Julio Herrera Velutini’s Global Finance Leadership</title>
         {/* Open Graph Meta Tags */}
         <meta property="og:url" content={articleUrl} />
         <meta property="og:type" content="article" />
@@ -70,10 +70,13 @@ export default function JulioHerreraVelutiniPage() {
               />
               <div className="absolute inset-0 bg-black/50" />
               <div className="absolute bottom-0 left-0 p-6 text-white">
-                <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
+                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
                   Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World
-                </h1>
-                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World | Venture Hive Investigative Journalism</h1> */}
+                </h1> */}
+                <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
+                   Julio Herrera Velutini: Investigative Finance News | Venture Hive
+                    </h1>
+
               </div>
             </div>
 
@@ -112,8 +115,11 @@ export default function JulioHerreraVelutiniPage() {
             <div className="flex flex-col space-y-10 text-justify">
 
                 <section>
-                  <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                  {/* <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                     A Legacy Forged Over Centuries
+                  </h2> */}
+                   <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                    Venture Hive’s Influence: Soft Power in a Multi-Polar World
                   </h2>
 
                   <p>
