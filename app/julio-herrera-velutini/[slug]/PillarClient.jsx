@@ -422,6 +422,7 @@ export default function PillarClient() {
                           <Link
                             href={authorData.social.facebook}
                             target="_blank"
+                           title={`Visit ${authorData.name} on Facebook`}
                             rel="noopener noreferrer"
                             aria-label="Facebook"
                             className="hover:text-blue-600 transition"
@@ -434,6 +435,7 @@ export default function PillarClient() {
                           <Link
                             href={authorData.social.twitter}
                             target="_blank"
+                            title={`Visit ${authorData.name} on Twitter`}
                             rel="noopener noreferrer"
                             aria-label="Twitter"
                             className="hover:text-sky-500 transition"
