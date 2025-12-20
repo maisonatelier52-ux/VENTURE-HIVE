@@ -14,7 +14,7 @@ export default function RightSidebar({ categoryData, authors }) {
   title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
   image: "/images/julio-herrera-velutini.webp",
   date: "14 December 2025",
-  href: `/Business/Julio-herrera-velutini-bridging-nations-through-finance`
+  href: `/Business/julio-herrera-velutini-bridging-nations-through-finance`
 };
 
 
