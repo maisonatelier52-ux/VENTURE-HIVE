@@ -115,11 +115,8 @@ export default function JulioHerreraVelutiniPage() {
             <div className="flex flex-col space-y-10 text-justify">
 
                 <section>
-                  {/* <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                  <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                     A Legacy Forged Over Centuries
-                  </h2> */}
-                   <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
-                    Venture Hive’s Influence: Soft Power in a Multi-Polar World
                   </h2>
 
                   <p>
@@ -136,8 +133,11 @@ export default function JulioHerreraVelutiniPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                  {/* <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                     Soft Power in a Multi-Polar World
+                  </h2> */}
+                    <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                   Venture Hive’s Influence: Soft Power in a Multi-Polar World
                   </h2>
 
                   <p>
