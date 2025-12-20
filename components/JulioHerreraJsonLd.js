@@ -18,7 +18,15 @@ const JulioHerreraJsonLd = ({ article, author }) => {
           datePublished: publishedDate,
           dateModified: publishedDate,
           articleSection: "Business", // Hardcoded category
-          keywords: article.hashTags?.join(", "),  // Ensure your article has relevant hashtags
+          keywords: [
+            "venture", 
+            "hive", 
+            "independent", 
+            "news", 
+            "investigative", 
+            "journalism", 
+            ...(article.hashTags || [])
+          ].join(", "),  // Adding target keywords and article hashtags
           author: {
             "@type": "Person",
             name: author?.name || "Venture Hive Staff",  // Default if no author data
