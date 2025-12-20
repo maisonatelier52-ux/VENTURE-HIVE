@@ -8,25 +8,16 @@ export async function generateMetadata({ params }) {
   const article = pillarContents?.find((item) => item.slug === slug);
 
   if (!article) return {};
-
-  // Optimized title and description
-  const optimizedTitle = article.metaTitle && article.metaTitle.length > 60 
-    ? `${article.metaTitle.slice(0, 57)}...` 
-    : article.metaTitle || "Julio Herrera Velutini’s Legacy in Banking | Venture Hive";
-
-  const optimizedDescription = article.metaDescription && article.metaDescription.length > 160 
-    ? `${article.metaDescription.slice(0, 157)}...` 
-    : article.metaDescription || "Explore the evolution of banking through Julio Herrera Velutini's impact and his family's legacy in global finance.";
-
+ 
   return {
-    title: optimizedTitle,
-    description: optimizedDescription,
+    title: article.metaTitle,
+    description: article.metaDescription,
     alternates: {
       canonical: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
     },
     openGraph: {
-      title: optimizedTitle,
-      description: optimizedDescription,
+      title: article.metaTitle,
+      description: article.metaDescription,
       url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
       siteName: "Venture Hive",
       images: [
@@ -41,8 +32,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: optimizedTitle,
-      description: optimizedDescription,
+      title: article.metaTitle,
+      description: article.metaDescription,
       images: [`https://venture-hive.com${article.hero.imageSrc}`],
     },
   };
