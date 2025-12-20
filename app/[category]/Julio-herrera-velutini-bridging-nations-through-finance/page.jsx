@@ -471,8 +471,8 @@ export async function generateMetadata() {
     content: "Descended from the renowned Herrera banking dynasty...",
     metaDescription: "Venture Hive's independent investigative journalism on Julio Herrera Velutini's leadership in global finance, sustainability, and economic collaboration. In-depth news and analysis on his influence in shaping the future of business and finance.",
     hashTags: ["finance", "leadership", "global economics", "sustainability"],
-    metaTitle:"Julio Herrera Velutini News | Investigative Global Finance & Leadership",
-    metaDescription:"Independent investigative news on Julio Herrera Velutini’s role in global finance, economic diplomacy, sustainability, and leadership shaping modern financial systems."
+    metaTitle:"Julio Herrera Velutini | Global Finance Investigation",
+    metaDescription:"Investigative reporting on Julio Herrera Velutini’s influence in global finance, economic diplomacy, and leadership shaping modern financial systems."
   };
   
   if (!article) return {};
