@@ -318,7 +318,7 @@ export default function JulioHerreraVelutiniPage() {
 
                   <p className="mt-2">
                     By embracing {" "}
-            <Link title="Read more about shaping the future of global finance" href="/julio-herrera-velutini/shaping-the-future-of-global-finance-julio-herrera-velutini">
+            <Link title="Read more about shaping the future of global finance" href="/julio-herrera-velutini/shaping-global-finance-technology-sustainability">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 innovation
                 </span>
