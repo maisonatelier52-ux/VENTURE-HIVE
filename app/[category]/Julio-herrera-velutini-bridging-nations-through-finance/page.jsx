@@ -246,7 +246,7 @@ export default function JulioHerreraVelutiniPage() {
     <strong>Environmental Advocacy :</strong>{" "}
     His ventures align with ESG (Environmental, Social, Governance) principles,
     emphasizing{" "}
-    <Link title="Read more about philanthropy culture esg commitment" href="/julio-herrera-velutini/philanthropy-culture-esg-commitment-julio-herrera-velutini">
+    <Link title="Read more about philanthropy culture esg commitment" href="/julio-herrera-velutini/philanthropy-esg-finance-social-purpose">
       <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer transition-transform duration-200 hover:scale-105">
         Sustainability
       </span>
