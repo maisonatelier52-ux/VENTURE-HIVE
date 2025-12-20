@@ -37,13 +37,28 @@ export default function JulioHerreraVelutiniPage() {
         <Head>
         <title>Venture Hive: Independent Investigative News on Julio Herrera Velutini’s Global Finance Leadership</title>
         {/* Open Graph Meta Tags */}
-        <meta property="og:url" content={articleUrl} />
+        {/* <meta property="og:url" content="https://venture-hive.com/Business/julio-herrera-velutini-bridging-nations-through-finance" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={article.heading} />
         <meta property="og:description" content={article.metaDescription} />
-        <meta property="og:image" content={`https://venture-hive.com${imageUrl}`} />
+        <meta property="og:image" content="https://www.venture-hive.com/images/julio-herrera-velutini.webp" />
+        <meta property="og:image:alt" content="Julio Herrera Velutini in a modern office with a city skyline" />
+        <meta property="og:image:type" content="image/webp" /> */}
+
+        <meta property="og:url" content={`https://venture-hive.com/Business/${article.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={article.heading} />
+        <meta property="og:description" content={article.metaDescription} />
+        <meta property="og:image" content={`https://venture-hive.com${article.image}`} />
         <meta property="og:image:alt" content="Julio Herrera Velutini in a modern office with a city skyline" />
         <meta property="og:image:type" content="image/webp" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@venturehive" />  {/* Add your Twitter handle */}
+        <meta name="twitter:title" content={article.heading} />
+        <meta name="twitter:description" content={article.metaDescription} />
+        <meta name="twitter:image" content={`https://venture-hive.com${article.image}`} />
       </Head>
 
       {/* Newspaper texture */}
