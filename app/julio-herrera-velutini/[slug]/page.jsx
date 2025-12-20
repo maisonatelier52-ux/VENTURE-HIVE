@@ -1,3 +1,68 @@
+import { notFound } from "next/navigation";
+import pillarContents from "../../../public/data/special/pillarContents";
+import PillarClient from "./PillarClient";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const article = pillarContents?.find((item) => item.slug === slug);
+
+  // Ensure article exists before proceeding
+  if (!article) {
+    return {};
+  }
+
+  // Adjusted title and description for SEO optimization
+  const optimizedTitle = article.metaTitle && article.metaTitle.length > 60 
+    ? `${article.metaTitle.slice(0, 57)}...` 
+    : article.metaTitle || "Default Title"; // Fallback if metaTitle is undefined
+
+  const optimizedDescription = article.metaDescription && article.metaDescription.length > 160 
+    ? `${article.metaDescription.slice(0, 157)}...` 
+    : article.metaDescription || "Default description"; // Fallback if metaDescription is undefined
+
+  return {
+    title: optimizedTitle,
+    description: optimizedDescription,
+    alternates: {
+      canonical: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+    },
+    openGraph: {
+      title: optimizedTitle,
+      description: optimizedDescription,
+      url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+      siteName: "Venture Hive",
+      images: [
+        {
+          url: `https://venture-hive.com${article.hero.imageSrc}`,
+          width: 1200,
+          height: 630,
+          alt: article.hero.imageAlt,
+        },
+      ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: optimizedTitle,
+      description: optimizedDescription,
+      images: [`https://venture-hive.com${article.hero.imageSrc}`],
+    },
+  };
+}
+
+
+export default async function Page({ params }) {
+  const { slug } = await params;
+
+  const article = pillarContents?.find((item) => item.slug === slug);
+
+  if (!article) notFound();
+
+  return <PillarClient slug={slug} />;
+}
+
+
 // "use client";
 
 // import { useParams } from "next/navigation";
@@ -234,55 +299,57 @@
 
 
 
-import { notFound } from "next/navigation";
-import pillarContents from '../../../public/data/special/pillarContents'
-import PillarClient from "./PillarClient";
+// import { notFound } from "next/navigation";
+// import pillarContents from '../../../public/data/special/pillarContents'
+// import PillarClient from "./PillarClient";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
+// export async function generateMetadata({ params }) {
+//   const { slug } = await params;
 
-  const article =
-    pillarContents?.find((item) => item.slug === slug);
+//   const article =
+//     pillarContents?.find((item) => item.slug === slug);
 
-  if (!article) return {};
+//   if (!article) return {};
 
-  return {
-    title: article.metaTitle,
-    description: article.metaDescription,
-    alternates: {
-      canonical: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
-    },
-    openGraph: {
-      title: article.metaTitle,
-      description: article.metaDescription,
-      url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
-      siteName: "Venture Hive",
-      images: [
-        {
-          url: `https://venture-hive.com${article.hero.imageSrc}`,
-          width: 1200,
-          height: 630,
-          alt: article.hero.imageAlt,
-        },
-      ],
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.metaTitle,
-      description: article.metaDescription,
-      images: [`https://venture-hive.com${article.hero.imageSrc}`],
-    },
-  };
-}
+//   return {
+//     title: article.metaTitle,
+//     description: article.metaDescription,
+//     alternates: {
+//       canonical: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+//     },
+//     openGraph: {
+//       title: article.metaTitle,
+//       description: article.metaDescription,
+//       url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+//       siteName: "Venture Hive",
+//       images: [
+//         {
+//           url: `https://venture-hive.com${article.hero.imageSrc}`,
+//           width: 1200,
+//           height: 630,
+//           alt: article.hero.imageAlt,
+//         },
+//       ],
+//       type: "article",
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: article.metaTitle,
+//       description: article.metaDescription,
+//       images: [`https://venture-hive.com${article.hero.imageSrc}`],
+//     },
+//   };
+// }
 
-export default async function Page({ params }) {
-  const { slug } = await params;
+// export default async function Page({ params }) {
+//   const { slug } = await params;
 
-  const article = pillarContents?.find((item) => item.slug === slug);
+//   const article = pillarContents?.find((item) => item.slug === slug);
 
-  if (!article) notFound();
+//   if (!article) notFound();
 
-  // ✅ pass params explicitly
-  return <PillarClient slug={slug} />;
-}
+//   // ✅ pass params explicitly
+//   return <PillarClient slug={slug} />;
+// }
+
+
