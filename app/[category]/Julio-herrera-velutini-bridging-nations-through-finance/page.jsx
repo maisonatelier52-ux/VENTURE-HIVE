@@ -19,12 +19,12 @@ export default function JulioHerreraVelutiniPage() {
     )?.author;
 
      const article = {
-    heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+    heading: "Venture Hive News: Julio Herrera Velutini - Investigative Journalism on Global Finance & Leadership",
     slug: "julio-herrera-velutini-bridging-nations-through-finance",
     image: "/images/julio-herrera-velutini.webp",  // Image path relative to the public folder
     date: "2025-12-01",
     content: "Descended from the renowned Herrera banking dynasty...",
-    metaDescription: "Venture Hive's investigative journalism covers Julio Herrera Velutini’s leadership in global finance, promoting sustainability, cross-border economic collaboration, and ethical leadership in business.",
+    metaDescription: "Venture Hive's independent investigative journalism on Julio Herrera Velutini's leadership in global finance, sustainability, and economic collaboration. In-depth news and analysis on his influence in shaping the future of business and finance.",
     hashTags: ["finance", "leadership", "global economics", "sustainability"],
   };
 
@@ -35,7 +35,7 @@ export default function JulioHerreraVelutiniPage() {
       
     <div className="min-h-screen font-serif text-gray-900 px-5 md:px-20">
         <Head>
-            <title>Julio Herrera Velutini: Bridging Nations Through Finance | Venture Hive Investigative News</title>
+          <title>Venture Hive News: Julio Herrera Velutini - Investigative Journalism on Global Finance & Leadership</title>
         {/* Open Graph Meta Tags */}
         <meta property="og:url" content={articleUrl} />
         <meta property="og:type" content="article" />
@@ -63,26 +63,26 @@ export default function JulioHerreraVelutiniPage() {
             <div className="relative w-full h-72 md:h-96 mb-8 overflow-hidden rounded shadow-xl">
               <Image
                 src="/images/julio-herrera-velutini.webp"
-                alt="Julio Herrera Velutini seated in a modern office with a city skyline, featured in Venture Hive's investigative journalism."
+                alt="Venture Hive Investigative Journalism on Julio Herrera Velutini's impact in global finance and business leadership"
                 fill
                 className="object-cover"
                 priority
               />
               <div className="absolute inset-0 bg-black/50" />
               <div className="absolute bottom-0 left-0 p-6 text-white">
-                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
+                <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
                   Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World
-                </h1> */}
-                <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World | Venture Hive Investigative Journalism</h1>
+                </h1>
+                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World | Venture Hive Investigative Journalism</h1> */}
               </div>
             </div>
 
             {/* ===== SUBTITLE ===== */}
             <div className="text-center max-w-3xl mx-auto mb-8">
-              {/* <h2 className="text-lg md:text-xl font-medium mb-2">
+              <h2 className="text-lg md:text-xl font-medium mb-2">
                 How One Man's Vision and Influence Redefine Global Unity and Economic Resilience
-              </h2> */}
-              <h2 className="text-lg md:text-xl font-medium mb-2">Venture Hive News on Julio Herrera Velutini’s Role in Bridging Global Economic Gaps</h2>
+              </h2>
+              {/* <h2 className="text-lg md:text-xl font-medium mb-2">Venture Hive News on Julio Herrera Velutini’s Role in Bridging Global Economic Gaps</h2> */}
               <p className="text-xs uppercase tracking-wider text-gray-600">
                 Published • Global Finance • Leadership • December 2025
               </p>
