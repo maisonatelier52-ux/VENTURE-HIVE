@@ -218,7 +218,7 @@ export default function JulioHerreraVelutiniPage() {
 
                   <p>
                     In Europe, Herrera Velutini’s strategic acquisitions and {" "}
-            <Link title="Read more about revitalizing latin america private capital" href="/julio-herrera-velutini/revitalizing-latin-america-private-capital-julio-herrera-velutini">
+            <Link title="Read more about revitalizing latin america private capital" href="/julio-herrera-velutini/revitalizing-latin-america-private-capital-growth-stability">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 investments
                 </span>
