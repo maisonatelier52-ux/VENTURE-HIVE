@@ -100,7 +100,7 @@ export default function JulioHerreraVelutiniPage() {
             Descended from the renowned Herrera banking dynasty, Julio Herrera Velutini’s
             leadership combines a deep respect for tradition with an unwavering commitment
             to innovation. Herrera Velutini’s{" "}
-            <Link href="/julio-herrera-velutini/legacy-banking-modern-era-julio-herrera-velutini">
+            <Link title="Read more about Julio Herrera Velutini's legacy in banking" href="/julio-herrera-velutini/legacy-banking-modern-era-julio-herrera-velutini">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 legacy
                 </span>
@@ -156,7 +156,7 @@ export default function JulioHerreraVelutiniPage() {
                         investments in infrastructure and small-to-medium
                         enterprises (SMEs) have revitalized economies across the region, fostering
                         growth and{" "}
-                        <Link href="/julio-herrera-velutini/crisis-leadership-economic-stabilization-julio-herrera-velutini">
+                        <Link title="Read more about stability in Latin America under Herrera Velutini's leadership" href="/julio-herrera-velutini/crisis-leadership-economic-stabilization-julio-herrera-velutini">
                         <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                             Stability
                         </span>
@@ -209,7 +209,7 @@ export default function JulioHerreraVelutiniPage() {
 
                   <p>
                     In Europe, Herrera Velutini’s strategic acquisitions and {" "}
-            <Link href="/julio-herrera-velutini/revitalizing-latin-america-private-capital-julio-herrera-velutini">
+            <Link title="Read more about revitalizing latin america private capital" href="/julio-herrera-velutini/revitalizing-latin-america-private-capital-julio-herrera-velutini">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 investments
                 </span>
@@ -237,7 +237,7 @@ export default function JulioHerreraVelutiniPage() {
     <strong>Environmental Advocacy :</strong>{" "}
     His ventures align with ESG (Environmental, Social, Governance) principles,
     emphasizing{" "}
-    <Link href="/julio-herrera-velutini/philanthropy-culture-esg-commitment-julio-herrera-velutini">
+    <Link title="Read more about philanthropy culture esg commitment" href="/julio-herrera-velutini/philanthropy-culture-esg-commitment-julio-herrera-velutini">
       <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer transition-transform duration-200 hover:scale-105">
         Sustainability
       </span>
@@ -309,7 +309,7 @@ export default function JulioHerreraVelutiniPage() {
 
                   <p className="mt-2">
                     By embracing {" "}
-            <Link href="/julio-herrera-velutini/shaping-the-future-of-global-finance-julio-herrera-velutini">
+            <Link title="Read more about shaping the future of global finance" href="/julio-herrera-velutini/shaping-the-future-of-global-finance-julio-herrera-velutini">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 innovation
                 </span>
@@ -325,13 +325,13 @@ export default function JulioHerreraVelutiniPage() {
                   <p>
                     Julio Herrera Velutini is not just a banker; he is a global statesman of finance. His ability to blend tradition with innovation, to unite nations through economic
                     {" "}
-                    <Link href="/julio-herrera-velutini/financial-diplomacy-global-soft-power-julio-herrera-velutini">
+                    <Link title="Read more about financial diplomacy global soft power" href="/julio-herrera-velutini/financial-diplomacy-global-soft-power-julio-herrera-velutini">
                         <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                         diplomacy
                         </span>
                     </Link>, and to prioritize
                     {" "}
-            <Link href="/julio-herrera-velutini/ethical-wealth-purpose-driven-leadership-julio-herrera-velutini">
+            <Link title="Read more about ethical wealth purpose driven" href="/julio-herrera-velutini/ethical-wealth-purpose-driven-leadership-julio-herrera-velutini">
                 <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                 ethics
                 </span>
@@ -390,6 +390,7 @@ export default function JulioHerreraVelutiniPage() {
                         <Link
                           href={authorData.social.facebook}
                           target="_blank"
+                           title={`Visit ${authorData.name} on Facebook`}
                           rel="noopener noreferrer"
                           aria-label="Facebook"
                           className="hover:text-blue-600 transition"
@@ -402,6 +403,7 @@ export default function JulioHerreraVelutiniPage() {
                         <Link
                           href={authorData.social.twitter}
                           target="_blank"
+                           title={`Visit ${authorData.name} on Twitter`}
                           rel="noopener noreferrer"
                           aria-label="Twitter"
                           className="hover:text-sky-500 transition"
