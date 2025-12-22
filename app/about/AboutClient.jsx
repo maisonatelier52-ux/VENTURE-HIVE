@@ -3,10 +3,15 @@ export default function AboutClient() {
     <div className="min-h-screen bg-zinc-50 px-5 md:px-20 py-12 font-serif">
       <div className="max-w-4xl mx-auto space-y-8">
 
-        {/* H1 (keep only one) */}
+        {/* H1 aligned with URL slug */}
         <h1 className="text-4xl font-semibold text-center">
-          About VENTURE HIVE
+          About Us
         </h1>
+
+        {/* Brand + keyword reinforcement (visible, SEO-safe) */}
+        <p className="text-sm text-gray-600 text-center mt-2">
+          Independent journalism by VENTURE HIVE
+        </p>
 
         {/* H2 #1 */}
         <h2 className="text-2xl font-semibold mt-8">
