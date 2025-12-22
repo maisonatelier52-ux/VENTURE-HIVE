@@ -51,22 +51,29 @@ export default function AuthorClient() {
             news and investigative reporting across politics, business, sports,
             opinion, and global affairs.
         </p>
-         {/* SEO Editorial Intro */}
-      <p className="text-sm text-gray-600 max-w-4xl mx-auto text-center mt-6 mb-10">
-        VENTURE HIVE is an independent news and investigative journalism
-        publication powered by experienced reporters and contributors covering
-        politics, business, sports, opinion, and in-depth investigations.
-      </p>
+        
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-6 mb-10">
         
         {/* LEFT CONTENT */}
         <div>
+
+             <p className="text-sm text-gray-600 max-w-4xl mx-auto text-start mt-6 mb-10">
+        VENTURE HIVE is an independent news and investigative journalism
+        publication powered by experienced reporters and contributors covering
+        politics, business, sports, opinion, and in-depth investigations.
+      </p>
           {/* PAGE TITLE */}
           <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
             {selectedAuthor
                 ? "Author Articles"
-                : "VENTURE HIVE Contributors & Journalists"}
+                : "VENTURE HIVE Authors"}
             </h1>
+            {/* SEO-friendly subheading */}
+                {!selectedAuthor && (
+                <p className="text-sm text-gray-600 text-center mb-6">
+                    Journalists and contributors publishing independent news and investigative reporting
+                </p>
+                )}
 
           {/* ================= ALL AUTHORS ================= */}
           {!selectedAuthor && (
