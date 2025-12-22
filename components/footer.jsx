@@ -42,7 +42,7 @@ export default function FooterComponent() {
             investigations, and opinion with integrity and clarity.
           </p>
 
-       <Link href="/about"  title="Read more about Venture Hive">
+       <Link href="/about-venture-hive"  title="Read more about Venture Hive">
         <span className="text-xs underline">
           Read more <span className="sr-only">about Venture Hive</span>
         </span>

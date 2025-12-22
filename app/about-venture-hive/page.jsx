@@ -9,14 +9,14 @@ export const metadata = {
     "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism across politics, business, investigations, sports, and opinion.",
 
   alternates: {
-    canonical: "https://venture-hive.com/about",
+  canonical: "https://venture-hive.com/about-venture-hive",
   },
 
   openGraph: {
     title: "About VENTURE HIVE",
     description:
       "VENTURE HIVE is an independent news organization committed to accurate reporting, investigative journalism, and editorial integrity.",
-    url: "https://venture-hive.com/about",
+    url: "https://venture-hive.com/about-venture-hive",
     siteName: "VENTURE HIVE",
     images: [
       {
