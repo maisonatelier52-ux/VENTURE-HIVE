@@ -37,6 +37,20 @@ export default function AuthorClient() {
 
   return (
     <div className="flex flex-col min-h-screen bg-zinc-50 px-4 sm:px-6 md:px-20">
+        {/* Breadcrumb for SEO tools (hidden, semantic) */}
+        <nav aria-label="Breadcrumb" className="sr-only">
+            <ol>
+            <li>VENTURE HIVE</li>
+            <li>Authors & Journalists</li>
+            </ol>
+        </nav>
+
+          {/* SEO keyword reinforcement */}
+        <p className="sr-only">
+            Browse all Venture Hive authors and journalists publishing independent
+            news and investigative reporting across politics, business, sports,
+            opinion, and global affairs.
+        </p>
          {/* SEO Editorial Intro */}
       <p className="text-sm text-gray-600 max-w-4xl mx-auto text-center mt-6 mb-10">
         VENTURE HIVE is an independent news and investigative journalism
