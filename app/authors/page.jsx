@@ -180,9 +180,9 @@ import AuthorClient from "./AuthorClient";
 
 
 export const metadata = {
-  title: "VENTURE HIVE Authors – Independent News & Investigative Journalism",
+  title: "Authors & Journalists | VENTURE HIVE",
   description:
-    "Meet the journalists and contributors behind VENTURE HIVE, delivering independent news, investigative journalism, and in-depth reporting across politics, business, sports, and global affairs.",
+    "Meet the journalists behind VENTURE HIVE, an independent news publication delivering investigative reporting across politics, business, sports, and opinion.",
 
   alternates: {
     canonical: "https://venture-hive.com/authors",
