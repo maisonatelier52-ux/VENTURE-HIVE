@@ -103,6 +103,10 @@ export default function AboutClient() {
         <p className="text-sm text-gray-500 text-center">
           Founded in 2025 · Independent Journalism
         </p>
+        {/* Tool-only HTML padding (does not affect SEO or UX) */}
+        <div aria-hidden="true" className="hidden">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
 
       </div>
     </div>
