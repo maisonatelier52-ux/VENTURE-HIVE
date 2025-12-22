@@ -3,7 +3,7 @@ import AboutClient from "./AboutClient";
 
 
 export const metadata = {
-  title: "About VENTURE HIVE | Independent News & Investigative Journalism",
+  title: "About VENTURE HIVE | Independent Journalism",
 
   description:
     "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism across politics, business, investigations, sports, and opinion.",
