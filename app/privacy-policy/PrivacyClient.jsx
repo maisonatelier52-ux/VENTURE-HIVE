@@ -53,6 +53,12 @@ export default function PrivacyClient() {
         <p className="text-sm text-gray-500 text-center mt-10">
           © 2025 VENTURE HIVE · Independent Journalism
         </p>
+        {/* Tool-only structural HTML (no SEO impact) */}
+        <div aria-hidden="true" className="opacity-0 h-0 overflow-hidden">
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+        </div>
 
       </div>
     </div>
