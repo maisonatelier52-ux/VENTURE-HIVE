@@ -1,35 +1,51 @@
+import AboutJsonLd from "../../components/AboutJsonLd.js";
+import AboutClient from "./AboutClient";
+
+
+export const metadata = {
+  title: "About VENTURE HIVE | Independent News & Investigative Journalism",
+
+  description:
+    "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism across politics, business, investigations, sports, and opinion.",
+
+  alternates: {
+    canonical: "https://venture-hive.com/about",
+  },
+
+  openGraph: {
+    title: "About VENTURE HIVE",
+    description:
+      "VENTURE HIVE is an independent news organization committed to accurate reporting, investigative journalism, and editorial integrity.",
+    url: "https://venture-hive.com/about",
+    siteName: "VENTURE HIVE",
+    images: [
+      {
+        url: "https://venture-hive.com/images/og-about.webp",
+        width: 1200,
+        height: 630,
+        alt: "About VENTURE HIVE",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About VENTURE HIVE",
+    description:
+      "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism and investigative reporting.",
+    images: ["https://venture-hive.com/images/og-about.webp"],
+  },
+};
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 px-5 md:px-20 py-12 font-serif">
-      <div className="max-w-4xl mx-auto space-y-8">
-        <h1 className="text-4xl font-semibold text-center">
-          About VENTURE HIVE
-        </h1>
+    <>
+      {/* Structured Data */}
+      <AboutJsonLd />
 
-        <p className="text-gray-700 leading-relaxed">
-          VENTURE HIVE is an independent digital newspaper dedicated to
-          delivering accurate, thoughtful, and engaging journalism across
-          politics, business, sports, investigations, and opinion.
-        </p>
-
-        <p className="text-gray-700 leading-relaxed">
-          Our mission is to inform readers with clarity and integrity while
-          highlighting stories that shape society. We believe journalism
-          should be accessible, transparent, and rooted in facts.
-        </p>
-
-        <p className="text-gray-700 leading-relaxed">
-          Our contributors come from diverse backgrounds, bringing expertise
-          and perspective to every article. From breaking news to in-depth
-          analysis, VENTURE HIVE is committed to meaningful storytelling.
-        </p>
-
-        <hr />
-
-        <p className="text-sm text-gray-500 text-center">
-          Founded in 2025 · Independent Journalism
-        </p>
-      </div>
-    </div>
+      {/* Page Content */}
+      <AboutClient />
+    </>
   );
 }
