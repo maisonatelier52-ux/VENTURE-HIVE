@@ -6,6 +6,7 @@ import { useState } from "react";
 import categoryData from "../public/data/category/categorypagedata";
 import { Facebook, Twitter, Clock, Globe } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 
 export default function HeaderComponent() {
   const [open, setOpen] = useState(false);
@@ -50,11 +51,11 @@ export default function HeaderComponent() {
           </a>
 
           <a
-            href="https://www.google.com"
-            title="Visit Venture Hive on Google"
-            aria-label="Google"
+            href="https://www.substack.com"
+            title="Visit Venture Hive on Substack"
+            aria-label="Substack"
           >
-            <Globe size={18} />
+            <SiSubstack  size={18} />
           </a>
 
         </div>

@@ -3,6 +3,7 @@ import categoryData from "../public/data/category/categorypagedata";
 import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 
 export default function FooterComponent() {
 
@@ -156,14 +157,14 @@ export default function FooterComponent() {
           </a>
 
           <a
-            href="https://www.google.com"
+            href="https://www.substack.com"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Google"
-            title="Visit Venture Hive on Google"
+            aria-label="Substack"
+            title="Visit Venture Hive on Substack"
             className="hover:text-red-500 transition"
           >
-            <Globe size={18} />
+            <SiSubstack  size={18} />
           </a>
 
           <a

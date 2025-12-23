@@ -15,6 +15,7 @@ import { Facebook, Twitter,Linkedin, Globe, Instagram } from "lucide-react";
 import { PillarcontentJsonLd } from "../../../components/PillarcontentJsonLd";
 import { FaRedditAlien } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 
 export default function PillarClient() {
   const { slug } = useParams();
@@ -267,9 +268,22 @@ export default function PillarClient() {
                             aria-label="Twitter"
                             className="hover:text-sky-500 transition"
                           >
-                            <Twitter size={18} />
+                            <FaXTwitter size={18} />
                           </Link>
                         )}
+
+                          {authorData.social.substack && (
+                        <Link
+                          href={authorData.social.substack}
+                          target="_blank"
+                           title={`Visit ${authorData.name} on Substack`}
+                          rel="noopener noreferrer"
+                          aria-label="Twitter"
+                          className="hover:text-red-500 transition"
+                        >
+                          <SiSubstack size={18} />
+                        </Link>
+                      )}
                       </div>
                     </div>
                   </div>

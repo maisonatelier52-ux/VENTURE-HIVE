@@ -8,6 +8,7 @@ import ArticleJsonLd from "../../../components/ArticleJsonLd";
 import { Facebook, Twitter, Linkedin , Globe} from "lucide-react";
 import { FaRedditAlien } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 import Image from "next/image";
 
 function ArticleClient({ category, slug }) { 
@@ -384,18 +385,18 @@ const encodedUrl = encodeURIComponent(shareUrl);
         aria-label={`Visit ${authorData.name} on Twitter`}
         className="hover:text-sky-500"
         >
-        <Twitter size={18} />
+        <FaXTwitter size={18} />
         </a>
 
         <a
         href="https://google.com"
         target="_blank"
         rel="noopener noreferrer"
-        title={`Visit ${authorData.name}'s Website`}
-        aria-label={`Visit ${authorData.name}'s Website`}
+        title={`Visit ${authorData.name} on Substack`}
+        aria-label={`Visit ${authorData.name}on Substack`}
         className="hover:text-red-500"
         >
-        <Globe size={18} />
+        <SiSubstack  size={18} />
         </a>
 
       </div>
