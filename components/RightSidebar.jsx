@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import pillarContents from "../public/data/special/pillarContents.json";
 
 export default function RightSidebar({ categoryData, authors }) {
 
@@ -183,6 +184,55 @@ const getAllNews = Object.keys(categoryData).flatMap((cat) =>
   }))
 );
 
+// 🔹 1. Category articles (existing)
+const categorySearchItems = Object.keys(categoryData).flatMap((cat) =>
+  categoryData[cat].map((post) => ({
+    heading: post.heading,
+    slug: post.slug,
+    type: "category",
+    href: `/${cat}/${post.slug}`,
+  }))
+);
+
+// 🔹 2. Static special article
+const specialSearchItem = {
+  heading: staticSpecialArticle.title,
+  slug: "/business/julio-herrera-velutini-bridging-nations-through-finance",
+  type: "special",
+  href: staticSpecialArticle.href,
+};
+
+// 🔹 3. Pillar contents
+const pillarSearchItems = pillarContents.map((item) => ({
+  heading: item.hero.title,
+  slug: item.slug,
+  type: "pillar",
+  href: `/julio-herrera-velutini/${item.slug}`,
+}));
+
+// 🔹 4. Combine EVERYTHING
+const allSearchItems = [
+  ...categorySearchItems,
+  specialSearchItem,
+  ...pillarSearchItems,
+];
+
+
+// function handleSearchInput(e) {
+//   const value = e.target.value;
+//   setQuery(value);
+
+//   if (value.trim().length < 2) {
+//     setResults([]);
+//     return;
+//   }
+
+//   const filtered = allPosts.filter((post) =>
+//     post.heading.toLowerCase().includes(value.toLowerCase())
+//   );
+
+//   setResults(filtered.slice(0, 6));
+// }
 function handleSearchInput(e) {
   const value = e.target.value;
   setQuery(value);
@@ -192,12 +242,13 @@ function handleSearchInput(e) {
     return;
   }
 
-  const filtered = allPosts.filter((post) =>
-    post.heading.toLowerCase().includes(value.toLowerCase())
+  const filtered = allSearchItems.filter((item) =>
+    item.heading.toLowerCase().includes(value.toLowerCase())
   );
 
   setResults(filtered.slice(0, 6));
 }
+
 
   return (
     <div>
@@ -261,7 +312,7 @@ function handleSearchInput(e) {
           </div>
 
           {/* Autocomplete dropdown */}
-          {results.length > 0 && (
+          {/* {results.length > 0 && (
             <div className="absolute z-20 bg-white border w-full shadow-lg mt-1 rounded">
               {results.map((item) => (
                 <Link
@@ -280,7 +331,24 @@ function handleSearchInput(e) {
                 </Link>
               ))}
             </div>
-          )}
+          )} */}
+          {results.map((item) => (
+            <Link
+              key={`${item.type}-${item.slug}`}
+              href={item.href}
+              title={item.heading}
+              className="block px-3 py-2 hover:bg-gray-100 text-sm"
+              onClick={() => {
+                setResults([]);
+                setQuery("");
+              }}
+            >
+              {item.heading.length > 60
+                ? item.heading.slice(0, 60) + "..."
+                : item.heading}
+            </Link>
+          ))}
+
 
         </div>
 
