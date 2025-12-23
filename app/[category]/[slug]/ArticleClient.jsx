@@ -7,6 +7,7 @@ import Link from "next/link";
 import ArticleJsonLd from "../../../components/ArticleJsonLd";
 import { Facebook, Twitter, Linkedin , Globe} from "lucide-react";
 import { FaRedditAlien } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 function ArticleClient({ category, slug }) { 
@@ -288,9 +289,9 @@ const encodedUrl = encodeURIComponent(shareUrl);
     rel="noopener noreferrer"
     aria-label="Share on Twitter"
     title="Share on Twitter"
-    className="w-6 h-6 rotate-45 bg-sky-400 flex items-center justify-center"
+    className="w-6 h-6 rotate-45 bg-black flex items-center justify-center"
   >
-    <Twitter size={14} className="text-white -rotate-45" />
+    <FaXTwitter size={14} className="text-white -rotate-45" />
   </a>
 
   {/* LinkedIn */}

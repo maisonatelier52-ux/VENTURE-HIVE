@@ -2,6 +2,7 @@ import Link from "next/link";
 import categoryData from "../public/data/category/categorypagedata";
 import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 import Image from "next/image";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function FooterComponent() {
 
@@ -151,7 +152,7 @@ export default function FooterComponent() {
             title="Visit Venture Hive on Twitter"
             className="hover:text-sky-500 transition"
           >
-            <Twitter size={18} />
+            <FaXTwitter size={18} />
           </a>
 
           <a

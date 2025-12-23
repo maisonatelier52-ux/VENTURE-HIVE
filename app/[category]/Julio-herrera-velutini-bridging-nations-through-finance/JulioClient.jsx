@@ -5,7 +5,9 @@ import RightSidebar from "../../../components/RightSidebar";
 import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors";
 import Link from "next/link";
-import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Globe } from "lucide-react";
+import { FaRedditAlien } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 export default function JulioClient() {
@@ -16,7 +18,15 @@ export default function JulioClient() {
       (item) => item.category === category
     )?.author;
 
-    
+    const shareUrl =
+  "https://www.venture-hive.com/business/julio-herrera-velutini-bridging-nations-through-finance";
+
+const shareTitle = encodeURIComponent(
+  "Julio Herrera Velutini: Investigative Finance News | Venture Hive"
+);
+
+const encodedUrl = encodeURIComponent(shareUrl);
+
 
   return (
       
@@ -330,6 +340,61 @@ export default function JulioClient() {
 
             </div>
             </article>
+
+            <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 my-10">
+              <span className="text-2xl">~</span>
+
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Facebook"
+                title="Share on Facebook"
+                className="w-6 h-6 rotate-45 bg-blue-900 flex items-center justify-center"
+              >
+                <Facebook size={14} className="text-white -rotate-45" />
+              </a>
+
+              {/* Twitter / X */}
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${shareTitle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Twitter"
+                title="Share on Twitter"
+                className="w-6 h-6 rotate-45 bg-black flex items-center justify-center"
+              >
+                <FaXTwitter size={14} className="text-white -rotate-45" />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
+                title="Share on LinkedIn"
+                className="w-6 h-6 rotate-45 bg-blue-700 flex items-center justify-center"
+              >
+                <Linkedin size={14} className="text-white -rotate-45" />
+              </a>
+
+              {/* Reddit */}
+              <a
+                href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${shareTitle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Reddit"
+                title="Share on Reddit"
+                className="w-6 h-6 rotate-45 bg-orange-600 flex items-center justify-center"
+              >
+                <FaRedditAlien size={14} className="text-white -rotate-45" />
+              </a>
+
+              <span className="text-2xl">~</span>
+            </div>
+
 
             {authorData && (
               <div className="bg-blue-100 p-4 mt-10">

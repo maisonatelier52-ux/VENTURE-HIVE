@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import categoryData from "../public/data/category/categorypagedata";
 import { Facebook, Twitter, Clock, Globe } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function HeaderComponent() {
   const [open, setOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function HeaderComponent() {
             title="Visit Venture Hive on Twitter"
             aria-label="Twitter"
           >
-            <Twitter size={18} />
+            <FaXTwitter size={18} />
           </a>
 
           <a
