@@ -5,7 +5,8 @@ import categorypagedata from "../../../public/data/category/categorypagedata";
 import authorsPageData from "../../../public/data/authors"
 import Link from "next/link";
 import ArticleJsonLd from "../../../components/ArticleJsonLd";
-import { Facebook, Twitter, Instagram, Globe } from "lucide-react";
+import { Facebook, Twitter, Linkedin , Globe} from "lucide-react";
+import { FaRedditAlien } from "react-icons/fa";
 import Image from "next/image";
 
 function ArticleClient({ category, slug }) { 
@@ -31,6 +32,10 @@ function ArticleClient({ category, slug }) {
 
 const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
 const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null;
+
+const shareUrl = `https://www.venture-hive.com/${category}/${slug}`;
+const shareTitle = encodeURIComponent(article.heading);
+const encodedUrl = encodeURIComponent(shareUrl);
 
    
   
@@ -213,7 +218,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
       </div>
 
 
-        <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
+        {/* <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
           <span className="text-2xl">~</span>
           <a
             href="https://facebook.com"
@@ -259,7 +264,62 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
         </a>
 
           <span className="text-2xl">~</span>
-        </div>
+        </div> */}
+
+        <div className="flex items-center justify-center gap-4 border border-gray-300 border-s-0 border-e-0 p-5 mb-10">
+  <span className="text-2xl">~</span>
+
+  {/* Facebook */}
+  <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Facebook"
+    title="Share on Facebook"
+    className="w-6 h-6 rotate-45 bg-blue-900 flex items-center justify-center"
+  >
+    <Facebook size={14} className="text-white -rotate-45" />
+  </a>
+
+  {/* Twitter / X */}
+  <a
+    href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${shareTitle}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Twitter"
+    title="Share on Twitter"
+    className="w-6 h-6 rotate-45 bg-sky-400 flex items-center justify-center"
+  >
+    <Twitter size={14} className="text-white -rotate-45" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on LinkedIn"
+    title="Share on LinkedIn"
+    className="w-6 h-6 rotate-45 bg-blue-700 flex items-center justify-center"
+  >
+    <Linkedin size={14} className="text-white -rotate-45" />
+  </a>
+
+  {/* Reddit */}
+  <a
+    href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${shareTitle}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Reddit"
+    title="Share on Reddit"
+    className="w-6 h-6 rotate-45 bg-orange-600 flex items-center justify-center"
+  >
+    <FaRedditAlien size={14} className="text-white -rotate-45" />
+  </a>
+
+  <span className="text-2xl">~</span>
+</div>
+
 
     <div className="bg-blue-100 p-4">
   <div className="
