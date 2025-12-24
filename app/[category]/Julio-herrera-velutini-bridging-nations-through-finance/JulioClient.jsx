@@ -23,7 +23,7 @@ export default function JulioClient() {
   "https://www.venture-hive.com/business/julio-herrera-velutini-bridging-nations-through-finance";
 
 const shareTitle = encodeURIComponent(
-  "Julio Herrera Velutini: Investigative Finance News | Venture Hive"
+  " Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World"
 );
 
 const encodedUrl = encodeURIComponent(shareUrl);
@@ -58,12 +58,12 @@ const encodedUrl = encodeURIComponent(shareUrl);
               />
               <div className="absolute inset-0 bg-black/50" />
               <div className="absolute bottom-0 left-0 p-6 text-white">
-                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
-                  Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World
-                </h1> */}
                 <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
+                  Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World
+                </h1>
+                {/* <h1 className="text-2xl md:text-3xl font-semibold leading-snug max-w-3xl">
                    Julio Herrera Velutini: Investigative Finance News | Venture Hive
-                    </h1>
+                    </h1> */}
 
               </div>
             </div>
@@ -121,12 +121,12 @@ const encodedUrl = encodeURIComponent(shareUrl);
                 </section>
 
                 <section>
-                  {/* <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                  <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                     Soft Power in a Multi-Polar World
-                  </h2> */}
-                    <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
-                   Venture Hive’s Influence: Soft Power in a Multi-Polar World
                   </h2>
+                    {/* <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
+                   Venture Hive’s Influence: Soft Power in a Multi-Polar World
+                  </h2> */}
 
                   <p>
                     Herrera Velutini has earned the moniker “Silent Titan” of global finance for his ability to operate discreetly yet effectively. His influence extends far beyond the confines of boardrooms, often acting as a stabilizing force in politically and economically volatile regions.
