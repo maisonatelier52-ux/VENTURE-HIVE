@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
-          url: "https://venture-hive.com/images/og-category.webp",
+          url: "https://venture-hive.com/images/venture-hive-logo.webp",
           width: 1200,
           height: 630,
           alt: `${formatted} News – Venture Hive`,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title,
       description,
-      images: ["https://venture-hive.com/images/og-category.webp"],
+      images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
     },
   };
 }

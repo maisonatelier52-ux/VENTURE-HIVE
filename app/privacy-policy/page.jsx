@@ -16,7 +16,7 @@ export const metadata = {
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/og-default.webp",
+        url: "https://venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "VENTURE HIVE Privacy Policy",
@@ -29,7 +29,7 @@ export const metadata = {
     title: "Privacy Policy | VENTURE HIVE",
     description:
       "Privacy Policy of VENTURE HIVE, an independent digital journalism platform.",
-    images: ["https://venture-hive.com/images/og-default.webp"],
+    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 

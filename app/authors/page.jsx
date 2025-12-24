@@ -21,7 +21,7 @@ export const metadata = {
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/og-authors.webp",
+        url: "https://venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "VENTURE HIVE Contributors",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "VENTURE HIVE Authors & Journalists",
     description:
       "Meet the contributors behind VENTURE HIVE’s independent news and investigative journalism.",
-    images: ["https://venture-hive.com/images/og-authors.webp"],
+    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 

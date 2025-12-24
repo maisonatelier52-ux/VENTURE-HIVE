@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/og-home.webp",
+        url: "https://venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "VENTURE HIVE News",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "VENTURE HIVE – Independent Journalism",
     description:
       "Trusted reporting and deep analysis across politics, business, investigations, and opinion.",
-    images: ["https://venture-hive.com/images/og-home.webp"],
+    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 
