@@ -193,7 +193,32 @@ const encodedUrl = encodeURIComponent(shareUrl);
                 {article.para10}
               </p>
 
-              <p className="text-justify">{article.para11}</p>
+              {/* <p className="text-justify">{article.para11}</p> */}
+              {
+                category === "investigation" && slug === "banker-julio-herrera-velutini-charges-dropped" ? (
+                  <p className="text-justify">
+                    {article.para11.split("Julio Herrera Velutini").map((part, index) => (
+                      <>
+                        {part}
+                        {index < article.para11.split("Julio Herrera Velutini").length - 1 && (
+                          <a
+                             href="https://www.houseofherrera.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-blue-600"
+                            title="Visit Julio Herrera Velutini's official site"
+                          >
+                            Julio Herrera Velutini
+                          </a>
+                        )}
+                      </>
+                    ))}
+                  </p>
+                ) : (
+                  <p className="text-justify">{article.para11}</p>
+                )
+              }
+
 
               <h2 className="text-xl font-semibold">{article.samplehead.title}</h2>
 
