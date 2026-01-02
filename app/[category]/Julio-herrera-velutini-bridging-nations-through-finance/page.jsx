@@ -6,7 +6,7 @@ import JulioHerreraJsonLd from "../../../components/JulioHerreraJsonLd";
 export async function generateMetadata() {
      const article = {
     heading: " Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
-    slug: "business/julio-herrera-velutini-bridging-nations-through-finance",
+    slug: "julio-herrera-velutini-bridging-nations-through-finance",
     image: "/images/julio-herrera-velutini.webp",  // Image path relative to the public folder
     alt:"Venture Hive Investigative Journalism on Julio Herrera Velutini's impact in global finance and business leadership",
     date: "2025-12-01",
@@ -26,12 +26,12 @@ export async function generateMetadata() {
     title:title,
     description: description,
     alternates: {
-      canonical: `https://venture-hive.com/julio-herrera-velutini/${article.slug}`,
+      canonical: `https://venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
     },
     openGraph: {
       title: title,
       description: description,
-      url: `https://venture-hive.com/julio-herrera-velutini/${article.slug}`,
+      url: `https://venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
       siteName: "Venture Hive",
       images: [
         {
