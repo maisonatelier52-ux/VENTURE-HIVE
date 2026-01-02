@@ -12,17 +12,17 @@ export const metadata = {
   description:
     "VENTURE HIVE delivers trusted journalism across politics, business, investigations, sports, and opinion with depth, clarity, and integrity.",
   alternates: {
-    canonical: "https://venture-hive.com/",
+    canonical: "https://www.venture-hive.com/",
   },
   openGraph: {
     title: "VENTURE HIVE – Independent News & Investigative Journalism",
     description:
       "Breaking news, investigations, and expert analysis across politics, business, and global affairs.",
-    url: "https://venture-hive.com/",
+    url: "https://www.venture-hive.com/",
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/venture-hive-logo.webp",
+        url: "https://www.venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "VENTURE HIVE News",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "VENTURE HIVE – Independent Journalism",
     description:
       "Trusted reporting and deep analysis across politics, business, investigations, and opinion.",
-    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
+    images: ["https://www.venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 

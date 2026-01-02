@@ -7,8 +7,8 @@ export default function JsonLd() {
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "VENTURE HIVE",
-          url: "https://venture-hive.com",
-          logo: "https://venture-hive.com/images/logo.png",
+          url: "https://www.venture-hive.com",
+          logo: "https://www.venture-hive.com/images/logo.png",
           sameAs: [
             "https://facebook.com",
             "https://twitter.com"

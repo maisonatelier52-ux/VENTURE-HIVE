@@ -10,18 +10,18 @@ export const metadata = {
     "Meet the journalists behind VENTURE HIVE, an independent news publication delivering investigative reporting across politics, business, sports, and opinion.",
 
   alternates: {
-    canonical: "https://venture-hive.com/authors",
+    canonical: "https://www.venture-hive.com/authors",
   },
 
   openGraph: {
     title: "VENTURE HIVE Authors – Independent Journalism",
     description:
       "Explore articles from VENTURE HIVE contributors producing trusted independent news and investigative journalism.",
-    url: "https://venture-hive.com/authors",
+    url: "https://www.venture-hive.com/authors",
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/venture-hive-logo.webp",
+        url: "https://www.venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "VENTURE HIVE Contributors",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "VENTURE HIVE Authors & Journalists",
     description:
       "Meet the contributors behind VENTURE HIVE’s independent news and investigative journalism.",
-    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
+    images: ["https://www.venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 

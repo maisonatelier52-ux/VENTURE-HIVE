@@ -51,7 +51,7 @@ export default function ArticleJsonLd({ article, category, author }) {
 
           headline: article.heading,
           description: article.metaDescription || article.content,
-          image: [`https://venture-hive.com${article.image}`],
+          image: [`https://www.venture-hive.com${article.image}`],
 
           datePublished: publishedDate,
           dateModified: publishedDate,
@@ -69,13 +69,13 @@ export default function ArticleJsonLd({ article, category, author }) {
             name: "Venture Hive",
             logo: {
               "@type": "ImageObject",
-              url: "https://venture-hive.com/images/logo.png",
+              url: "https://www.venture-hive.com/images/logo.png",
             },
           },
 
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://venture-hive.com/${category}/${article.slug}`,
+            "@id": `https://www.venture-hive.com/${category}/${article.slug}`,
           },
 
           isAccessibleForFree: true,

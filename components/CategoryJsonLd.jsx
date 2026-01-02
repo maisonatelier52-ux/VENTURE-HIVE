@@ -7,11 +7,11 @@ export default function CategoryJsonLd({ category, articles }) {
     "@type": "CollectionPage",
     "name": `${formatted} News & Analysis | Venture Hive`,
     "description": `Latest ${formatted.toLowerCase()} news, analysis, and investigative journalism from Venture Hive.`,
-    "url": `https://venture-hive.com/${category}`,
+    "url": `https://www.venture-hive.com/${category}`,
     "isPartOf": {
       "@type": "WebSite",
       "name": "Venture Hive",
-      "url": "https://venture-hive.com"
+      "url": "https://www.venture-hive.com"
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -20,13 +20,13 @@ export default function CategoryJsonLd({ category, articles }) {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://venture-hive.com"
+          "item": "https://www.venture-hive.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": formatted,
-          "item": `https://venture-hive.com/${category}`
+          "item": `https://www.venture-hive.com/${category}`
         }
       ]
     }

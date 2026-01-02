@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 
   const title = `${formatted} News & Analysis | Venture Hive`;
   const description = `Latest ${formatted.toLowerCase()} news, in-depth analysis, and investigative journalism from Venture Hive.`;
-  const url = `https://venture-hive.com/${category}`;
+  const url = `https://www.venture-hive.com/${category}`;
 
   return {
     title,
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
-          url: "https://venture-hive.com/images/venture-hive-logo.webp",
+          url: "https://www.venture-hive.com/images/venture-hive-logo.webp",
           width: 1200,
           height: 630,
           alt: `${formatted} News – Venture Hive`,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title,
       description,
-      images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
+      images: ["https://www.venture-hive.com/images/venture-hive-logo.webp"],
     },
   };
 }

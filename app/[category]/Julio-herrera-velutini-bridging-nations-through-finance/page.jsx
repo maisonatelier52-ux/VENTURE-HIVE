@@ -26,16 +26,16 @@ export async function generateMetadata() {
     title:title,
     description: description,
     alternates: {
-      canonical: `https://venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
+      canonical: `https://www.venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
     },
     openGraph: {
       title: title,
       description: description,
-      url: `https://venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
+      url: `https://www.venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
       siteName: "Venture Hive",
       images: [
         {
-          url: `https://venture-hive.com${article.image}`,
+          url: `https://www.venture-hive.com${article.image}`,
           width: 1200,
           height: 630,
           alt: article.alt,
@@ -47,7 +47,7 @@ export async function generateMetadata() {
       card: "summary_large_image",
       title: title,
       description: description,
-      images: [`https://venture-hive.com${article.image}`],
+      images: [`https://www.venture-hive.com${article.image}`],
     },
   };
 }

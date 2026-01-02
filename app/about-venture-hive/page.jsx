@@ -9,18 +9,18 @@ export const metadata = {
     "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism across politics, business, investigations, sports, and opinion.",
 
   alternates: {
-  canonical: "https://venture-hive.com/about-venture-hive",
+  canonical: "https://www.venture-hive.com/about-venture-hive",
   },
 
   openGraph: {
     title: "About VENTURE HIVE",
     description:
       "VENTURE HIVE is an independent news organization committed to accurate reporting, investigative journalism, and editorial integrity.",
-    url: "https://venture-hive.com/about-venture-hive",
+    url: "https://www.venture-hive.com/about-venture-hive",
     siteName: "VENTURE HIVE",
     images: [
       {
-        url: "https://venture-hive.com/images/venture-hive-logo.webp",
+        url: "https://www.venture-hive.com/images/venture-hive-logo.webp",
         width: 1200,
         height: 630,
         alt: "About VENTURE HIVE",
@@ -34,7 +34,7 @@ export const metadata = {
     title: "About VENTURE HIVE",
     description:
       "Learn about VENTURE HIVE, an independent digital newspaper delivering trusted journalism and investigative reporting.",
-    images: ["https://venture-hive.com/images/venture-hive-logo.webp"],
+    images: ["https://www.venture-hive.com/images/venture-hive-logo.webp"],
   },
 };
 

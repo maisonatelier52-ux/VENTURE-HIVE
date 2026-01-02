@@ -15,16 +15,16 @@ export async function generateMetadata({ params }) {
     title: article.metaTitle,
     description: article.metaDescription,
     alternates: {
-      canonical: `https://venture-hive.com/${category}/${slug}`,
+      canonical: `https://www.venture-hive.com/${category}/${slug}`,
     },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
-      url: `https://venture-hive.com/${category}/${slug}`,
+      url: `https://www.venture-hive.com/${category}/${slug}`,
       siteName: "Venture Hive",
       images: [
         {
-          url: `https://venture-hive.com${article.image}`,
+          url: `https://www.venture-hive.com${article.image}`,
           width: 1200,
           height: 630,
           alt: article.alt,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: article.metaTitle,
       description: article.metaDescription,
-      images: [`https://venture-hive.com${article.image}`],
+      images: [`https://www.venture-hive.com${article.image}`],
     },
   };
 }

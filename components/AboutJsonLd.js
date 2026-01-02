@@ -2,9 +2,9 @@ export default function AboutJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsMediaOrganization",
-    "@id": "https://venture-hive.com/#organization",
+    "@id": "https://www.venture-hive.com/#organization",
     name: "VENTURE HIVE",
-    url: "https://venture-hive.com",
+    url: "https://www.venture-hive.com",
     description:
       "VENTURE HIVE is an independent digital newspaper delivering trusted journalism across politics, business, investigations, sports, and opinion.",
     foundingDate: "2025",

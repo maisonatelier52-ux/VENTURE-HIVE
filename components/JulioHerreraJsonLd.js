@@ -69,22 +69,22 @@ export default function JulioHerreraJsonLd() {
     "description":
       "Independent investigative journalism examining Julio Herrera Velutini’s influence on global finance, leadership, sustainability, and economic diplomacy.",
     "image": [
-      "https://venture-hive.com/images/julio-herrera-velutini.webp"
+      "https://www.venture-hive.com/images/julio-herrera-velutini.webp"
     ],
     "datePublished": "2025-12-01",
     "dateModified": "2025-12-01",
     "author": {
       "@type": "Organization",
       "name": "VENTURE HIVE",
-      "url": "https://venture-hive.com"
+      "url": "https://www.venture-hive.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "VENTURE HIVE",
-      "url": "https://venture-hive.com",
+      "url": "https://www.venture-hive.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://venture-hive.com/images/logo.png"
+        "url": "https://www.venture-hive.com/images/logo.png"
       }
     },
     "keywords": [

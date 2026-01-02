@@ -65,36 +65,36 @@ export const PillarcontentJsonLd = (article) => {
     "@type": "Article",
     headline: metaTitle,
     description: metaDescription,
-    url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
-    image: `https://venture-hive.com${hero.imageSrc}`,
+    url: `https://www.venture-hive.com/julio-herrera-velutini/${slug}`,
+    image: `https://www.venture-hive.com${hero.imageSrc}`,
     author: {
       "@type": "Person",
       name: subtitle?.author?.name || "Unknown Author", // Add author data if available
-      url: subtitle?.author?.url || "https://venture-hive.com/authors/unknown",
+      url: subtitle?.author?.url || "https://www.venture-hive.com/authors/unknown",
     },
     publisher: {
       "@type": "Organization",
       name: "Venture Hive",
       logo: {
         "@type": "ImageObject",
-        url: "https://venture-hive.com/images/logo.png", // Replace with actual logo URL
+        url: "https://www.venture-hive.com/images/logo.png", // Replace with actual logo URL
       },
     },
     datePublished: datePublished || currentDate, // Use provided datePublished or current date
     dateModified: dateModified || currentDate, // Use provided dateModified or current date
-    mainEntityOfPage: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+    mainEntityOfPage: `https://www.venture-hive.com/julio-herrera-velutini/${slug}`,
     potentialAction: {
       "@type": "ReadAction",
-      target: [`https://venture-hive.com/julio-herrera-velutini/${slug}`],
+      target: [`https://www.venture-hive.com/julio-herrera-velutini/${slug}`],
     },
     openGraph: {
       title: metaTitle,
       description: metaDescription,
-      url: `https://venture-hive.com/julio-herrera-velutini/${slug}`,
+      url: `https://www.venture-hive.com/julio-herrera-velutini/${slug}`,
       siteName: "Venture Hive",
       images: [
         {
-          url: `https://venture-hive.com${hero.imageSrc}`,
+          url: `https://www.venture-hive.com${hero.imageSrc}`,
           width: 1200,
           height: 630,
           alt: hero.imageAlt,
@@ -105,7 +105,7 @@ export const PillarcontentJsonLd = (article) => {
       card: "summary_large_image",
       title: metaTitle,
       description: metaDescription,
-      images: [`https://venture-hive.com${hero.imageSrc}`],
+      images: [`https://www.venture-hive.com${hero.imageSrc}`],
     },
   };
 

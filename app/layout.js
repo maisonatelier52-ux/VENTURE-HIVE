@@ -63,7 +63,7 @@ const geistMono = Geist_Mono({
  * Individual pages override this when needed
  */
 export const metadata = {
-  metadataBase: new URL("https://venture-hive.com"), // ✅ IMPORTANT
+  metadataBase: new URL("https://www.venture-hive.com"), // ✅ IMPORTANT
 
   title: {
     default: "VENTURE HIVE – Independent News & Investigative Journalism",

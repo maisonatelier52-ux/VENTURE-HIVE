@@ -4,12 +4,12 @@ export default function AuthorJsonLd() {
   const authors = authorsData.categories.map(({ author }) => ({
     "@type": "Person",
     name: author.name,
-    image: `https://venture-hive.com${author.profileImage}`,
+    image: `https://www.venture-hive.com${author.profileImage}`,
     jobTitle: "Journalist",
     worksFor: {
       "@type": "NewsMediaOrganization",
       name: "VENTURE HIVE",
-      url: "https://venture-hive.com",
+      url: "https://www.venture-hive.com",
     },
     sameAs: Object.values(author.social || {}),
   }));
@@ -20,7 +20,7 @@ export default function AuthorJsonLd() {
       {
         "@type": "NewsMediaOrganization",
         name: "VENTURE HIVE",
-        url: "https://venture-hive.com",
+        url: "https://www.venture-hive.com",
         sameAs: ["https://twitter.com/venturehive"],
       },
       ...authors,
