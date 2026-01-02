@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://venture-hive.com/sitemap.xml
+Sitemap: https://www.venture-hive.com/sitemap.xml
