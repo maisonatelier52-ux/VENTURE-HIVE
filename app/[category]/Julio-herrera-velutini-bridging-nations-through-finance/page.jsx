@@ -26,12 +26,12 @@ export async function generateMetadata() {
     title:title,
     description: description,
     alternates: {
-      canonical: `https://www.venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
+      canonical: `https://www.venture-hive.com/business/${article.slug}`,
     },
     openGraph: {
       title: title,
       description: description,
-      url: `https://www.venture-hive.com/business/julio-herrera-velutini/${article.slug}`,
+      url: `https://www.venture-hive.com/business/${article.slug}`,
       siteName: "Venture Hive",
       images: [
         {
