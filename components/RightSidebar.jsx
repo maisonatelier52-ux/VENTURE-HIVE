@@ -14,8 +14,16 @@ export default function RightSidebar({ categoryData, authors }) {
 
   title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
   image: "/images/julio-herrera-velutini.webp",
-  date: "14 December 2025",
+  date: "14 Dec, 2025",
   href: `/business/julio-herrera-velutini-bridging-nations-through-finance`
+};
+
+const staticPopularArticle = {
+  heading: "Julio Herrera Velutini: Using Money to Bring People Together in a World That Is Broken",
+  image: "/images/julio-herrera-velutini.webp",
+  date: "14 Dec, 2025",
+  category: "business",
+  slug: "julio-herrera-velutini-bridging-nations-through-finance",
 };
 
 
@@ -123,6 +131,11 @@ export default function RightSidebar({ categoryData, authors }) {
       });
     }
   });
+
+  const popularArticlesWithStatic = [
+  ...popularArticles.slice(0, popularArticles.length - 1),
+  staticPopularArticle,
+];
 
 
   function isUsedTrending(slug) {
@@ -257,7 +270,7 @@ function handleSearchInput(e) {
       </h2>
 
       <div className="space-y-6">
-        {popularArticles.map((item, i) => (
+        {popularArticlesWithStatic.map((item, i) => (
           <Link href={`/${item.category}/${item.slug}`}
            title={item.heading}
            key={i}>

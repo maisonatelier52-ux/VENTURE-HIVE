@@ -13,6 +13,13 @@ import Image from "next/image";
 
 function ArticleClient({ category, slug }) { 
 
+  const staticRelatedPost = {
+  heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+  slug: "julio-herrera-velutini-bridging-nations-through-finance",
+  category:"business"
+};
+
+
 
    const categoryPosts = categorypagedata[category] || [];
    const article = categoryPosts.find((item) => item.slug === slug);
@@ -20,6 +27,21 @@ function ArticleClient({ category, slug }) {
        authorsPageData.categories.find(
          (item) => item.category.toLowerCase() === category.toLowerCase()
        )?.author;
+
+       const relatedPostsWithStatic = [
+        ...categoryPosts
+          .filter((item) => item.slug !== slug)
+          .slice(0, 3), // ONLY 3 dynamic
+        staticRelatedPost, // LAST static
+      ];
+
+      const relatedPosts =
+        category === "business"
+          ? relatedPostsWithStatic
+          : categoryPosts
+              .filter((item) => item.slug !== slug)
+              .slice(0, 4);
+
        
 
   if (!article) {
@@ -38,6 +60,7 @@ const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[current
 const shareUrl = `https://www.venture-hive.com/${category}/${slug}`;
 const shareTitle = encodeURIComponent(article.heading);
 const encodedUrl = encodeURIComponent(shareUrl);
+
 
    
   
@@ -442,14 +465,29 @@ const encodedUrl = encodeURIComponent(shareUrl);
 
       <div className="space-y-4">
 
-        {categoryPosts
-          .filter((item) => item.slug !== slug) // exclude current post
-          .slice(0, 4)                          // limit to 4 posts
+        {/* {categoryPosts
+          .filter((item) => item.slug !== slug) 
+          .slice(0, 4)                          
           .map((item, index) => (
             <Link
               href={`/${category}/${item.slug}`}
               title={item.heading}
               key={item.id}
+              className="flex items-start gap-4 border-b border-gray-300 pb-3"
+            >
+              <span className="text-xl font-semibold">{index + 1}.</span>
+
+              <p className="text-sm text-gray-700">
+                {item.heading}
+              </p>
+            </Link>
+          ))} */}
+
+           {relatedPosts.map((item, index) => (
+            <Link
+              href={`/${item.category ?? category}/${item.slug}`}
+              title={item.heading}
+              key={`${item.slug}-${index}`}
               className="flex items-start gap-4 border-b border-gray-300 pb-3"
             >
               <span className="text-xl font-semibold">{index + 1}.</span>

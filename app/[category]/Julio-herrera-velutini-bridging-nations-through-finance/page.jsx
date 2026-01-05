@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import JulioClient from "./JulioClient";
 import JulioHerreraJsonLd from "../../../components/JulioHerreraJsonLd";
+import JulioHerreraFaqJsonLd from "../../../components/JulioHerreraFaqJsonLd";
 
 export async function generateMetadata() {
      const article = {
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     image: "/images/julio-herrera-velutini.webp",  // Image path relative to the public folder
     alt:"Venture Hive Investigative Journalism on Julio Herrera Velutini's impact in global finance and business leadership",
     date: "2025-12-01",
-    content: "Descended from the renowned Herrera banking dynasty...",
+    content: " Julio Herrera Velutini is from the famous Herrera banking family...",
     metaDescription: "Venture Hive's independent investigative journalism on Julio Herrera Velutini's leadership in global finance, sustainability, and economic collaboration. In-depth news and analysis on his influence in shaping the future of business and finance.",
     hashTags: ["finance", "leadership", "global economics", "sustainability"],
     metaTitle:"Julio Herrera Velutini | Global Finance Investigation",
@@ -61,6 +62,7 @@ export default async function Page() {
 return (
     <>
       <JulioHerreraJsonLd />
+       <JulioHerreraFaqJsonLd />
       <JulioClient />
     </>
   );

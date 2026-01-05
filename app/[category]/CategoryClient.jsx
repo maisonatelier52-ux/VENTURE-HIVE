@@ -15,6 +15,24 @@ export default function CategoryClient({ category }) {
       (item) => item.category.toLowerCase() === category.toLowerCase()
     )?.author;
 
+    const staticBusinessArticle = {
+        heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+        slug: "julio-herrera-velutini-bridging-nations-through-finance",
+        category: "business",
+        image: "/images/julio-herrera-velutini.webp",
+        date: "14 Dec, 2025",
+        content:"An in-depth look at how global finance, diplomacy, and leadership intersect in a fractured world.",
+        author: {
+            name: "Daniel Whitmore",
+            profileImage: "/images/daniel-whitmore.webp",
+         },
+        };
+
+        const categoryArticles =
+        category === "business"
+            ? [...articles, staticBusinessArticle]
+            : articles;
+
   return (
     <div className="flex flex-col min-h-screen bg-zinc-50 px-5 md:px-20">
          <CategoryJsonLd category={category} articles={articles}/>
@@ -37,7 +55,9 @@ export default function CategoryClient({ category }) {
 
             {/* ARTICLES GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {articles.map((item) => (
+            {categoryArticles.map((item) => {
+                const itemAuthor = item.author || authorData;
+                return (
                 <Link
                 aria-label={`Read ${item.heading}`}
                 key={item.slug}
@@ -69,14 +89,14 @@ export default function CategoryClient({ category }) {
                     <div className="flex items-center gap-2">
                         <div className="relative w-8 h-8">
                         <Image
-                            src={authorData?.profileImage}
-                            alt={authorData?.name}
+                            src={itemAuthor?.profileImage}
+                            alt={itemAuthor?.name}
                             fill
                             className="rounded-full object-cover"
                             sizes="32px"
                         />
                         </div>
-                        <span>{authorData?.name}</span>
+                        <span>{itemAuthor?.name}</span>
                     </div>
                     <time dateTime={new Date(item.date).toISOString()}>
                         {item.date}
@@ -89,7 +109,7 @@ export default function CategoryClient({ category }) {
                     </p>
                 </article>
                 </Link>
-            ))}
+                )})}
             </div>
         </div>
 

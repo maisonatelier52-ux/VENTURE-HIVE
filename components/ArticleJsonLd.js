@@ -1,5 +1,11 @@
-// export default function ArticleJsonLd({ article }) {
+
+
+// export default function ArticleJsonLd({ article, category, author }) {
 //   if (!article) return null;
+
+//   const publishedDate = article.date
+//     ? new Date(article.date).toISOString()
+//     : undefined;
 
 //   return (
 //     <script
@@ -8,31 +14,43 @@
 //         __html: JSON.stringify({
 //           "@context": "https://schema.org",
 //           "@type": "NewsArticle",
+
 //           headline: article.heading,
-//           image: [`https://venture-hive.com${article.image}`],
-//           datePublished: new Date(article.date).toISOString(),
-//           dateModified: new Date(article.date).toISOString(),
+//           description: article.metaDescription || article.content,
+//           image: [`https://www.venture-hive.com${article.image}`],
+
+//           datePublished: publishedDate,
+//           dateModified: publishedDate,
+
+//           articleSection: category,
+//           keywords: article.hashTags?.join(", "),
+
 //           author: {
 //             "@type": "Person",
-//             name: article.author?.name,
+//             name: author?.name || "Venture Hive Staff",
 //           },
+
 //           publisher: {
 //             "@type": "Organization",
-//             name: "VENTURE HIVE",
+//             name: "Venture Hive",
 //             logo: {
 //               "@type": "ImageObject",
-//               url: "https://venture-hive.com/images/logo.png",
+//               url: "https://www.venture-hive.com/images/logo.png",
 //             },
 //           },
+
 //           mainEntityOfPage: {
 //             "@type": "WebPage",
-//             "@id": `https://venture-hive.com/${article.category}/${article.slug}`,
+//             "@id": `https://www.venture-hive.com/${category}/${article.slug}`,
 //           },
+
+//           isAccessibleForFree: true,
 //         }),
 //       }}
 //     />
 //   );
 // }
+
 
 export default function ArticleJsonLd({ article, category, author }) {
   if (!article) return null;
@@ -41,6 +59,9 @@ export default function ArticleJsonLd({ article, category, author }) {
     ? new Date(article.date).toISOString()
     : undefined;
 
+  const section =
+    category.charAt(0).toUpperCase() + category.slice(1);
+
   return (
     <script
       type="application/ld+json"
@@ -48,6 +69,12 @@ export default function ArticleJsonLd({ article, category, author }) {
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "NewsArticle",
+          "@id": `https://www.venture-hive.com/${category}/${article.slug}#article`,
+
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://www.venture-hive.com/${category}/${article.slug}`,
+          },
 
           headline: article.heading,
           description: article.metaDescription || article.content,
@@ -56,32 +83,36 @@ export default function ArticleJsonLd({ article, category, author }) {
           datePublished: publishedDate,
           dateModified: publishedDate,
 
-          articleSection: category,
+          articleSection: section,
           keywords: article.hashTags?.join(", "),
+          wordCount: article.wordCount || 1800,
 
           author: {
             "@type": "Person",
-            name: author?.name || "Venture Hive Staff",
+            name: author?.name || "Venture Hive Editorial Team",
           },
 
           publisher: {
             "@type": "Organization",
             name: "Venture Hive",
+            url: "https://www.venture-hive.com",
             logo: {
               "@type": "ImageObject",
               url: "https://www.venture-hive.com/images/logo.png",
             },
           },
 
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `https://www.venture-hive.com/${category}/${article.slug}`,
+          about: {
+            "@type": "Thing",
+            name: article.heading,
           },
 
           isAccessibleForFree: true,
+          inLanguage: "en",
         }),
       }}
     />
   );
 }
+
 

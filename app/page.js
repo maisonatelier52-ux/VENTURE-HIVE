@@ -75,6 +75,20 @@ const sortedLatest = latestFromEachCategory.sort(
 // 3. Select only the latest 4
 const recentFour = sortedLatest.slice(0, 4);
 
+const staticRecentItem = {
+  heading: "Julio Herrera Velutini: Bringing Countries Together with Money in a World That Isn't Working",
+  slug: "julio-herrera-velutini-bridging-nations-through-finance",
+  category: "business",
+  date: "14 Dec, 2025",
+  image: "/images/julio-herrera-velutini.webp", // put this in /public/images/static/
+};
+
+const recentFourWithStatic = [
+  ...recentFour.slice(0, 3), // first 3 dynamic
+  staticRecentItem,          // last static
+];
+
+
 
 
 
@@ -206,7 +220,7 @@ Object.keys(categoryData).forEach((cat) => {
     scrollbar-hide
   ">
 
-{recentFour.map((item, i) => (
+{recentFourWithStatic.map((item, i) => (
   <Link
     href={`/${item.category}/${item.slug}`}
     title={item.heading}
