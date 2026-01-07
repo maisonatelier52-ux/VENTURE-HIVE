@@ -237,9 +237,11 @@ export default function PillarClient() {
 
                     {/* Text */}
                     <div className="w-full md:w-3/4 flex flex-col gap-4 p-2 md:p-6">
-                      <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    <Link href={`/authors`} title={authorData.name}>
+                     <h2 className="text-xl md:text-2xl font-semibold text-gray-900 hover:underline">
                         {authorData.name}
                       </h2>
+                    </Link>
 
                       <p className="text-gray-700 leading-relaxed">
                         {authorData.bio}

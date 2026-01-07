@@ -403,9 +403,12 @@ const encodedUrl = encodeURIComponent(shareUrl);
     >
 
       {/* Name */}
-      <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
-        {authorData.name}
-      </h2>
+      <Link href={`/authors`} title={authorData.name}>
+        <h2 className="text-xl md:text-2xl font-semibold text-gray-900 cursor-pointer hover:underline">
+          {authorData.name}
+        </h2>
+      </Link>
+      
 
       {/* Description */}
       <p className="text-gray-700 leading-relaxed">
