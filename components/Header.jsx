@@ -63,9 +63,11 @@ export default function HeaderComponent() {
 
       {/* ================= HEADING ================= */}
       <div className="text-center py-6 px-4">
-        <p className="text-4xl md:text-6xl font-medium">
+        <Link href="/" title="Venture Hive home page">
+         <p className="text-4xl md:text-6xl font-medium">
           VENTURE HIVE
         </p>
+        </Link>
         <p className="text-xs md:text-base mt-1">
           CLARITY IN A NOISY WORLD
         </p>

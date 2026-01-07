@@ -128,9 +128,10 @@ export default function FooterComponent() {
       {/* ===== BOTTOM SECTION ===== */}
       <div className="text-center mt-10">
 
+       <Link href="/" title="Venture Hive home page">
        <p className="text-4xl font-medium">
           VENTURE HIVE
-        </p>
+        </p></Link>
 
         <div className="flex items-center justify-center gap-4 mt-6">
           <span className="text-2xl">~</span>
