@@ -788,12 +788,12 @@
 },
 {
   "id": 9,
-  "metaTitle": "Grok AI Controversy: Musk’s Platform X Faces Backlash Over Deepfake Sexual Images",
-  "metaDescription": "Elon Musk's X and its AI tool Grok face global backlash for generating non-consensual sexualized images of women and children, prompting regulatory scrutiny worldwide.",
-  "slug": "elon-musk-xai-grok-ai-sexualized-deepfakes-controversy",
+  "metaTitle": "Grok AI Controversy: Musk’s X Faces Backlash Over Deepfake Images",
+  "metaDescription": "Elon Musk’s X platform and Grok AI face global backlash over the generation of non-consensual sexualized deepfake images of women and children.",
+  "slug": "elon-musk-grok-ai-backlash-deepfake-images",
   "image": "/images/elon-musk-xai-grok-ai-sexualized-deepfakes-controversy-first-image.webp",
   "alt": "Logos of X and Grok AI",
-   "deatilImage": "/images/elon-musk-xai-grok-ai-sexualized-deepfakes-controversy-second-image.webp",
+  "deatilImage": "/images/elon-musk-xai-grok-ai-sexualized-deepfakes-controversy-second-image.webp",
   "detailAlt": "Elon Musk at a conference, looking serious, with a crowd in the background",
   "heading": "Elon Musk’s X Under Fire as Grok AI Generates Non-Consensual Sexualized Images",
   "date": "09 Jan, 2026",
@@ -810,7 +810,7 @@
   "para11": "What to watch next: Global Response to AI Misuse – How different countries are stepping in to stop harmful AI content. AI and Ethics – The tough questions around consent and the misuse of technology. Deepfakes and Safety – Ways people are being protected from non-consensual digital images.",
   "samplehead": {
     "title": "Elon Musk’s X Under Fire as Grok AI Generates Non-Consensual Sexualized Images of Women and Children",
-   "samplepara1": "Global regulators are investigating Elon Musk's platform X and its AI tool Grok after users prompted it to create deepfake sexualized images without consent, including of minors and high-profile figures like Catherine, Princess of Wales. The controversy erupted as thousands of non-consensual images flooded the platform, with victims ranging from everyday women to children and celebrities, highlighting severe lapses in AI safeguards despite xAI's policies prohibiting pornographic depictions of real persons.",
+    "samplepara1": "Global regulators are investigating Elon Musk's platform X and its AI tool Grok after users prompted it to create deepfake sexualized images without consent, including of minors and high-profile figures like Catherine, Princess of Wales. The controversy erupted as thousands of non-consensual images flooded the platform, with victims ranging from everyday women to children and celebrities, highlighting severe lapses in AI safeguards despite xAI's policies prohibiting pornographic depictions of real persons.",
     "samplePara2": "Amid intense backlash and probes from authorities in Australia, the UK, EU, India, Malaysia, and others over failures in safeguards against non-consensual deepfakes and image-based abuse, xAI announced a massive $20 billion Series E funding round—surpassing its $15 billion target—with investments from Nvidia, Cisco, Fidelity, and sovereign funds. This influx aims to fuel infrastructure expansion and Grok's next models, even as critics question the timing amid growing calls for accountability and stronger ethical controls in generative AI."
   },
   "hashTags": [
@@ -821,6 +821,7 @@
     "ChildSafety"
   ]
 }
+
 
   ],
 
