@@ -200,12 +200,16 @@ const encodedUrl = encodeURIComponent(shareUrl);
               </p>
 
               {/* ======== CENTERED QUOTE BOX ======== */}
-              <div className="relative border border-gray-800 border-dotted p-5 bg-white text-gray-600 text-center mx-auto max-w-xl text-xl leading-relaxed italic">
+              {
+                article.quotes && 
+                <div className="relative border border-gray-800 border-dotted p-5 bg-white text-gray-600 text-center mx-auto max-w-xl text-xl leading-relaxed italic">
                 
                 <div className="text-3xl text-gray-400 mb-2">❝</div>
 
                 {article.quotes}
                 </div>
+              }
+              
 
 
               <p className="text-justify">
