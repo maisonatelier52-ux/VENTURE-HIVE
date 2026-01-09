@@ -788,8 +788,8 @@
 },
 {
   "id": 9,
-  "metaTitle": "Grok AI Controversy: Musk’s X Faces Backlash Over Deepfake Images",
-  "metaDescription": "Elon Musk’s X platform and Grok AI face global backlash over the generation of non-consensual sexualized deepfake images of women and children.",
+  "metaTitle": "Grok AI Backlash: Musk’s X Faces Deepfake Controversy Over Images",
+  "metaDescription": "Musk’s X and Grok AI face global backlash over the creation of non-consensual deepfake images. Regulators probe the platform’s failure to prevent misuse.",
   "slug": "elon-musk-grok-ai-backlash-deepfake-images",
   "image": "/images/elon-musk-xai-grok-ai-sexualized-deepfakes-controversy-first-image.webp",
   "alt": "Logos of X and Grok AI",
@@ -821,6 +821,7 @@
     "ChildSafety"
   ]
 }
+
 
 
   ],
