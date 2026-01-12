@@ -10,6 +10,8 @@ import { FaRedditAlien } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import Image from "next/image";
+import { SiMedium } from "react-icons/si";
+import { FaQuora } from "react-icons/fa";
 
 function ArticleClient({ category, slug }) { 
 
@@ -422,14 +424,14 @@ const encodedUrl = encodeURIComponent(shareUrl);
       {/* Social Icons */}
       <div className="flex items-center gap-4 text-lg text-gray-800">
      <a
-        href={authorData.social.facebook}
+        href={authorData.social.quora}
         target="_blank"
         rel="noopener noreferrer"
-        title={`Visit ${authorData.name} on Facebook`}
-        aria-label={`Visit ${authorData.name} on Facebook`}
-        className="hover:text-blue-600"
+        title={`Visit ${authorData.name} on Quora`}
+        aria-label={`Visit ${authorData.name} on Quora`}
+        className="hover:text-red-600"
         >
-        <Facebook size={18} />
+        <FaQuora  size={18} />
         </a>
 
         <a
@@ -444,14 +446,25 @@ const encodedUrl = encodeURIComponent(shareUrl);
         </a>
 
         <a
-        href="https://google.com"
+         href={authorData.social.medium}
         target="_blank"
         rel="noopener noreferrer"
-        title={`Visit ${authorData.name} on Substack`}
-        aria-label={`Visit ${authorData.name}on Substack`}
-        className="hover:text-red-500"
+        title={`Visit ${authorData.name} on Medium`}
+        aria-label={`Visit ${authorData.name}on Medium`}
+        className="hover:text-black"
         >
-        <SiSubstack  size={18} />
+        <SiMedium   size={18} />
+        </a>
+
+          <a
+            href={authorData.social.reddit}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Visit ${authorData.name} on Reddit`}
+            aria-label={`Visit ${authorData.name}on Reddit`}
+            className="hover:text-red-500"
+            >
+          <FaRedditAlien size={18} />
         </a>
 
       </div>

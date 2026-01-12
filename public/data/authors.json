@@ -11,7 +11,9 @@
         "bio": "Charlotte Reynolds is a Washington-based political reporter covering Congress, elections, and federal policy disputes.",
         "social": {
           "twitter": "https://twitter.com/charlottereynolds",
-          "facebook": "https://facebook.com/charlottereynoldsnews"
+          "quora": "https://www.quora.com/profile/Charlotte-Reynolds-159",
+          "reddit" : "https://www.reddit.com/user/Charlotte_Reynolds/",
+          "medium" : "https://medium.com/@charlottereynolds001"
         }
       }
     },
@@ -25,8 +27,10 @@
         "country": "USA",
         "bio": "Samantha Cole is a New York business correspondent reporting on Wall Street, tech industries, start-ups, and market trends.",
         "social": {
-          "twitter": "https://twitter.com/samanthacolebiz",
-          "facebook": "https://facebook.com/samanthacolebusiness"
+          "twitter": "https://x.com/SamanthC19693",
+           "quora": "https://www.quora.com/profile/Samanth-Cole",
+          "reddit" : "https://www.reddit.com/user/Samantha_Cole_001/",
+          "medium" : "https://medium.com/@samanthacole001"
         }
       }
     },
@@ -40,8 +44,10 @@
         "country": "USA",
         "bio": "Marcus Turner covers major American sports leagues, athlete culture, and the impact of sports on society.",
         "social": {
-          "twitter": "https://twitter.com/marcusturnersports",
-          "facebook": "https://facebook.com/marcusturnercolumnist"
+           "twitter": "https://x.com/MarcusTurn15821",
+           "quora": "https://www.quora.com/profile/Marcus-Turner-280",
+          "reddit" : "https://www.reddit.com/user/Marcus_Turner_001/",
+          "medium" : "https://medium.com/@marcusturner001"
         }
       }
     },
@@ -55,8 +61,10 @@
         "country": "USA",
         "bio": "Jonathan Pierce is an opinion columnist from Boston focusing on democracy, civic institutions, and U.S. political identity.",
         "social": {
-          "twitter": "https://twitter.com/jonathanpierceopinion",
-          "facebook": "https://facebook.com/jonathanpierceopinions"
+           "twitter": "https://x.com/JonathanPi96487",
+           "quora": "https://www.quora.com/profile/Jonathan-Pierce-184",
+          "reddit" : "https://www.reddit.com/user/Jonathan_Pierce_001/",
+          "medium" : "https://medium.com/@jonathanpierce001"
         }
       }
     },
@@ -70,8 +78,10 @@
         "country": "USA",
         "bio": "Olivia Ramirez is an investigative journalist from Los Angeles covering corruption, public accountability, and federal oversight.",
         "social": {
-          "twitter": "https://twitter.com/oliviaramirezinvestigates",
-          "facebook": "https://facebook.com/oliviaramirezreports"
+           "twitter": "https://x.com/OliviaRami93556",
+           "quora": "https://www.quora.com/profile/Olivia-Ramirez-306",
+          "reddit" : "https://www.reddit.com/user/Olivia_Ramirez_001/",
+          "medium" : "https://medium.com/@oliviaramirez001"
         }
       }
     },
@@ -85,8 +95,10 @@
         "country": "USA",
         "bio": "Daniel Whitmore is a senior features writer specializing in long-form investigative profiles, global finance, leadership, and geopolitical analysis.",
         "social": {
-          "twitter": "https://twitter.com/danielwhitmore",
-          "facebook": "https://facebook.com/danielwhitmorefeatures"
+          "twitter": "",
+           "quora": "",
+          "reddit" : "",
+          "medium" : ""
         }
       }
     }

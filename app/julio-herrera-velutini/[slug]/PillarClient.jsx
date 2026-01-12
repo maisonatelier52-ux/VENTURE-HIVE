@@ -16,6 +16,8 @@ import { PillarcontentJsonLd } from "../../../components/PillarcontentJsonLd";
 import { FaRedditAlien } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
+import { SiMedium } from "react-icons/si";
+import { FaQuora } from "react-icons/fa";
 
 export default function PillarClient() {
   const { slug } = useParams();
@@ -248,16 +250,16 @@ export default function PillarClient() {
                       </p>
 
                       <div className="flex items-center gap-4 text-lg text-gray-800">
-                       {authorData.social.facebook && (
+                       {authorData.social.quora && (
                           <Link
-                            href={authorData.social.facebook}
+                            href={authorData.social.quora}
                             target="_blank"
-                           title={`Visit ${authorData.name} on Facebook`}
+                           title={`Visit ${authorData.name} on Quora`}
                             rel="noopener noreferrer"
-                            aria-label="Facebook"
-                            className="hover:text-blue-600 transition"
+                            aria-label="Quora"
+                            className="hover:text-red-600 transition"
                           >
-                            <Facebook size={18} />
+                            <FaQuora size={18} />
                           </Link>
                         )}
 
@@ -274,16 +276,29 @@ export default function PillarClient() {
                           </Link>
                         )}
 
-                          {authorData.social.substack && (
+                          {authorData.social.medium && (
                         <Link
-                          href={authorData.social.substack}
+                          href={authorData.social.medium}
                           target="_blank"
-                           title={`Visit ${authorData.name} on Substack`}
+                           title={`Visit ${authorData.name} on Medium`}
                           rel="noopener noreferrer"
-                          aria-label="Twitter"
+                          aria-label="Medium"
+                          className="hover:text-black transition"
+                        >
+                          <SiMedium size={18} />
+                        </Link>
+                      )}
+
+                      {authorData.social.reddit && (
+                        <Link
+                          href={authorData.social.reddit}
+                          target="_blank"
+                           title={`Visit ${authorData.name} on Reddit`}
+                          rel="noopener noreferrer"
+                          aria-label="Reddit"
                           className="hover:text-red-500 transition"
                         >
-                          <SiSubstack size={18} />
+                          <FaRedditAlien size={18} />
                         </Link>
                       )}
                       </div>
