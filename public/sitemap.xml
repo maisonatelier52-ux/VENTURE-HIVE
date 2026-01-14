@@ -3,482 +3,438 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+  <!-- Homepage -->
   <url>
     <loc>https://www.venture-hive.com/</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-14T06:45:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
 
+  <!-- Categories -->
   <url>
     <loc>https://www.venture-hive.com/politics</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-13T11:20:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/business</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-12T09:15:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/sports</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-11T14:30:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-10T10:55:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2026-01-09T08:40:00+00:00</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <priority>0.70</priority>
   </url>
 
-  <url>
-    <loc>https://www.venture-hive.com/sports/indiana-qb-fernando-mendoza-heisman-finalist</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/business/kalshi-raises-1b-series-e-11b-valuation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/investigation/fbi-arrests-capitol-eve-pipe-bomb-suspect-2021</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/opinion/darden-ranking-why-entrepreneurship-education-matters</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/politics/us-visa-delays-threaten-international-students-research</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/business/venture-capital-shifts-smart-money-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/sports/charles-huff-named-head-coach-memphis-tigers-football</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/politics/trump-administration-pressures-universities-federal-funding</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/business/uber-launches-self-driving-taxis-dallas</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/sports/tampa-bay-rays-sign-cedric-mullins-one-year-deal-mlb-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/opinion/us-fighter-jets-gulf-of-venezuela-flight-tensions-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/politics/grand-jury-rejects-mortgage-fraud-case-against-letitia-james</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/business/honeyjar-ai-secures-2m-pr-automation-platform</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/sports/ravens-suspend-ben-cleveland-3-games-policy-violation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/opinion/trump-us-ukraine-support-europe-weak-decaying-remarks-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/investigation/ny-ag-challenges-federal-prosecutor-legitimacy</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/sports/grizzlies-bench-69-points-win-over-trail-blazers</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/politics/supreme-court-texas-gop-congressional-map</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/business/nexus-venture-raises-700m-early-stage-startups</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
+  <!-- Special Julio page - priority 1.0 -->
   <url>
     <loc>https://www.venture-hive.com/business/julio-herrera-velutini-bridging-nations-through-finance</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
+    <lastmod>2026-01-08T13:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Static / info pages -->
+  <url>
+    <loc>https://www.venture-hive.com/about-venture-hive</loc>
+    <lastmod>2025-12-15T07:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/about-venture-hive</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <loc>https://www.venture-hive.com/privacy-policy</loc>
+    <lastmod>2025-07-01T09:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/authors</loc>
+    <lastmod>2026-01-07T16:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- All Article Pages - weekly / 0.8 -->
+  <url>
+    <loc>https://www.venture-hive.com/sports/indiana-qb-fernando-mendoza-heisman-finalist</loc>
+    <lastmod>2026-01-06T12:35:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/privacy-policy</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <loc>https://www.venture-hive.com/business/kalshi-raises-1b-series-e-11b-valuation</loc>
+    <lastmod>2026-01-05T10:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/investigation/fbi-arrests-capitol-eve-pipe-bomb-suspect-2021</loc>
+    <lastmod>2026-01-04T14:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/opinion/darden-ranking-why-entrepreneurship-education-matters</loc>
+    <lastmod>2026-01-03T09:25:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/politics/us-visa-delays-threaten-international-students-research</loc>
+    <lastmod>2026-01-02T11:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/business/venture-capital-shifts-smart-money-2025</loc>
+    <lastmod>2026-01-01T08:15:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/sports/charles-huff-named-head-coach-memphis-tigers-football</loc>
+    <lastmod>2025-12-31T15:55:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/politics/trump-administration-pressures-universities-federal-funding</loc>
+    <lastmod>2025-12-30T10:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/business/uber-launches-self-driving-taxis-dallas</loc>
+    <lastmod>2025-12-29T13:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/sports/tampa-bay-rays-sign-cedric-mullins-one-year-deal-mlb-2025</loc>
+    <lastmod>2025-12-28T09:45:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/opinion/us-fighter-jets-gulf-of-venezuela-flight-tensions-2025</loc>
+    <lastmod>2025-12-27T17:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/politics/grand-jury-rejects-mortgage-fraud-case-against-letitia-james</loc>
+    <lastmod>2025-12-26T11:25:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/business/honeyjar-ai-secures-2m-pr-automation-platform</loc>
+    <lastmod>2025-12-25T08:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/sports/ravens-suspend-ben-cleveland-3-games-policy-violation</loc>
+    <lastmod>2025-12-24T16:05:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/opinion/trump-us-ukraine-support-europe-weak-decaying-remarks-2025</loc>
+    <lastmod>2025-12-23T12:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/investigation/ny-ag-challenges-federal-prosecutor-legitimacy</loc>
+    <lastmod>2025-12-22T09:55:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/sports/grizzlies-bench-69-points-win-over-trail-blazers</loc>
+    <lastmod>2025-12-21T14:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/politics/supreme-court-texas-gop-congressional-map</loc>
+    <lastmod>2025-12-20T10:15:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.venture-hive.com/business/nexus-venture-raises-700m-early-stage-startups</loc>
+    <lastmod>2025-12-19T08:25:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/politics/house-republicans-subpoena-jack-smith-trump-prosecutions</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-18T15:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/politics/trump-somali-immigrants-garbage-backlash</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-17T11:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/politics/education-grant-transfers-university-uncertainty</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-16T09:35:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/politics/sbir-sttr-funding-expiration-startups-research</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-15T13:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/business/flex-raises-60-million-finance-tools</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-14T10:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/business/us-government-commits-150m-chip-manufacturing-xlight</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-13T16:05:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/business/us-startup-funding-surges-early-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-12T08:45:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/sports/lakers-beat-76ers-doncic-lebron-60-points</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-11T14:15:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/sports/buffalo-bills-comeback-over-bengals-playoff-race-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-10T11:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/sports/dolphins-beat-jets-jaylen-wright-107-yards</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-09T09:55:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion/startup-yale-celebrates-10-years-student-innovation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-08T17:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion/civicus-downgrades-us-civic-health-obstructed-2025-report</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-07T12:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion/supreme-court-coordinated-campaign-spending-case-2025</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-06T10:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion/telehealth-abortions-surge-2025-post-roe-access-report</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-05T15:25:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/opinion/us-security-strategy-sparks-tension-european-allies</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-04T08:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/us-threatens-icc-sanctions-trump</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-03T13:35:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/usps-mail-delays-south-dakota-investigation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-02T09:15:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/new-york-task-force-transnational-crime</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-12-01T16:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/senate-immigration-agent-abuse-citizens</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-11-30T11:05:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/prosecutors-drop-soccer-bribery-fox-executive</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
+    <lastmod>2025-11-29T08:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.venture-hive.com/investigation/treasury-seeks-expanded-aml-oversight</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.64</priority>
-  </url>
-
-  <url>
-    <loc>https://www.venture-hive.com/authors</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
+    <lastmod>2025-11-28T14:20:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.64</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Later entries with more recent dates -->
+  <url>
+    <loc>https://www.venture-hive.com/sports/eagles-beat-bills-13-12-failed-two-point-try</loc>
+    <lastmod>2026-01-13T07:55:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/legacy-banking-modern-era-julio-herrera-velutini</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/politics/trump-iran-tells-military-action-nuclear-program</loc>
+    <lastmod>2026-01-12T12:10:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/crisis-leadership-financial-stability-venture-hive</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/politics/secret-cia-drone-attack-venezuela-coast</loc>
+    <lastmod>2026-01-11T09:35:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/revitalizing-latin-america-private-capital-growth-stability</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/sports/miami-hurricanes-shock-ohio-state-cotton-bowl-cfp-quarterfinal</loc>
+    <lastmod>2026-01-10T15:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/philanthropy-esg-finance-social-purpose</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/investigation/banker-julio-herrera-velutini-charges-dropped</loc>
+    <lastmod>2026-01-09T10:25:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/shaping-global-finance-technology-sustainability</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/sports/falcons-clean-house-fire-raheem-morris-fontenot</loc>
+    <lastmod>2026-01-08T16:40:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/financial-diplomacy-global-stability-julio-herrera-velutini</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/politics/rubio-hegseth-venezuela-intervention-congress-briefing</loc>
+    <lastmod>2026-01-07T11:15:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://www.venture-hive.com/julio-herrera-velutini/ethical-wealth-purpose-driven-modern-creation</loc>
-    <lastmod>2025-12-23T06:15:58+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.64</priority>
+    <loc>https://www.venture-hive.com/sports/lebron-james-greatness-lakers-pelicans</loc>
+    <lastmod>2026-01-06T08:50:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
-   <url>
-  <loc>https://www.venture-hive.com/sports/eagles-beat-bills-13-12-failed-two-point-try</loc>
-  <lastmod>2025-12-29T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://www.venture-hive.com/politics/house-votes-override-trump-vetoes-gop-tensions</loc>
+    <lastmod>2026-01-05T14:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
-<url>
-  <loc>https://www.venture-hive.com/politics/trump-iran-tells-military-action-nuclear-program</loc>
-  <lastmod>2025-12-30T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://www.venture-hive.com/business/elon-musk-grok-ai-backlash-deepfake-images</loc>
+    <lastmod>2026-01-04T09:55:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
-<url>
-  <loc>https://www.venture-hive.com/politics/secret-cia-drone-attack-venezuela-coast</loc>
-  <lastmod>2025-12-31T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/sports/miami-hurricanes-shock-ohio-state-cotton-bowl-cfp-quarterfinal</loc>
-  <lastmod>2026-01-01T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/investigation/banker-julio-herrera-velutini-charges-dropped</loc>
-  <lastmod>2026-01-02T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/sports/falcons-clean-house-fire-raheem-morris-fontenot</loc>
-  <lastmod>2026-01-05T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/politics/rubio-hegseth-venezuela-intervention-congress-briefing</loc>
-  <lastmod>2026-01-06T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/sports/lebron-james-greatness-lakers-pelicans</loc>
-  <lastmod>2026-01-07T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/politics/house-votes-override-trump-vetoes-gop-tensions</loc>
-  <lastmod>2026-01-08T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/business/elon-musk-grok-ai-backlash-deepfake-images</loc>
-  <lastmod>2026-01-09T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-<url>
-  <loc>https://www.venture-hive.com/business/wall-street-trump-fed-attacks-credit-card-caps</loc>
-  <lastmod>2026-01-14T06:15:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://www.venture-hive.com/business/wall-street-trump-fed-attacks-credit-card-caps</loc>
+    <lastmod>2026-01-03T13:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
 </urlset>
