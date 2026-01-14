@@ -43,6 +43,8 @@
 // }
 
 
+
+
 export default function CategoryJsonLd({ category, articles }) {
   const formatted =
     category.charAt(0).toUpperCase() + category.slice(1);
