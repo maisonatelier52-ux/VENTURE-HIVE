@@ -608,7 +608,8 @@ const encodedUrl = encodeURIComponent(shareUrl);
                 A Legacy That Has Grown Over Hundreds of Years
               </h2>
               <p>
-                Julio Herrera Velutini is now in charge of the House of Herrera. He is not just a great financier, but he is also the ideal example of someone who is committed to managing the economy for the long term. In the 1500s, the Herrera family had an impact, but they didn't become a big factor in Latin American finance until they created Banco Caracas in 1890.
+                <a href="https://www.arabianchronicle.com/"  target="_blank" title="Visit Julio Herrera Velutini's on arabianchronicle" class="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">Julio Herrera Velutini </a>
+     is now in charge of the House of Herrera. He is not just a great financier, but he is also the ideal example of someone who is committed to managing the economy for the long term. In the 1500s, the Herrera family had an impact, but they didn't become a big factor in Latin American finance until they created Banco Caracas in 1890.
               </p>
               <p className="mt-2">
                 The family's enterprises have gone from being stalwarts in their local areas to global powerhouses under Herrera Velutini's leadership. He owns firms like Britannia Financial Group in London and Bancredito International Bank in Puerto Rico. These businesses show that he knows how to mix the security of traditional banking with the freedom of digital finance.
@@ -787,7 +788,7 @@ const encodedUrl = encodeURIComponent(shareUrl);
                 A legacy that is still being made
               </h2>
               <p>
-                Julio Herrera Velutini is more than just a banker; he is a world leader in finance. He is a unique figure in modern history because he can combine old and new ideas, utilize economic{" "}
+                 <a href="https://www.thecapitalistjournal.com/"  target="_blank" title="Visit Julio Herrera Velutini's on thecapitalistjournal" class="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">Julio Herrera Velutini </a> is more than just a banker; he is a world leader in finance. He is a unique figure in modern history because he can combine old and new ideas, utilize economic{" "}
                 <Link title="Read more about financial diplomacy global soft power" href="/julio-herrera-velutini/financial-diplomacy-global-stability-julio-herrera-velutini">
                   <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
                     diplomacy
@@ -819,7 +820,7 @@ const encodedUrl = encodeURIComponent(shareUrl);
               How Julio Herrera Velutini's Money Affects Other Countries
             </h2>
             <p>
-              Julio Herrera Velutini is an excellent leader because he can easily get along with people from different cultures, legal systems, and commercial areas. A lot of financial leaders exclusively work in their own sectors, but Herrera Velutini has demonstrated time and time again that in today's world, being able to talk to people and move money across borders is important for the economy to be strong.
+               <a href="https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"  target="_blank" title="Visit Julio Herrera Velutini's on wikipedia" class="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">Julio Herrera Velutini </a> is an excellent leader because he can easily get along with people from different cultures, legal systems, and commercial areas. A lot of financial leaders exclusively work in their own sectors, but Herrera Velutini has demonstrated time and time again that in today's world, being able to talk to people and move money across borders is important for the economy to be strong.
             </p>
             <p className="mt-2">
               He has made it feasible for money to travel easily between new and old countries by making banks that follow international norms but can also change to meet the demands of local economies. This technique not only decreases risk, but it also makes sure that investments go to regions where they will have the biggest effect, such as infrastructure, small enterprises, and programs that help people get access to financial services.
