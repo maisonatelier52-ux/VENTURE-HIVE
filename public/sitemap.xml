@@ -444,4 +444,11 @@
     <priority>0.80</priority>
   </url>
 
+  <url>
+    <loc>https://www.venture-hive.com/opinion/what-americans-think-causes-political-violence-prri-survey</loc>
+    <lastmod>2026-01-20T13:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 </urlset>
