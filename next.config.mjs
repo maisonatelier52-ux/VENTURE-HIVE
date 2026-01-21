@@ -29,47 +29,77 @@ const nextConfig = {
 
 export default nextConfig;
 
-
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
 //   images: {
-//     // Update to use remotePatterns instead of domains
 //     remotePatterns: [
 //       {
 //         protocol: "https",
-//         hostname: "upload.wikimedia.org", // Allows images from this hostname
+//         hostname: "upload.wikimedia.org",
 //       },
 //     ],
-
-//     // Serve modern formats for better compression
 //     formats: ["image/avif", "image/webp"],
-
-//     // Reduce number of generated image variants to improve performance
-//     deviceSizes: [320, 420, 768, 1024, 1200], // Adjusting the device sizes
-//     imageSizes: [32, 48, 64, 80, 120, 160], // Optimized image sizes
-
-//     // Cache images for a longer period (performance boost)
-//     minimumCacheTTL: 60, // Minimum time-to-live for cached images in seconds
+//     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+//     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+//     minimumCacheTTL: 31536000, // 1 year cache
+//     dangerouslyAllowSVG: true,
+//     contentDispositionType: 'attachment',
+//     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 //   },
 
-//   // Define redirects for pages that need to be permanently moved
-//   async redirects() {
+//   // Compress pages with gzip/brotli
+//   compress: true,
+
+//   // Enable SWC minification
+//   swcMinify: true,
+
+//   // Optimize production builds
+//   productionBrowserSourceMaps: false,
+
+//   // Reduce bundle size
+//   modularizeImports: {
+//     'lucide-react': {
+//       transform: 'lucide-react/dist/esm/icons/{{member}}',
+//     },
+//   },
+
+//   async headers() {
 //     return [
 //       {
-//         source: "/about", // URL to redirect from
-//         destination: "/about-venture-hive", // New destination URL
-//         permanent: true, // Permanent redirect (HTTP 301)
+//         source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif)',
+//         headers: [
+//           {
+//             key: 'Cache-Control',
+//             value: 'public, max-age=31536000, immutable',
+//           },
+//         ],
+//       },
+//       {
+//         source: '/_next/static/:path*',
+//         headers: [
+//           {
+//             key: 'Cache-Control',
+//             value: 'public, max-age=31536000, immutable',
+//           },
+//         ],
 //       },
 //     ];
 //   },
 
-//   // Optional: Enable React Strict Mode for detecting potential issues
-//   reactStrictMode: true,
+//   async redirects() {
+//     return [
+//       {
+//         source: "/about",
+//         destination: "/about-venture-hive",
+//         permanent: true,
+//       },
+//     ];
+//   },
 
-//   // Optional: Minify CSS and JS for production (better performance)
-//   swcMinify: true,
+//   // Experimental features for better performance
+//   experimental: {
+//     optimizePackageImports: ['lucide-react'],
+//   },
 // };
 
 // export default nextConfig;
-
-

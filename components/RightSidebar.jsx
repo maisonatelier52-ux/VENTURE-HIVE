@@ -483,11 +483,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import pillarContents from "../public/data/special/pillarContents.json";
 
 export default function RightSidebar({ categoryData, authors }) {
-
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -506,167 +505,176 @@ export default function RightSidebar({ categoryData, authors }) {
     slug: "julio-herrera-velutini-bridging-nations-through-finance",
   };
 
-  // Helper: get author for category
-  function getAuthor(category) {
-    return authors.categories.find(
-      (c) => c.category.toLowerCase() === category.toLowerCase()
-    )?.author;
-  }
+  // Memoize expensive calculations
+  const { popularArticlesWithStatic, trendingArticle, smallTrending, allSearchItems } = useMemo(() => {
+    function getAuthor(category) {
+      return authors.categories.find(
+        (c) => c.category.toLowerCase() === category.toLowerCase()
+      )?.author;
+    }
 
-  const latestFromEachCategory = Object.keys(categoryData)
-    .map((cat) => {
+    const latestFromEachCategory = Object.keys(categoryData)
+      .map((cat) => {
+        const posts = categoryData[cat];
+        if (!posts?.length) return null;
+
+        const sorted = [...posts].sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
+
+        return { ...sorted[0], category: cat };
+      })
+      .filter(Boolean);
+
+    const recentFour = latestFromEachCategory
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 4);
+
+    const secondLatest = Object.keys(categoryData)
+      .map((cat) => {
+        const posts = categoryData[cat];
+        if (!posts?.length) return null;
+
+        const idx = posts.length >= 2 ? posts.length - 2 : posts.length - 1;
+        return { ...posts[idx], category: cat };
+      })
+      .filter(Boolean)
+      .filter((p) => !recentFour.some((r) => r.slug === p.slug))
+      .slice(0, 3)
+      .map((p) => ({ ...p, author: getAuthor(p.category) }));
+
+    const thirdLatest = Object.keys(categoryData)
+      .map((cat) => {
+        const posts = categoryData[cat];
+        if (!posts?.length) return null;
+
+        const idx =
+          posts.length >= 3 ? posts.length - 3 :
+          posts.length >= 2 ? posts.length - 2 :
+          posts.length - 1;
+
+        return { ...posts[idx], category: cat };
+      })
+      .filter(Boolean)
+      .filter(
+        (p) =>
+          !recentFour.some((r) => r.slug === p.slug) &&
+          !secondLatest.some((s) => s.slug === p.slug)
+      )
+      .slice(0, 4)
+      .map((p) => ({ ...p, author: getAuthor(p.category) }));
+
+    function isUsed(slug) {
+      return (
+        recentFour.some((p) => p.slug === slug) ||
+        secondLatest.some((p) => p.slug === slug) ||
+        thirdLatest.some((p) => p.slug === slug)
+      );
+    }
+
+    let popularArticles = [];
+
+    Object.keys(categoryData).forEach((cat) => {
+      if (popularArticles.length >= 5) return;
+
       const posts = categoryData[cat];
-      if (!posts?.length) return null;
+      if (!posts?.length) return;
 
       const sorted = [...posts].sort(
         (a, b) => new Date(b.date) - new Date(a.date)
       );
 
-      return { ...sorted[0], category: cat };
-    })
-    .filter(Boolean);
+      const found = sorted.find((post) => !isUsed(post.slug));
 
-  const recentFour = latestFromEachCategory
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 4);
+      if (found) {
+        popularArticles.push({
+          ...found,
+          category: cat,
+          author: getAuthor(cat),
+        });
+      }
+    });
 
-  const secondLatest = Object.keys(categoryData)
-    .map((cat) => {
-      const posts = categoryData[cat];
-      if (!posts?.length) return null;
+    const popularArticlesWithStatic = [
+      ...popularArticles.slice(0, popularArticles.length - 1),
+      staticPopularArticle,
+    ];
 
-      const idx = posts.length >= 2 ? posts.length - 2 : posts.length - 1;
-      return { ...posts[idx], category: cat };
-    })
-    .filter(Boolean)
-    .filter((p) => !recentFour.some((r) => r.slug === p.slug))
-    .slice(0, 3)
-    .map((p) => ({ ...p, author: getAuthor(p.category) }));
+    function isUsedTrending(slug) {
+      return (
+        isUsed(slug) ||
+        popularArticles.some((p) => p.slug === slug)
+      );
+    }
 
-  const thirdLatest = Object.keys(categoryData)
-    .map((cat) => {
-      const posts = categoryData[cat];
-      if (!posts?.length) return null;
+    let trendingArticle = null;
 
-      const idx =
-        posts.length >= 3 ? posts.length - 3 :
-        posts.length >= 2 ? posts.length - 2 :
-        posts.length - 1;
-
-      return { ...posts[idx], category: cat };
-    })
-    .filter(Boolean)
-    .filter(
-      (p) =>
-        !recentFour.some((r) => r.slug === p.slug) &&
-        !secondLatest.some((s) => s.slug === p.slug)
-    )
-    .slice(0, 4)
-    .map((p) => ({ ...p, author: getAuthor(p.category) }));
-
-  function isUsed(slug) {
-    return (
-      recentFour.some((p) => p.slug === slug) ||
-      secondLatest.some((p) => p.slug === slug) ||
-      thirdLatest.some((p) => p.slug === slug)
+    const allPosts = Object.keys(categoryData).flatMap((cat) =>
+      categoryData[cat].map((post) => ({ ...post, category: cat }))
     );
-  }
 
-  let popularArticles = [];
-
-  Object.keys(categoryData).forEach((cat) => {
-    if (popularArticles.length >= 5) return;
-
-    const posts = categoryData[cat];
-    if (!posts?.length) return;
-
-    const sorted = [...posts].sort(
+    const sortedAll = allPosts.sort(
       (a, b) => new Date(b.date) - new Date(a.date)
     );
 
-    const found = sorted.find((post) => !isUsed(post.slug));
+    trendingArticle = sortedAll.find((post) => !isUsedTrending(post.slug));
 
-    if (found) {
-      popularArticles.push({
-        ...found,
-        category: cat,
-        author: getAuthor(cat),
-      });
-    }
-  });
+    const isUsedSmallTrending = (slug) => 
+      isUsedTrending(slug) || (trendingArticle && trendingArticle.slug === slug);
 
-  const popularArticlesWithStatic = [
-    ...popularArticles.slice(0, popularArticles.length - 1),
-    staticPopularArticle,
-  ];
+    let smallTrending = [];
 
-  function isUsedTrending(slug) {
-    return (
-      isUsed(slug) ||
-      popularArticles.some((p) => p.slug === slug)
-    );
-  }
+    Object.keys(categoryData).forEach((cat) => {
+      if (smallTrending.length >= 3) return;
 
-  let trendingArticle = null;
+      const posts = categoryData[cat];
+      if (!posts?.length) return;
 
-  const allPosts = Object.keys(categoryData).flatMap((cat) =>
-    categoryData[cat].map((post) => ({ ...post, category: cat }))
-  );
+      const sorted = [...posts].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
 
-  const sortedAll = allPosts.sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
+      const found = sorted.find((post) => !isUsedSmallTrending(post.slug));
 
-  trendingArticle = sortedAll.find((post) => !isUsedTrending(post.slug));
+      if (found) {
+        smallTrending.push({
+          ...found,
+          category: cat,
+          author: getAuthor(cat),
+        });
+      }
+    });
 
-  const isUsedSmallTrending = (slug) => 
-    isUsedTrending(slug) || (trendingArticle && trendingArticle.slug === slug);
+    const allSearchItems = [
+      ...Object.keys(categoryData).flatMap((cat) =>
+        categoryData[cat].map((post) => ({
+          heading: post.heading,
+          slug: post.slug,
+          type: "category",
+          href: `/${cat}/${post.slug}`,
+        }))
+      ),
+      {
+        heading: staticSpecialArticle.title,
+        slug: "/business/julio-herrera-velutini-bridging-nations-through-finance",
+        type: "special",
+        href: staticSpecialArticle.href,
+      },
+      ...pillarContents.map((item) => ({
+        heading: item.hero.title,
+        slug: item.slug,
+        type: "pillar",
+        href: `/julio-herrera-velutini/${item.slug}`,
+      })),
+    ];
 
-  let smallTrending = [];
-
-  Object.keys(categoryData).forEach((cat) => {
-    if (smallTrending.length >= 3) return;
-
-    const posts = categoryData[cat];
-    if (!posts?.length) return;
-
-    const sorted = [...posts].sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-
-    const found = sorted.find((post) => !isUsedSmallTrending(post.slug));
-
-    if (found) {
-      smallTrending.push({
-        ...found,
-        category: cat,
-        author: getAuthor(cat),
-      });
-    }
-  });
-
-  const allSearchItems = [
-    ...Object.keys(categoryData).flatMap((cat) =>
-      categoryData[cat].map((post) => ({
-        heading: post.heading,
-        slug: post.slug,
-        type: "category",
-        href: `/${cat}/${post.slug}`,
-      }))
-    ),
-    {
-      heading: staticSpecialArticle.title,
-      slug: "/business/julio-herrera-velutini-bridging-nations-through-finance",
-      type: "special",
-      href: staticSpecialArticle.href,
-    },
-    ...pillarContents.map((item) => ({
-      heading: item.hero.title,
-      slug: item.slug,
-      type: "pillar",
-      href: `/julio-herrera-velutini/${item.slug}`,
-    })),
-  ];
+    return { 
+      popularArticlesWithStatic, 
+      trendingArticle, 
+      smallTrending, 
+      allSearchItems 
+    };
+  }, [categoryData, authors]);
 
   function handleSearchInput(e) {
     const value = e.target.value;
@@ -706,6 +714,7 @@ export default function RightSidebar({ categoryData, authors }) {
                   fill
                   className="object-cover rounded"
                   sizes="80px"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -714,7 +723,7 @@ export default function RightSidebar({ categoryData, authors }) {
       </div>
 
       {/* Search Section */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4">• SEARCH</h2>
+      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• SEARCH</h2>
       <div className="relative">
         <div className="w-full max-w-xl border border-gray-400 rounded flex overflow-hidden">
           <input
@@ -726,24 +735,28 @@ export default function RightSidebar({ categoryData, authors }) {
           />
           <button className="px-4 py-2 bg-gray-700 text-white font-medium">Search</button>
         </div>
-        {results.map((item) => (
-          <Link
-            key={`${item.type}-${item.slug}`}
-            href={item.href}
-            title={item.heading}
-            className="block px-3 py-2 hover:bg-gray-100 text-sm"
-            onClick={() => {
-              setResults([]);
-              setQuery("");
-            }}
-          >
-            {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
-          </Link>
-        ))}
+        {results.length > 0 && (
+          <div className="absolute z-10 w-full bg-white border border-gray-300 mt-1 rounded shadow-lg">
+            {results.map((item) => (
+              <Link
+                key={`${item.type}-${item.slug}`}
+                href={item.href}
+                title={item.heading}
+                className="block px-3 py-2 hover:bg-gray-100 text-sm"
+                onClick={() => {
+                  setResults([]);
+                  setQuery("");
+                }}
+              >
+                {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Trending Section */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4">• TRENDING</h2>
+      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TRENDING</h2>
       {trendingArticle && (
         <div className="space-y-3">
           <div className="relative w-full aspect-[16/9]">
@@ -753,6 +766,7 @@ export default function RightSidebar({ categoryData, authors }) {
               fill
               className="object-cover rounded"
               sizes="(max-width: 768px) 100vw, 400px"
+              loading="lazy"
             />
           </div>
           <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`} title={trendingArticle.heading}>
@@ -766,19 +780,20 @@ export default function RightSidebar({ categoryData, authors }) {
         </div>
       )}
 
-      <hr className="border border-gray-200" />
+      <hr className="border border-gray-200 my-4" />
 
       <div className="space-y-5">
         {smallTrending.slice(0, 2).map((item, i) => (
           <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
             <div className="flex items-start gap-4 mb-3">
-              <div className="relative w-50 h-20">
+              <div className="relative w-20 h-20 flex-shrink-0">
                 <Image
                   src={item.image}
                   alt={item.heading}
                   fill
                   className="object-cover rounded"
                   sizes="80px"
+                  loading="lazy"
                 />
               </div>
               <div className="flex flex-col">
@@ -792,13 +807,14 @@ export default function RightSidebar({ categoryData, authors }) {
         ))}
         <Link href={staticSpecialArticle.href} title={staticSpecialArticle.title}>
           <div className="flex items-start gap-4 mb-3">
-            <div className="relative w-50 h-20">
+            <div className="relative w-20 h-20 flex-shrink-0">
               <Image
                 src={staticSpecialArticle.image}
                 alt={staticSpecialArticle.title}
                 fill
                 className="object-cover rounded"
                 sizes="80px"
+                loading="lazy"
               />
             </div>
             <div className="flex flex-col">
@@ -814,7 +830,7 @@ export default function RightSidebar({ categoryData, authors }) {
       </div>
 
       {/* Tag Cloud */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4">• TAG CLOUD</h2>
+      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TAG CLOUD</h2>
       <div className="flex flex-wrap gap-3">
         {Object.keys(categoryData).map((cat) => (
           <Link
@@ -830,4 +846,3 @@ export default function RightSidebar({ categoryData, authors }) {
     </div>
   );
 }
-
