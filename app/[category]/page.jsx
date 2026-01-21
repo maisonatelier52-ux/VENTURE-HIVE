@@ -266,9 +266,10 @@ export default async function CategoryPage({ params }) {
                             <Image
                               src={itemAuthor?.profileImage}
                               alt={itemAuthor?.name}
-                              fill
+                               width={600}
+                                height={400}
+                                loading="lazy"
                               className="rounded-full object-cover"
-                              sizes="32px"
                             />
                           </div>
                           <span>{itemAuthor?.name}</span>
