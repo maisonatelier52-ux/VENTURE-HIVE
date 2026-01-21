@@ -306,7 +306,6 @@
 // }
 
 
-
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -402,8 +401,8 @@ export default async function CategoryPage({ params }) {
   const formatted =
     category.charAt(0).toUpperCase() + category.slice(1);
 
-     /* ---------------------------------
-     JSON-LD
+  /* ---------------------------------
+   JSON-LD
   ---------------------------------- */
   const collectionJsonLd = {
     "@context": "https://schema.org",
