@@ -479,12 +479,16 @@
 //   );
 // }
 
+
+
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import pillarContents from "../public/data/special/pillarContents.json";
+import styles from "./RightSidebar.module.css";
 
 export default function RightSidebar({ categoryData, authors }) {
   const [query, setQuery] = useState("");
@@ -505,7 +509,6 @@ export default function RightSidebar({ categoryData, authors }) {
     slug: "julio-herrera-velutini-bridging-nations-through-finance",
   };
 
-  // Memoize expensive calculations
   const { popularArticlesWithStatic, trendingArticle, smallTrending, allSearchItems } = useMemo(() => {
     function getAuthor(category) {
       return authors.categories.find(
@@ -694,155 +697,529 @@ export default function RightSidebar({ categoryData, authors }) {
 
   return (
     <div>
-      {/* Popular Articles Section */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-2">• POPULAR ARTICLES</h2>
-      <div className="space-y-6">
-        {popularArticlesWithStatic.map((item, i) => (
-          <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
-            <div className="grid grid-cols-[30px_1fr_90px] gap-3 pb-4 border-b pt-2">
-              <span className="text-xl font-medium">{i + 1}.</span>
-              <div>
-                <h3 className="text-sm font-semibold">
-                  {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
-                </h3>
-                <p className="text-xs text-gray-500 mt-1">{item.date} • {item.category.toUpperCase()}</p>
+      <section className={styles.popularSection}>
+        <h2 className={styles.sectionTitle}>• POPULAR ARTICLES</h2>
+        <div className={styles.popularList}>
+          {popularArticlesWithStatic.map((item, i) => (
+            <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
+              <div className={styles.popularItem}>
+                <span className={styles.popularNumber}>{i + 1}.</span>
+                <div>
+                  <h3 className={styles.popularTitle}>
+                    {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+                  </h3>
+                  <p className={styles.popularMeta}>{item.date} • {item.category.toUpperCase()}</p>
+                </div>
+                <div className={styles.popularImage}>
+                  <Image
+                    src={item.image}
+                    alt={item.heading}
+                    fill
+                    className={styles.popularImg}
+                    sizes="80px"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <div className="relative w-20 h-16">
-                <Image
-                  src={item.image}
-                  alt={item.heading}
-                  fill
-                  className="object-cover rounded"
-                  sizes="80px"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      {/* Search Section */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• SEARCH</h2>
-      <div className="relative">
-        <div className="w-full max-w-xl border border-gray-400 rounded flex overflow-hidden">
-          <input
-            type="text"
-            value={query}
-            onChange={handleSearchInput}
-            placeholder="Search articles..."
-            className="flex-1 p-2 outline-none"
-          />
-          <button className="px-4 py-2 bg-gray-700 text-white font-medium">Search</button>
+            </Link>
+          ))}
         </div>
-        {results.length > 0 && (
-          <div className="absolute z-10 w-full bg-white border border-gray-300 mt-1 rounded shadow-lg">
-            {results.map((item) => (
-              <Link
-                key={`${item.type}-${item.slug}`}
-                href={item.href}
-                title={item.heading}
-                className="block px-3 py-2 hover:bg-gray-100 text-sm"
-                onClick={() => {
-                  setResults([]);
-                  setQuery("");
-                }}
-              >
-                {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
+      </section>
 
-      {/* Trending Section */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TRENDING</h2>
-      {trendingArticle && (
-        <div className="space-y-3">
-          <div className="relative w-full aspect-[16/9]">
-            <Image
-              src={trendingArticle.image}
-              alt={trendingArticle.heading}
-              fill
-              className="object-cover rounded"
-              sizes="(max-width: 768px) 100vw, 400px"
-              loading="lazy"
+      <section className={styles.searchSection}>
+        <h2 className={styles.sectionTitle}>• SEARCH</h2>
+        <div className={styles.searchWrapper}>
+          <div className={styles.searchInputWrapper}>
+            <input
+              type="text"
+              value={query}
+              onChange={handleSearchInput}
+              placeholder="Search articles..."
+              className={styles.searchInput}
             />
+            <button className={styles.searchButton}>Search</button>
           </div>
-          <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`} title={trendingArticle.heading}>
-            <h3 className="text-md font-semibold">
-              {trendingArticle.heading.length > 80 ? trendingArticle.heading.slice(0, 80) + "..." : trendingArticle.heading}
-            </h3>
-          </Link>
-          <p className="text-xs text-gray-500">
-            {trendingArticle.date} • {trendingArticle.category.toUpperCase()}
-          </p>
-        </div>
-      )}
-
-      <hr className="border border-gray-200 my-4" />
-
-      <div className="space-y-5">
-        {smallTrending.slice(0, 2).map((item, i) => (
-          <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
-            <div className="flex items-start gap-4 mb-3">
-              <div className="relative w-20 h-20 flex-shrink-0">
-                <Image
-                  src={item.image}
-                  alt={item.heading}
-                  fill
-                  className="object-cover rounded"
-                  sizes="80px"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="text-sm font-semibold">
+          {results.length > 0 && (
+            <div className={styles.searchResults}>
+              {results.map((item) => (
+                <Link
+                  key={`${item.type}-${item.slug}`}
+                  href={item.href}
+                  title={item.heading}
+                  className={styles.searchResultItem}
+                  onClick={() => {
+                    setResults([]);
+                    setQuery("");
+                  }}
+                >
                   {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
-                </h3>
-                <p className="text-gray-500 text-xs mt-1">{item.date}</p>
-              </div>
+                </Link>
+              ))}
             </div>
-          </Link>
-        ))}
-        <Link href={staticSpecialArticle.href} title={staticSpecialArticle.title}>
-          <div className="flex items-start gap-4 mb-3">
-            <div className="relative w-20 h-20 flex-shrink-0">
+          )}
+        </div>
+      </section>
+
+      <section className={styles.trendingSection}>
+        <h2 className={styles.sectionTitle}>• TRENDING</h2>
+        {trendingArticle && (
+          <div className={styles.trendingMain}>
+            <div className={styles.trendingImageWrapper}>
               <Image
-                src={staticSpecialArticle.image}
-                alt={staticSpecialArticle.title}
+                src={trendingArticle.image}
+                alt={trendingArticle.heading}
                 fill
-                className="object-cover rounded"
-                sizes="80px"
+                className={styles.trendingImage}
+                sizes="(max-width: 768px) 100vw, 400px"
                 loading="lazy"
               />
             </div>
-            <div className="flex flex-col">
-              <h3 className="text-sm font-semibold">
-                {staticSpecialArticle.title.length > 60
-                  ? staticSpecialArticle.title.slice(0, 60) + "..."
-                  : staticSpecialArticle.title}
+            <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`} title={trendingArticle.heading}>
+              <h3 className={styles.trendingTitle}>
+                {trendingArticle.heading.length > 80 ? trendingArticle.heading.slice(0, 80) + "..." : trendingArticle.heading}
               </h3>
-              <p className="text-gray-500 text-xs mt-1">{staticSpecialArticle.date}</p>
-            </div>
+            </Link>
+            <p className={styles.trendingMeta}>
+              {trendingArticle.date} • {trendingArticle.category.toUpperCase()}
+            </p>
           </div>
-        </Link>
-      </div>
+        )}
 
-      {/* Tag Cloud */}
-      <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TAG CLOUD</h2>
-      <div className="flex flex-wrap gap-3">
-        {Object.keys(categoryData).map((cat) => (
-          <Link
-            key={cat}
-            href={`/${cat}`}
-            title={`${cat} news and analysis on Venture Hive`}
-            className="p-2 bg-blue-200 rounded cursor-pointer hover:bg-blue-300 transition"
-          >
-            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+        <hr className={styles.divider} />
+
+        <div className={styles.smallTrendingList}>
+          {smallTrending.slice(0, 2).map((item, i) => (
+            <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
+              <div className={styles.smallTrendingItem}>
+                <div className={styles.smallTrendingImage}>
+                  <Image
+                    src={item.image}
+                    alt={item.heading}
+                    fill
+                    className={styles.smallTrendingImg}
+                    sizes="80px"
+                    loading="lazy"
+                  />
+                </div>
+                <div className={styles.smallTrendingContent}>
+                  <h3>
+                    {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+                  </h3>
+                  <p>{item.date}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+          <Link href={staticSpecialArticle.href} title={staticSpecialArticle.title}>
+            <div className={styles.smallTrendingItem}>
+              <div className={styles.smallTrendingImage}>
+                <Image
+                  src={staticSpecialArticle.image}
+                  alt={staticSpecialArticle.title}
+                  fill
+                  className={styles.smallTrendingImg}
+                  sizes="80px"
+                  loading="lazy"
+                />
+              </div>
+              <div className={styles.smallTrendingContent}>
+                <h3>
+                  {staticSpecialArticle.title.length > 60
+                    ? staticSpecialArticle.title.slice(0, 60) + "..."
+                    : staticSpecialArticle.title}
+                </h3>
+                <p>{staticSpecialArticle.date}</p>
+              </div>
+            </div>
           </Link>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      <section className={styles.tagCloud}>
+        <h2 className={styles.sectionTitle}>• TAG CLOUD</h2>
+        <div className={styles.tagList}>
+          {Object.keys(categoryData).map((cat) => (
+            <Link
+              key={cat}
+              href={`/${cat}`}
+              title={`${cat} news and analysis on Venture Hive`}
+              className={styles.tagItem}
+            >
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
+
+
+
+// "use client";
+
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useState, useMemo } from "react";
+// import pillarContents from "../public/data/special/pillarContents.json";
+
+// export default function RightSidebar({ categoryData, authors }) {
+//   const [query, setQuery] = useState("");
+//   const [results, setResults] = useState([]);
+
+//   const staticSpecialArticle = {
+//     title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+//     image: "/images/julio-herrera-velutini.webp",
+//     date: "14 Dec, 2025",
+//     href: `/business/julio-herrera-velutini-bridging-nations-through-finance`
+//   };
+
+//   const staticPopularArticle = {
+//     heading: "Julio Herrera Velutini: Using Money to Bring People Together in a World That Is Broken",
+//     image: "/images/julio-herrera-velutini.webp",
+//     date: "14 Dec, 2025",
+//     category: "business",
+//     slug: "julio-herrera-velutini-bridging-nations-through-finance",
+//   };
+
+//   // Memoize expensive calculations
+//   const { popularArticlesWithStatic, trendingArticle, smallTrending, allSearchItems } = useMemo(() => {
+//     function getAuthor(category) {
+//       return authors.categories.find(
+//         (c) => c.category.toLowerCase() === category.toLowerCase()
+//       )?.author;
+//     }
+
+//     const latestFromEachCategory = Object.keys(categoryData)
+//       .map((cat) => {
+//         const posts = categoryData[cat];
+//         if (!posts?.length) return null;
+
+//         const sorted = [...posts].sort(
+//           (a, b) => new Date(b.date) - new Date(a.date)
+//         );
+
+//         return { ...sorted[0], category: cat };
+//       })
+//       .filter(Boolean);
+
+//     const recentFour = latestFromEachCategory
+//       .sort((a, b) => new Date(b.date) - new Date(a.date))
+//       .slice(0, 4);
+
+//     const secondLatest = Object.keys(categoryData)
+//       .map((cat) => {
+//         const posts = categoryData[cat];
+//         if (!posts?.length) return null;
+
+//         const idx = posts.length >= 2 ? posts.length - 2 : posts.length - 1;
+//         return { ...posts[idx], category: cat };
+//       })
+//       .filter(Boolean)
+//       .filter((p) => !recentFour.some((r) => r.slug === p.slug))
+//       .slice(0, 3)
+//       .map((p) => ({ ...p, author: getAuthor(p.category) }));
+
+//     const thirdLatest = Object.keys(categoryData)
+//       .map((cat) => {
+//         const posts = categoryData[cat];
+//         if (!posts?.length) return null;
+
+//         const idx =
+//           posts.length >= 3 ? posts.length - 3 :
+//           posts.length >= 2 ? posts.length - 2 :
+//           posts.length - 1;
+
+//         return { ...posts[idx], category: cat };
+//       })
+//       .filter(Boolean)
+//       .filter(
+//         (p) =>
+//           !recentFour.some((r) => r.slug === p.slug) &&
+//           !secondLatest.some((s) => s.slug === p.slug)
+//       )
+//       .slice(0, 4)
+//       .map((p) => ({ ...p, author: getAuthor(p.category) }));
+
+//     function isUsed(slug) {
+//       return (
+//         recentFour.some((p) => p.slug === slug) ||
+//         secondLatest.some((p) => p.slug === slug) ||
+//         thirdLatest.some((p) => p.slug === slug)
+//       );
+//     }
+
+//     let popularArticles = [];
+
+//     Object.keys(categoryData).forEach((cat) => {
+//       if (popularArticles.length >= 5) return;
+
+//       const posts = categoryData[cat];
+//       if (!posts?.length) return;
+
+//       const sorted = [...posts].sort(
+//         (a, b) => new Date(b.date) - new Date(a.date)
+//       );
+
+//       const found = sorted.find((post) => !isUsed(post.slug));
+
+//       if (found) {
+//         popularArticles.push({
+//           ...found,
+//           category: cat,
+//           author: getAuthor(cat),
+//         });
+//       }
+//     });
+
+//     const popularArticlesWithStatic = [
+//       ...popularArticles.slice(0, popularArticles.length - 1),
+//       staticPopularArticle,
+//     ];
+
+//     function isUsedTrending(slug) {
+//       return (
+//         isUsed(slug) ||
+//         popularArticles.some((p) => p.slug === slug)
+//       );
+//     }
+
+//     let trendingArticle = null;
+
+//     const allPosts = Object.keys(categoryData).flatMap((cat) =>
+//       categoryData[cat].map((post) => ({ ...post, category: cat }))
+//     );
+
+//     const sortedAll = allPosts.sort(
+//       (a, b) => new Date(b.date) - new Date(a.date)
+//     );
+
+//     trendingArticle = sortedAll.find((post) => !isUsedTrending(post.slug));
+
+//     const isUsedSmallTrending = (slug) => 
+//       isUsedTrending(slug) || (trendingArticle && trendingArticle.slug === slug);
+
+//     let smallTrending = [];
+
+//     Object.keys(categoryData).forEach((cat) => {
+//       if (smallTrending.length >= 3) return;
+
+//       const posts = categoryData[cat];
+//       if (!posts?.length) return;
+
+//       const sorted = [...posts].sort(
+//         (a, b) => new Date(b.date) - new Date(a.date)
+//       );
+
+//       const found = sorted.find((post) => !isUsedSmallTrending(post.slug));
+
+//       if (found) {
+//         smallTrending.push({
+//           ...found,
+//           category: cat,
+//           author: getAuthor(cat),
+//         });
+//       }
+//     });
+
+//     const allSearchItems = [
+//       ...Object.keys(categoryData).flatMap((cat) =>
+//         categoryData[cat].map((post) => ({
+//           heading: post.heading,
+//           slug: post.slug,
+//           type: "category",
+//           href: `/${cat}/${post.slug}`,
+//         }))
+//       ),
+//       {
+//         heading: staticSpecialArticle.title,
+//         slug: "/business/julio-herrera-velutini-bridging-nations-through-finance",
+//         type: "special",
+//         href: staticSpecialArticle.href,
+//       },
+//       ...pillarContents.map((item) => ({
+//         heading: item.hero.title,
+//         slug: item.slug,
+//         type: "pillar",
+//         href: `/julio-herrera-velutini/${item.slug}`,
+//       })),
+//     ];
+
+//     return { 
+//       popularArticlesWithStatic, 
+//       trendingArticle, 
+//       smallTrending, 
+//       allSearchItems 
+//     };
+//   }, [categoryData, authors]);
+
+//   function handleSearchInput(e) {
+//     const value = e.target.value;
+//     setQuery(value);
+
+//     if (value.trim().length < 2) {
+//       setResults([]);
+//       return;
+//     }
+
+//     const filtered = allSearchItems.filter((item) =>
+//       item.heading.toLowerCase().includes(value.toLowerCase())
+//     );
+
+//     setResults(filtered.slice(0, 6));
+//   }
+
+//   return (
+//     <div>
+//       {/* Popular Articles Section */}
+//       <h2 className="text-lg font-medium border-b pb-2 mb-2">• POPULAR ARTICLES</h2>
+//       <div className="space-y-6">
+//         {popularArticlesWithStatic.map((item, i) => (
+//           <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
+//             <div className="grid grid-cols-[30px_1fr_90px] gap-3 pb-4 border-b pt-2">
+//               <span className="text-xl font-medium">{i + 1}.</span>
+//               <div>
+//                 <h3 className="text-sm font-semibold">
+//                   {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+//                 </h3>
+//                 <p className="text-xs text-gray-500 mt-1">{item.date} • {item.category.toUpperCase()}</p>
+//               </div>
+//               <div className="relative w-20 h-16">
+//                 <Image
+//                   src={item.image}
+//                   alt={item.heading}
+//                   fill
+//                   className="object-cover rounded"
+//                   sizes="80px"
+//                   loading="lazy"
+//                 />
+//               </div>
+//             </div>
+//           </Link>
+//         ))}
+//       </div>
+
+//       {/* Search Section */}
+//       <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• SEARCH</h2>
+//       <div className="relative">
+//         <div className="w-full max-w-xl border border-gray-400 rounded flex overflow-hidden">
+//           <input
+//             type="text"
+//             value={query}
+//             onChange={handleSearchInput}
+//             placeholder="Search articles..."
+//             className="flex-1 p-2 outline-none"
+//           />
+//           <button className="px-4 py-2 bg-gray-700 text-white font-medium">Search</button>
+//         </div>
+//         {results.length > 0 && (
+//           <div className="absolute z-10 w-full bg-white border border-gray-300 mt-1 rounded shadow-lg">
+//             {results.map((item) => (
+//               <Link
+//                 key={`${item.type}-${item.slug}`}
+//                 href={item.href}
+//                 title={item.heading}
+//                 className="block px-3 py-2 hover:bg-gray-100 text-sm"
+//                 onClick={() => {
+//                   setResults([]);
+//                   setQuery("");
+//                 }}
+//               >
+//                 {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+//               </Link>
+//             ))}
+//           </div>
+//         )}
+//       </div>
+
+//       {/* Trending Section */}
+//       <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TRENDING</h2>
+//       {trendingArticle && (
+//         <div className="space-y-3">
+//           <div className="relative w-full aspect-[16/9]">
+//             <Image
+//               src={trendingArticle.image}
+//               alt={trendingArticle.heading}
+//               fill
+//               className="object-cover rounded"
+//               sizes="(max-width: 768px) 100vw, 400px"
+//               loading="lazy"
+//             />
+//           </div>
+//           <Link href={`/${trendingArticle.category}/${trendingArticle.slug}`} title={trendingArticle.heading}>
+//             <h3 className="text-md font-semibold">
+//               {trendingArticle.heading.length > 80 ? trendingArticle.heading.slice(0, 80) + "..." : trendingArticle.heading}
+//             </h3>
+//           </Link>
+//           <p className="text-xs text-gray-500">
+//             {trendingArticle.date} • {trendingArticle.category.toUpperCase()}
+//           </p>
+//         </div>
+//       )}
+
+//       <hr className="border border-gray-200 my-4" />
+
+//       <div className="space-y-5">
+//         {smallTrending.slice(0, 2).map((item, i) => (
+//           <Link key={i} href={`/${item.category}/${item.slug}`} title={item.heading}>
+//             <div className="flex items-start gap-4 mb-3">
+//               <div className="relative w-20 h-20 flex-shrink-0">
+//                 <Image
+//                   src={item.image}
+//                   alt={item.heading}
+//                   fill
+//                   className="object-cover rounded"
+//                   sizes="80px"
+//                   loading="lazy"
+//                 />
+//               </div>
+//               <div className="flex flex-col">
+//                 <h3 className="text-sm font-semibold">
+//                   {item.heading.length > 60 ? item.heading.slice(0, 60) + "..." : item.heading}
+//                 </h3>
+//                 <p className="text-gray-500 text-xs mt-1">{item.date}</p>
+//               </div>
+//             </div>
+//           </Link>
+//         ))}
+//         <Link href={staticSpecialArticle.href} title={staticSpecialArticle.title}>
+//           <div className="flex items-start gap-4 mb-3">
+//             <div className="relative w-20 h-20 flex-shrink-0">
+//               <Image
+//                 src={staticSpecialArticle.image}
+//                 alt={staticSpecialArticle.title}
+//                 fill
+//                 className="object-cover rounded"
+//                 sizes="80px"
+//                 loading="lazy"
+//               />
+//             </div>
+//             <div className="flex flex-col">
+//               <h3 className="text-sm font-semibold">
+//                 {staticSpecialArticle.title.length > 60
+//                   ? staticSpecialArticle.title.slice(0, 60) + "..."
+//                   : staticSpecialArticle.title}
+//               </h3>
+//               <p className="text-gray-500 text-xs mt-1">{staticSpecialArticle.date}</p>
+//             </div>
+//           </div>
+//         </Link>
+//       </div>
+
+//       {/* Tag Cloud */}
+//       <h2 className="text-lg font-medium border-b pb-2 mb-4 mt-6">• TAG CLOUD</h2>
+//       <div className="flex flex-wrap gap-3">
+//         {Object.keys(categoryData).map((cat) => (
+//           <Link
+//             key={cat}
+//             href={`/${cat}`}
+//             title={`${cat} news and analysis on Venture Hive`}
+//             className="p-2 bg-blue-200 rounded cursor-pointer hover:bg-blue-300 transition"
+//           >
+//             {cat.charAt(0).toUpperCase() + cat.slice(1)}
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
