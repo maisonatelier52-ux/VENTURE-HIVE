@@ -402,7 +402,7 @@ export default async function CategoryPage({ params }) {
   const formatted =
     category.charAt(0).toUpperCase() + category.slice(1);
 
-  /* ---------------------------------
+     /* ---------------------------------
      JSON-LD
   ---------------------------------- */
   const collectionJsonLd = {
@@ -447,7 +447,6 @@ export default async function CategoryPage({ params }) {
       />
 
       <div className="flex flex-col min-h-screen bg-zinc-50 px-5 md:px-20">
-
         {/* BREADCRUMB */}
         <div className="text-sm text-gray-500 mt-4 mb-2">
           <Link href="/" className="hover:text-black">Home</Link>
@@ -458,7 +457,6 @@ export default async function CategoryPage({ params }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mb-10">
-
           {/* LEFT COLUMN */}
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold mb-3 capitalize">
@@ -467,9 +465,7 @@ export default async function CategoryPage({ params }) {
 
             <p className="text-gray-600 text-sm mb-6 max-w-3xl">
              Explore the latest {category} news, in-depth political analysis, and
-            investigative reporting from <strong>Venture Hive</strong>. Our journalism
-            delivers clear insights, verified facts, and expert perspectives on today’s
-            most important stories.
+            investigative reporting from <strong>Venture Hive</strong>.
             </p>
 
             {/* ARTICLES GRID */}
@@ -485,7 +481,6 @@ export default async function CategoryPage({ params }) {
                     title={item.heading}
                   >
                     <article className="h-full flex flex-col bg-white p-3 rounded shadow-sm">
-
                       <div className="relative w-full h-40">
                         <Image
                           src={item.image}
@@ -494,16 +489,15 @@ export default async function CategoryPage({ params }) {
                           className="object-cover rounded"
                           sizes="(max-width: 768px) 100vw, 50vw"
                           fetchPriority="high"
-                          loading="eager" // Ensure the LCP image is loaded eagerly for fast rendering
+                          loading="eager"
+                          quality={75} // Adjusted image quality
                         />
                         <span className="absolute bottom-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
                           {category}
                         </span>
                       </div>
 
-                      <h2 className="text-lg font-medium mt-2">
-                        {item.heading}
-                      </h2>
+                      <h2 className="text-lg font-medium mt-2">{item.heading}</h2>
 
                       <div className="flex justify-between items-center text-sm text-gray-500 mt-1">
                         <div className="flex items-center gap-2">
@@ -527,7 +521,6 @@ export default async function CategoryPage({ params }) {
                       <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
                         {item.content.slice(0, 180)}
                       </p>
-
                     </article>
                   </Link>
                 );
@@ -542,7 +535,6 @@ export default async function CategoryPage({ params }) {
               authors={authorsPageData}
             />
           </aside>
-
         </div>
       </div>
     </>
