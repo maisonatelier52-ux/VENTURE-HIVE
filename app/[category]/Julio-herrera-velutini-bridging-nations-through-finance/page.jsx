@@ -177,6 +177,7 @@ import { FaRedditAlien } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiMedium } from "react-icons/si";
 import { FaQuora } from "react-icons/fa";
+import Head from "next/head";
 
 const SITE_URL =
   "https://www.venture-hive.com/business/julio-herrera-velutini-bridging-nations-through-finance";
@@ -334,6 +335,10 @@ export default function Page() {
 
   return (
     <>
+
+     <Head>
+        <link rel="canonical" href={SITE_URL} />
+      </Head>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
