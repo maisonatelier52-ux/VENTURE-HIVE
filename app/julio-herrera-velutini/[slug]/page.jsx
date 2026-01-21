@@ -201,6 +201,7 @@ export default async function Page({ params }) {
         <Link
           href="/business/julio-herrera-velutini-bridging-nations-through-finance"
           className="hover:text-black"
+          title="julio-herrera-velutini"
         >
           Julio Herrera Velutini
         </Link>
