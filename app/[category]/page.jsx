@@ -250,6 +250,7 @@ export default async function CategoryPage({ params }) {
                           fill
                           className="object-cover rounded"
                           sizes="(max-width: 768px) 100vw, 50vw"
+                          fetchpriority="high"
                         />
                         <span className="absolute bottom-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
                           {category}
@@ -268,7 +269,7 @@ export default async function CategoryPage({ params }) {
                               alt={itemAuthor?.name}
                                width={600}
                                 height={400}
-                                loading="lazy"
+                              sizes="(max-width: 768px) 100vw, 50vw"
                               className="rounded-full object-cover"
                             />
                           </div>
@@ -303,3 +304,4 @@ export default async function CategoryPage({ params }) {
     </>
   );
 }
+
