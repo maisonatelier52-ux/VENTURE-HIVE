@@ -2,6 +2,7 @@
   "politics": [
     {
       "id": 1,
+      "type": "news",
       "metaTitle": "House Republicans Subpoena Jack Smith in Trump Case",
       "metaDescription": "House Republicans subpoena Jack Smith over Trump prosecutions, raising questions about congressional oversight and political motives.",
       "slug": "house-republicans-subpoena-jack-smith-trump-prosecutions",
@@ -35,6 +36,7 @@
     },
     {
       "id": 2,
+      "type": "news",
       "metaTitle": "Grand Jury Rejects Fraud Case Against Letitia James",
       "metaDescription": "A federal grand jury rejected renewed mortgage fraud charges against New York Attorney General Letitia James, dealing a setback to prosecutors.",
       "slug": "grand-jury-rejects-mortgage-fraud-case-against-letitia-james",
@@ -67,6 +69,7 @@
     },
     {
       "id": 3,
+      "type": "news",
        "metaTitle": "Supreme Court Allows Texas GOP-Favored Congressional Map",
        "metaDescription": "The Supreme Court cleared Texas to use a Republican-favored congressional map, overturning a lower-court ruling and reshaping the 2026 House battlefield.",
       "slug": "supreme-court-texas-gop-congressional-map",
@@ -99,6 +102,7 @@
     },
     {
       "id": 4,
+      "type": "news",
       "metaTitle": "Trump Backlash Over Somali Immigrants Remarks",
       "metaDescription": "Donald Trump faces backlash after campaign remarks calling Somali immigrants “garbage,” escalating criticism of his anti-immigrant rhetoric.",
       "heading": "Trump Faces Backlash Over Campaign Remarks Calling Somali Immigrants “Garbage”",
@@ -131,6 +135,7 @@
     },
     {
   "id": 5,
+  "type": "news",
   "metaTitle": "Education Grant Transfer Raises University Concerns",
   "metaDescription": "The Education Department shifted major grant programs to other agencies, raising concerns among universities over funding stability and innovation efforts.",
   "slug": "education-grant-transfers-university-uncertainty",
@@ -167,6 +172,7 @@
 
    {
   "id": 6,
+  "type": "news",
   "metaTitle": "Trump Administration Pressures Universities on Federal Funding",
   "metaDescription": "The Trump administration pressured nine universities to accept a political compact tied to admissions, speech policies, and access to federal funding.",
   "slug": "trump-administration-pressures-universities-federal-funding",
@@ -213,6 +219,7 @@
 
  {
   "id": 7,
+  "type": "news",
   "metaTitle": "U.S. Visa Delays Threaten International Students and Research",
   "metaDescription": "Universities warn that stricter U.S. visa rules and delays are limiting international students and slowing research and innovation efforts.",
   "slug": "us-visa-delays-threaten-international-students-research",
@@ -263,6 +270,7 @@
 },
 {
   "id": 8,
+  "type": "news",
   "metaTitle": "SBIR and STTR Funding Expiration Alarms Startups",
   "metaDescription": "The expiration of SBIR and STTR funding has left startups and research labs facing delays, uncertainty, and stalled innovation projects.",
   "slug": "sbir-sttr-funding-expiration-startups-research",
@@ -313,6 +321,7 @@
 },
 {
   "id": 9,
+  "type": "news",
   "metaTitle": "Trump Warns Iran of Military Action Over Nuclear Program",
   "metaDescription": "Trump warns Iran of U.S. military action if it restarts its nuclear program. Discussions with Netanyahu highlight concerns over Iran’s nuclear threat.",
   "slug": "trump-iran-tells-military-action-nuclear-program",
@@ -364,6 +373,7 @@
 },
 {
   "id": 10,
+  "type": "news",
   "metaTitle": "Secret CIA Drone Attack on Venezuela Dock",
   "metaDescription": "Discover how a secret CIA drone attack on a Venezuelan coastal dock is escalating U.S. pressure on Maduro’s regime.",
   "slug": "secret-cia-drone-attack-venezuela-coast",
@@ -399,6 +409,7 @@
 },
 {
   "id": 11,
+  "type": "news",
   "metaTitle": "Rubio, Hegseth Brief Congress on Venezuela Intervention",
   "metaDescription": "Marco Rubio and Pete Hegseth brief Congress on the U.S. military intervention in Venezuela, raising concerns over costs, legality, and next steps after Maduro’s removal.",
   "slug": "rubio-hegseth-venezuela-intervention-congress-briefing",
@@ -434,6 +445,7 @@
 },
 {
   "id": 12,
+  "type": "news",
   "metaTitle": "House Votes to Override Trump's Vetoes Amid GOP Tensions",
   "metaDescription": "The U.S. House votes Thursday to override Trump's vetoes of bipartisan bills, testing GOP unity over Colorado water pipeline and Miccosukee tribal land.",
   "slug": "house-votes-override-trump-vetoes-gop-tensions",
@@ -470,6 +482,7 @@
 },
 {
   "id": 13,
+  "type": "news",
   "metaTitle": "Lindsey Halligan Resigns as U.S. Attorney",
   "metaDescription": "Lindsey Halligan resigns as U.S. Attorney after judges ruled her appointment illegal. Her controversial prosecutions of Comey and James were dismissed.",
   "slug": "lindsey-halligan-resigns-us-attorney-controversy",
@@ -515,6 +528,7 @@
   "business": [
     {
   "id": 1,
+  "type": "news",
   "metaTitle": "Flex Raises $60M for Mid-Sized Business Finance Tools",
   "metaDescription": "Flex secures $60M in Series B funding to expand finance tools for mid-sized U.S. businesses.",
   "slug": "flex-raises-60-million-finance-tools",
@@ -550,6 +564,7 @@
 },
 {
   "id": 2,
+  "type": "news",
   "metaTitle": "U.S. Commits $150M to xLight Chip Manufacturing",
   "metaDescription": "The U.S. government commits $150M in funding to xLight to strengthen domestic chip manufacturing and semiconductor technology.",
   "slug": "us-government-commits-150m-chip-manufacturing-xlight",
@@ -585,6 +600,7 @@
 },
 {
   "id": 3,
+  "type": "news",
    "metaTitle": "Nexus Venture Raises $700M for Early-Stage Startups",
   "metaDescription": "Nexus Venture Partners raises a $700M fund to back early-stage AI, fintech, and enterprise startups in the U.S. and India.",
   "slug": "nexus-venture-raises-700m-early-stage-startups",
@@ -620,6 +636,7 @@
 },
 {
   "id": 4,
+  "type": "news",
    "metaTitle": "U.S. Startup Funding Surges 75.6% in Early 2025",
   "metaDescription": "U.S. startup funding surged 75.6% in early 2025, reaching $162.8B and marking the strongest market rebound since 2021.",
   "slug": "us-startup-funding-surges-early-2025",
@@ -668,6 +685,7 @@
 },
 {
   "id": 5,
+  "type": "news",
  "metaTitle": "Honeyjar AI Raises $2M for PR Automation",
   "metaDescription": "Honeyjar AI secures $2M in pre-seed funding to build a PR and communications automation platform.",
   "slug": "honeyjar-ai-secures-2m-pr-automation-platform",
@@ -702,6 +720,7 @@
 },
 {
   "id": 6,
+  "type": "news",
  "metaTitle": "Uber Launches Self-Driving Taxis in Dallas",
   "metaDescription": "Uber launches self-driving taxis in Dallas, expanding its autonomous ride-hailing service to a third U.S. city.",
   "slug": "uber-launches-self-driving-taxis-dallas",
@@ -737,6 +756,7 @@
 },
 {
   "id": 7,
+  "type": "news",
   "metaTitle": "Venture Capital Shifts to Smart Money in 2025",
   "metaDescription": "Venture capital shifts toward smart money in 2025 as investors focus on sustainability, disciplined growth, and long-term value.",
   "slug": "venture-capital-shifts-smart-money-2025",
@@ -773,6 +793,7 @@
 
 {
   "id": 8,
+  "type": "news",
   "metaTitle": "Kalshi Raises $1B in Series E at $11B Valuation",
   "metaDescription": "Kalshi raises $1B in Series E funding, reaching an $11B valuation and marking one of the largest U.S. startup rounds of 2025.",
   "slug": "kalshi-raises-1b-series-e-11b-valuation",
@@ -823,6 +844,7 @@
 },
 {
   "id": 9,
+  "type": "news",
   "metaTitle": "Grok AI Backlash: Musk’s X Faces Deepfake Controversy",
   "metaDescription": "Musk’s X and Grok AI face global backlash over the creation of non-consensual deepfake images. Regulators probe the platform’s failure to prevent misuse.",
   "slug": "elon-musk-grok-ai-backlash-deepfake-images",
@@ -858,6 +880,7 @@
 },
 {
   "id": 10,
+  "type": "news",
   "metaTitle": "Trump’s Attack on the Fed & Credit Card Caps: Wall Street's Warning",
   "metaDescription": "Top bank CEOs warn Trump that his attack on the Fed and proposed credit card rate caps could hurt Wall Street, raise borrowing costs, and impact the economy.",
   "slug": "wall-street-trump-fed-attacks-credit-card-caps",
@@ -898,6 +921,7 @@
 },
 {
   "id": 11,
+  "type": "news",
   "metaTitle": "Saks Global Files for Chapter 11 Bankruptcy",
   "metaDescription": "Saks Global files for Chapter 11 bankruptcy after heavy debt and falling luxury sales, raising fresh concerns about the future of U.S. department stores.",
   "slug": "saks-global-bankruptcy-luxury-retail-debt-crisis",
@@ -935,6 +959,7 @@
 },
 {
   "id": 12,
+  "type": "news",
   "metaTitle": "U.S. Stocks Surge After Trump Backs Off Greenland Tariffs",
   "metaDescription": "U.S. stocks surged after President Trump backed off Greenland tariff threats and signaled a deal, easing trade-war fears and lifting market sentiment.",
   "slug": "us-stocks-rebound-trump-greenland-tariffs",
@@ -972,6 +997,7 @@
 },
 {
   "id": 13,
+  "type": "news",
   "metaTitle": "Massive Winter Storm Grounds 11,400+ Flights Across America",
   "metaDescription": "11,400+ flights were canceled as a historic winter storm paralyzed US airports. Discover which cities were hit hardest and what travelers should do next.",
   "slug": "winter-storm-grounds-us-skies",
@@ -1009,6 +1035,148 @@
 },
 {
   "id": 14,
+  "type": "client-news",
+  "slug": "julio-herrera-velutini-bridging-nations-through-finance",
+  "category": "business",
+  "authorCategory": "Special",
+  "metaTitle": "Julio Herrera Velutini | Global Finance Investigation",
+  "metaDescription": "Investigative reporting on Julio Herrera Velutini's influence in global finance, diplomacy, and leadership.",
+  "image": "/images/julio-herrera-velutini.webp",
+  "alt": "Venture Hive Investigative Journalism on Julio Herrera Velutini's impact in global finance and business leadership",
+  "heading": "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+  "date": "14 Dec, 2025",
+  "datePublished": "2025-12-14",
+  "dateModified": "2025-12-14",
+  "subtitle": "How One Man's Vision and Influence Redefine Global Unity and Economic Resilience",
+  "publishedDate": "Published • Global Finance • Leadership • December 2025",
+  "content":"Julio Herrera Velutini is from the famous Herrera banking family. He leads with a strong dedication to new ideas and a profound reverence for the past. Herrera Velutini's legacy, started in Latin America, but it has developed into a worldwide movement that quietly connects countries together, makes weak economies stronger, and promotes financial inclusion on a scale that has never been seen before.",
+  "detailcontents": {
+    "intro": "Julio Herrera Velutini is from the famous Herrera banking family. He leads with a strong dedication to new ideas and a profound reverence for the past. Herrera Velutini's legacy, started in Latin America, but it has developed into a worldwide movement that quietly connects countries together, makes weak economies stronger, and promotes financial inclusion on a scale that has never been seen before.",
+    "sections": [
+      {
+        "title": "A Legacy That Has Grown Over Hundreds of Years",
+        "paragraphs": [
+          "Julio Herrera Velutini is now in charge of the House of Herrera. He is not just a great financier, but he is also the ideal example of someone who is committed to managing the economy for the long term. In the 1500s, the Herrera family had an impact, but they didn't become a big factor in Latin American finance until they created Banco Caracas in 1890.",
+          "The family's enterprises have gone from being stalwarts in their local areas to global powerhouses under Herrera Velutini's leadership. He owns firms like Britannia Financial Group in London and Bancredito International Bank in Puerto Rico. These businesses show that he knows how to mix the security of traditional banking with the freedom of digital finance."
+        ],
+        "quote": "Tradition is what we stand on, but being creative is what keeps us important in a world that is always changing."
+      },
+      {
+        "title": "The Silent Titan of Global Banking",
+        "paragraphs": [
+          "Because he can get things done without making a lot of noise, Herrera Velutini is renowned as the 'Silent Titan' of global banking. He has a lot of power outside of the office. When politics and the economy are unsteady, he often helps things calm down."
+        ],
+        "listTitle": "Getting People to Work Together Across Borders",
+        "list": [
+          "Latin America: Herrera Velutini's investments in infrastructure and small and medium-sized businesses (SMEs) have brought economies back to life all over the region, which has contributed to growth and stability.",
+          "Europe and the Middle East: His engagement with leaders in the Gulf has brought in billions of dollars in foreign direct investment, which has enabled economies that had been apart for a long time come together.",
+          "Global Economic Initiatives: Through Britannia Financial Group, he has made it easier for investments to cross borders, which has helped businesses and economies work together."
+        ]
+      },
+      {
+        "title": "Having a Way to Get Through Hard Times",
+        "paragraphs": [
+          "People see Herrera Velutini as a steadying force when things go tough. He has always been able to make the best of bad situations, whether they were caused by political instability or a lethargic economy."
+        ]
+      },
+      {
+        "title": "The Economy of Latin America Is Becoming Better",
+        "paragraphs": [
+          "In the early 2000s, Herrera Velutini ran programs that helped the region's GDP expand by 6%. He modified hazardous political beliefs by using his own money to help businesses thrive and made sure that everyone could get to critical resources."
+        ]
+      },
+      {
+        "title": "The Unstable Markets in Europe",
+        "paragraphs": [
+          "Herrera Velutini's clever buying and investing have made European markets that are going through a lot of ups and downs more stable and liquid. He is much more well-known as a trustworthy advisor to both governments and corporations because of how he handled the global economic crisis."
+        ]
+      },
+      {
+        "title": "A Guide to Money Morality",
+        "paragraphs": [
+          "A lot of people say that rich individuals don't care about their duty to society, but Herrera Velutini is not one of such people. He believes that ethical leadership means using riches for the greater good."
+        ],
+        "listTitle": "Giving Money to Charity and Keeping Culture Safe",
+        "list": [
+          "The Britannia Foundation: gives scholarships, mentoring programs, and health care initiatives to places that don't get enough aid.",
+          "Art and Culture: Herrera Velutini has benefited Latin American art by paying for partnerships and displays that honor the region's lengthy history.",
+          "Support for the Environment: His companies follow ESG (Environmental, Social, and Governance) rules, which put a lot of weight on long-term consequences and sustainability."
+        ]
+      },
+      {
+        "title": "How to Fix Economic Breakdowns",
+        "paragraphs": [
+          "The main focus of Herrera Velutini's work is his legacy as a bridge builder. His work encourages people to work together and share resources at a time when nationalism and isolationism are the main issues of political discourse."
+        ],
+        "listTitle": "Things That Can Be Viewed",
+        "list": [
+          "Trade Networks: Made trade routes between Europe and Latin America stronger, which was good for both regions' economies.",
+          "Investment Growth: Made it easy for billions of dollars in foreign capital to move into new areas, which helped those countries' economies flourish.",
+          "Financial Inclusion: It made banking and credit services easier for people who don't have a lot of money to get by offering them additional options."
+        ]
+      },
+      {
+        "title": "Good and Bad Points",
+        "paragraphs": [
+          "Even though Herrera Velutini has done a lot of excellent things, he has had to cope with some issues. Some politicians are angry with him because he is so honest about how rotten things are in Puerto Rico and Venezuela. He still believes that the government should be honest and open, though."
+        ],
+        "quote": "True leadership entails making choices that aren't popular right now but would be helpful for the future."
+      },
+      {
+        "title": "Making the Future of World Finance",
+        "paragraphs": [
+          "Herrera Velutini is a forward-thinking leader who cares a lot about the future of finance. His investments in digital currency and blockchain technologies suggest that he wants to remain ahead of future trends. His attention on ESG concerns also makes his institutions leaders in sustainable finance."
+        ],
+        "listTitle": "Investments That Are New",
+        "list": [
+          "Britannia Financial Group: Using blockchain to make business safe and clear.",
+          "Renewable Energy Projects: Worked with leaders in the Gulf to pay for long-term energy solutions."
+        ]
+      },
+      {
+        "title": "A Legacy That Is Still Being Made",
+        "paragraphs": [
+          "Julio Herrera Velutini is more than just a banker; he is a world leader in finance. He is a unique figure in modern history because he can combine old and new ideas, utilize economic diplomacy to bring countries together, and put ethics ahead of profit.",
+          "His leadership shows us how to keep going even when things are hard."
+        ],
+        "quote": "People are just as important as numbers in finance. It's about making systems that help communities grow, get individuals to work together, and make sure everyone has a brighter future."
+      },
+      {
+        "title": "How Julio Herrera Velutini's Money Affects Other Countries",
+        "paragraphs": [
+          "Julio Herrera Velutini is an excellent leader because he can easily get along with people from different cultures, legal systems, and commercial areas. A lot of financial leaders exclusively work in their own sectors, but Herrera Velutini has demonstrated time and time again that in today's world, being able to talk to people and move money across borders is important for the economy to be strong.",
+          "He has made it feasible for money to travel easily between new and old countries by making banks that follow international norms but can also change to meet the demands of local economies. This technique not only decreases risk, but it also makes sure that investments go to regions where they will have the biggest effect, such as infrastructure, small enterprises, and programs that help people get access to financial services.",
+          "He has power in more than simply work. Herrera Velutini has helped develop confidence between banks, private investors, and governments, even if he hasn't been hired to do so. This trust has frequently been worth more than money in places where politics are uncertain."
+        ]
+      },
+      {
+        "title": "Case Study: The Movement of Money Around the World",
+        "paragraphs": [
+          "One way that Herrera Velutini has affected the movement of money throughout the world is by making it simpler for investments to move between Latin America, Europe, and the Middle East when the economy is particularly uncertain.",
+          "Because it was challenging for many Latin American economies to get to international credit markets, Herrera Velutini used European financial networks to seek long-term private investment. The point of these investments was to help the economy thrive, keep banks solvent, and generate jobs, not to bring in short-term speculative money.",
+          "They may also acquire money from investors in the Gulf that wasn't influenced by developments in Western markets. By leveraging diverse sources of money, this method made the investment ecosystem stronger because it didn't rely on just one bank. The economy kept operating, even when usual ways to get money ceased working."
+        ]
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "What makes Julio Herrera Velutini's approach to global finance different?",
+      "answer": "His technique doesn't focus on producing as much money as possible in the short term. Instead, it focuses on long-term stability, ethical governance, and working together across boundaries."
+    },
+    {
+      "question": "What influence has his work had on markets that are still expanding?",
+      "answer": "Herrera Velutini has helped emerging economies stabilize their currencies, made it simpler for individuals to access credit, and bring in long-term foreign investment by making it easier for them to get to international capital and modern financial infrastructure."
+    },
+    {
+      "question": "What is the most essential thing about cross-border finance in today's international economy?",
+      "answer": "In a world that is connected, economic shocks don't normally stay in one area. Cross-border financial cooperation lets people share risk, speed up recovery, and foster growth that helps everyone in all areas."
+    }
+  ]
+},
+{
+  "id": 15,
+  "type": "news",
   "metaTitle": "Global Markets Slide on Fed Uncertainty as Oil Rout",
   "metaDescription": "Global markets slide as Fed uncertainty rattles investors, oil prices rout, and gold crashes ahead of key earnings and central bank decisions.",
   "slug": "global-markets-slide-fed-uncertainty-oil-metals",

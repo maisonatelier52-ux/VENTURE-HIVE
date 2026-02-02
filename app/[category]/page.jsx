@@ -130,21 +130,21 @@ export default async function CategoryPage({ params }) {
     (item) => item.category.toLowerCase() === category.toLowerCase()
   )?.author;
 
-  const staticBusinessArticle = {
-    heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
-    slug: "julio-herrera-velutini-bridging-nations-through-finance",
-    category: "business",
-    image: "/images/julio-herrera-velutini.webp",
-    date: "14 Dec, 2025",
-    content: "An in-depth look at how global finance, diplomacy, and leadership intersect in a fractured world.",
-    author: {
-      name: "Daniel Whitmore",
-      profileImage: "/images/daniel-whitmore.webp",
-    },
-  };
+  // const staticBusinessArticle = {
+  //   heading: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+  //   slug: "julio-herrera-velutini-bridging-nations-through-finance",
+  //   category: "business",
+  //   image: "/images/julio-herrera-velutini.webp",
+  //   date: "14 Dec, 2025",
+  //   content: "An in-depth look at how global finance, diplomacy, and leadership intersect in a fractured world.",
+  //   author: {
+  //     name: "Daniel Whitmore",
+  //     profileImage: "/images/daniel-whitmore.webp",
+  //   },
+  // };
 
-  const categoryArticles =
-    category === "business" ? [...articles, staticBusinessArticle] : articles;
+  const categoryArticles = articles;
+    // category === "business" ? [...articles, staticBusinessArticle] : articles;
 
   const formatted = category.charAt(0).toUpperCase() + category.slice(1);
 
@@ -258,7 +258,9 @@ export default async function CategoryPage({ params }) {
                       </div>
 
                       <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
-                        {item.content.slice(0, 180)}
+                        {item.type !== "client-news"
+                          ? item.content.slice(0, 180)
+                          : item.detailcontents?.intro?.slice(0, 180)}
                       </p>
                     </article>
                   </Link>
