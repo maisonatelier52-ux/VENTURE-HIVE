@@ -1,5 +1,5 @@
-import categorypagedata from "./public/data/category/categorypagedata";
-import authorsPageData from "./public/data/authors";
+import categorypagedata from "../public/data/category/categorypagedata.json";
+
 
 const SITE_URL = "https://www.venture-hive.com";
 
