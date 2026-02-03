@@ -55,7 +55,6 @@
 
 
 
-
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -73,7 +72,7 @@ import { FaQuora } from "react-icons/fa";
 
 const SITE_URL = "https://www.venture-hive.com";
 
-// ✅ FIX #5: generateStaticParams for better crawl efficiency
+// ✅ generateStaticParams for better crawl efficiency
 export async function generateStaticParams() {
   const params = [];
 
@@ -89,6 +88,7 @@ export async function generateStaticParams() {
   return params;
 }
 
+// ✅ FIXED: Removed ALL FAQ schema from metadata - it's now ONLY in the page body
 export async function generateMetadata({ params }) {
   const { category, slug } = await params;
 
@@ -96,8 +96,7 @@ export async function generateMetadata({ params }) {
 
   if (!article) return {};
 
-  // ✅ FIX #1: Removed FAQ schema from metadata - it will be rendered as <script> in page body
-  // Basic metadata for both types
+  // ✅ Basic metadata only - NO FAQ schema here
   return {
     title: article.metaTitle,
     description: article.metaDescription,
@@ -142,25 +141,24 @@ export default async function ArticlePage({ params }) {
     (item) => item.category.toLowerCase() === (article.authorCategory || category).toLowerCase()
   )?.author;
 
-  // ✅ FIX #3: Review static related post - ensure it's truly news content
-  // Only include if this article is not on homepage and is different from pillar
- const specialSlug = "julio-herrera-velutini-bridging-nations-through-finance";
+  // Related posts logic
+  const specialSlug = "julio-herrera-velutini-bridging-nations-through-finance";
 
-const filteredCategoryPosts = categoryPosts.filter(
-  (item) => item.slug !== slug
-);
+  const filteredCategoryPosts = categoryPosts.filter(
+    (item) => item.slug !== slug
+  );
 
-const relatedPosts =
-  category === "business"
-    ? [
-        ...filteredCategoryPosts
-          .filter((item) => item.slug !== specialSlug)
-          .slice(0, 3),
-        filteredCategoryPosts.find(
-          (item) => item.slug === specialSlug
-        ),
-      ].filter(Boolean) // removes undefined if not found
-    : filteredCategoryPosts.slice(0, 4);
+  const relatedPosts =
+    category === "business"
+      ? [
+          ...filteredCategoryPosts
+            .filter((item) => item.slug !== specialSlug)
+            .slice(0, 3),
+          filteredCategoryPosts.find(
+            (item) => item.slug === specialSlug
+          ),
+        ].filter(Boolean)
+      : filteredCategoryPosts.slice(0, 4);
 
   const currentIndex = categoryPosts.findIndex(p => p.slug === slug);
   const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
@@ -170,7 +168,7 @@ const relatedPosts =
   const encodedUrl = encodeURIComponent(shareUrl);
   const shareTitle = encodeURIComponent(article.heading);
 
-  // ✅ FIX #2: Route to correct render component - only ONE schema renders per page
+  // Route to correct render component based on article type
   if (article.type === "client-news") {
     return <ClientNewsArticle 
       article={article} 
@@ -528,7 +526,6 @@ const relatedPosts =
 
                 <div className="space-y-4">
                   {relatedPosts.map((item, index) => {
-                    // ✅ FIX #4: Ensure category always exists, no fallback in URL
                     const itemCategory = item.category || category;
                     return (
                       <Link
@@ -618,10 +615,9 @@ const relatedPosts =
   );
 }
 
-// Client News Article Component
-// Client News Article Component
+// ✅ Client News Article Component - FAQ Schema ONLY rendered here in body
 function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, shareTitle, shareUrl }) {
-  // ✅ FIX #2 & #6: Schema only rendered here for client-news type, includes articleSection
+  // Article Schema with all required fields
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -674,7 +670,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     ],
   };
 
-  // ✅ FIX #1: FAQ schema as <script> tag in page body (NOT in metadata)
+  // ✅ FIXED: FAQ schema ONLY as <script> tag in page body (NOT in metadata)
   const faqJsonLd = article.faq ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -844,7 +840,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* ✅ FIX #1: FAQ Schema rendered as <script> in page body */}
+      {/* ✅ FIXED: FAQ Schema rendered as <script> in page body (NOT in metadata) */}
       {faqJsonLd && (
         <script
           type="application/ld+json"
@@ -1002,13 +998,13 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
 
                 {/* FAQ SECTION */}
                 {article.faq && article.faq.length > 0 && (
-                  <section>
-                    <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block mt-5">
+                  <section className="mt-10">
+                    <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                       Questions that people often ask
                     </h2>
                     {article.faq.map((item, index) => (
-                      <div key={index}>
-                        <h3 className="text-base font-semibold mt-4 mb-1">
+                      <div key={index} className="mt-4">
+                        <h3 className="text-base font-semibold mb-1">
                           {item.question}
                         </h3>
                         <p>{item.answer}</p>
@@ -1033,7 +1029,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                   <Facebook size={14} className="text-white -rotate-45" />
                 </a>
                 <a
-                
                   href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${shareTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
