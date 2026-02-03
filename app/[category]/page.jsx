@@ -260,7 +260,7 @@ export default async function CategoryPage({ params }) {
                       <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
                         {item.type !== "client-news"
                           ? item.content.slice(0, 180)
-                          : item.detailcontents?.intro?.slice(0, 180)}
+                          : item.content.slice(0, 180)}
                       </p>
                     </article>
                   </Link>

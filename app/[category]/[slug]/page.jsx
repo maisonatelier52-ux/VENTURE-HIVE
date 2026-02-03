@@ -56,7 +56,7 @@
 
 
 
-
+import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -619,6 +619,7 @@ const relatedPosts =
 }
 
 // Client News Article Component
+// Client News Article Component
 function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, shareTitle, shareUrl }) {
   // ✅ FIX #2 & #6: Schema only rendered here for client-news type, includes articleSection
   const articleJsonLd = {
@@ -626,7 +627,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     "@type": "NewsArticle",
     headline: article.heading,
     description: article.metaDescription,
-    articleSection: category, // ✅ FIX #6: Added articleSection
+    articleSection: category,
     image: [`${SITE_URL}${article.image}`],
     datePublished: article.datePublished || new Date(article.date).toISOString(),
     dateModified: article.dateModified || new Date(article.date).toISOString(),
@@ -686,6 +687,148 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
       },
     })),
   } : null;
+
+  // Helper function to render paragraph with mixed content (text and links)
+  const renderParagraph = (para, pIndex) => {
+    // If paragraph has parts (mixed text and links)
+    if (para.parts) {
+      return (
+        <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
+          {para.parts.map((part, partIndex) => {
+            if (part.type === "link") {
+              if (part.external) {
+                return (
+                  <a
+                    key={partIndex}
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={part.title}
+                    className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer"
+                  >
+                    {part.text}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={partIndex}
+                    href={part.href}
+                    title={part.title}
+                  >
+                    <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                      {part.text}
+                    </span>
+                  </Link>
+                );
+              }
+            } else {
+              return <span key={partIndex}>{part.content}</span>;
+            }
+          })}
+        </p>
+      );
+    }
+    
+    // If paragraph is just text
+    if (para.text) {
+      return (
+        <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
+          {para.text}
+        </p>
+      );
+    }
+    
+    // Fallback for plain string
+    return (
+      <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
+        {para}
+      </p>
+    );
+  };
+
+  // Helper function to render list items with mixed content
+  const renderListItem = (item, lIndex) => {
+    // If list item has parts (mixed text and links)
+    if (item.parts) {
+      return (
+        <li key={lIndex}>
+          {item.parts.map((part, partIndex) => {
+            if (part.type === "link") {
+              if (part.external) {
+                return (
+                  <a
+                    key={partIndex}
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={part.title}
+                    className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer"
+                  >
+                    {part.text}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={partIndex}
+                    href={part.href}
+                    title={part.title}
+                  >
+                    <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                      {part.text}
+                    </span>
+                  </Link>
+                );
+              }
+            } else {
+              return <span key={partIndex}>{part.content}</span>;
+            }
+          })}
+        </li>
+      );
+    }
+    
+    // If list item is just text
+    if (item.text) {
+      return <li key={lIndex}>{item.text}</li>;
+    }
+    
+    // Fallback for plain string
+    return <li key={lIndex}>{item}</li>;
+  };
+
+  // Helper function to render intro with mixed content
+  const renderIntro = () => {
+    const intro = article.detailcontents?.intro;
+    if (!intro) return null;
+
+    // If intro has links (complex structure)
+    if (intro.text || intro.links) {
+      return (
+        <p className="text-base leading-relaxed text-justify drop-cap mb-6">
+          {intro.text}
+          {intro.links && intro.links.map((link, index) => (
+            <React.Fragment key={index}>
+              <Link href={link.href} title={link.title}>
+                <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                  {link.text}
+                </span>
+              </Link>
+            </React.Fragment>
+          ))}
+          {intro.textAfter}
+        </p>
+      );
+    }
+    
+    // If intro is just a string
+    return (
+      <p className="text-base leading-relaxed text-justify drop-cap mb-6">
+        {intro}
+      </p>
+    );
+  };
 
   return (
     <>
@@ -764,11 +907,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
 
               <article className="text-sm leading-relaxed text-gray-800">
                 {/* INTRO */}
-                {article.detailcontents?.intro && (
-                  <p className="text-base leading-relaxed text-justify drop-cap mb-6">
-                    {article.detailcontents.intro}
-                  </p>
-                )}
+                {renderIntro()}
 
                 {/* SECTIONS */}
                 <div className="flex flex-col space-y-10 text-justify">
@@ -777,16 +916,18 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                       <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                         {section.title}
                       </h2>
-                      {section.paragraphs?.map((para, pIndex) => (
-                        <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
-                          {para}
-                        </p>
-                      ))}
+                      
+                      {/* Paragraphs */}
+                      {section.paragraphs?.map((para, pIndex) => renderParagraph(para, pIndex))}
+                      
+                      {/* Quote */}
                       {section.quote && (
                         <blockquote className="my-6 pl-4 border-l-4 border-gray-700 italic text-gray-600">
                           {section.quote}
                         </blockquote>
                       )}
+                      
+                      {/* List */}
                       {section.list && (
                         <>
                           {section.listTitle && (
@@ -795,13 +936,65 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                             </h3>
                           )}
                           <ul className="list-disc pl-5 space-y-1">
-                            {section.list.map((item, lIndex) => (
-                              <li key={lIndex}>
-                                {item}
-                              </li>
-                            ))}
+                            {section.list.map((item, lIndex) => renderListItem(item, lIndex))}
                           </ul>
                         </>
+                      )}
+                      
+                      {/* After List Text */}
+                      {section.afterList && (
+                        <>
+                          {section.afterList.parts ? (
+                            <p className="mt-2">
+                              {section.afterList.parts.map((part, partIndex) => {
+                                if (part.type === "link") {
+                                  if (part.external) {
+                                    return (
+                                      <a
+                                        key={partIndex}
+                                        href={part.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        title={part.title}
+                                        className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer"
+                                      >
+                                        {part.text}
+                                      </a>
+                                    );
+                                  } else {
+                                    return (
+                                      <Link
+                                        key={partIndex}
+                                        href={part.href}
+                                        title={part.title}
+                                      >
+                                        <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                                          {part.text}
+                                        </span>
+                                      </Link>
+                                    );
+                                  }
+                                } else {
+                                  return <span key={partIndex}>{part.content}</span>;
+                                }
+                              })}
+                            </p>
+                          ) : (
+                            <p className="mt-2">{section.afterList.text || section.afterList}</p>
+                          )}
+                        </>
+                      )}
+                      
+                      {/* Highlight Quote (for special formatting) */}
+                      {section.highlightQuote && (
+                        <div className="my-8 py-6 px-6 bg-gray-900 text-white text-lg text-center italic rounded">
+                          {section.highlightQuote}
+                        </div>
+                      )}
+                      
+                      {/* After Quote Text */}
+                      {section.afterQuote && (
+                        <p className="mt-2">{section.afterQuote.text || section.afterQuote}</p>
                       )}
                     </section>
                   ))}
@@ -811,7 +1004,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 {article.faq && article.faq.length > 0 && (
                   <section>
                     <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block mt-5">
-                      Frequently Asked Questions
+                      Questions that people often ask
                     </h2>
                     {article.faq.map((item, index) => (
                       <div key={index}>
@@ -839,8 +1032,8 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 >
                   <Facebook size={14} className="text-white -rotate-45" />
                 </a>
-
                 <a
+                
                   href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${shareTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
