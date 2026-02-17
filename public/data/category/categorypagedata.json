@@ -1517,7 +1517,61 @@
     "GoldCrash",
     "StockMarket"
   ]
+},
+{
+  "id": 16,
+  "type": "news",
+  "metaTitle": "Asian Markets Quiet on Lunar New Year as Nikkei Falls, SoftBank Slides",
+  "metaDescription": "Asian markets trade quietly during Lunar New Year as Japan’s Nikkei falls on profit-taking and a SoftBank drop, with investors watching global market signals.",
+  "slug": "asian-markets-quiet-lunar-new-year-nikkei-falls-softbank",
+  "image": "/images/asian-markets-quiet-lunar-new-year-nikkei-first-image.webp",
+  "alt": "Pedestrian checking phone in front of Nikkei stock index display in Tokyo",
+  "heading": "Asian Markets Quiet for Lunar New Year, Nikkei Falls as Japan Post-Election Rally Fades",
+  "date": "17 Feb, 2026",
+
+  "content": "Asian trading was subdued on Tuesday as Lunar New Year holidays kept several major markets closed across the region. With China, Hong Kong, South Korea, Singapore and Malaysia shut, activity was thin and attention shifted to Tokyo, one of the few major markets open.",
+
+  "para2": "Japan’s Nikkei 225 slipped 0.8% to finish at 56,363.39, pulling back after a strong run earlier this month. The index had surged to record territory ahead of the February 8 election, when Prime Minister Sanae Takaichi’s decisive victory raised expectations for fiscal support and tax relief.",
+
+  "para3": "The tone changed this week after softer economic indicators dampened some of that optimism. Shares of SoftBank Group dropped 5.4%, adding to the pressure. Given the company’s size and its heavy exposure to technology and artificial intelligence investments, the decline weighed on the broader market.",
+
+  "para4": "Part of the move also reflected investors taking money off the table. After a sharp rally, many traders opted to lock in gains as questions emerged about how quickly policy promises might translate into real economic growth.",
+
+  "para5": "Elsewhere, the few regional markets that were open showed modest strength. Australia’s S&P/ASX 200 rose 0.2%, Thailand’s SET gained 0.5%, and India’s Sensex added 0.4%, suggesting underlying stability despite the holiday-thinned session.",
+
+  "para6": "Global cues remained cautious. U.S. markets were closed Monday for Presidents’ Day, but futures edged lower ahead of the reopening. Investors continue to balance cooling inflation signals against uncertainty over interest rates and the sustainability of heavy spending tied to artificial intelligence.",
+
+  "para7": "Attention later in the day turns to UK employment data, which could influence expectations for Bank of England policy and affect currency and bond markets.",
+
+  "para8": "In commodities, Brent crude eased to $68.23 a barrel while U.S. crude posted a small gain. Precious metals declined, with gold down 2.9% and silver falling more sharply, indicating caution but little sign of broad risk aversion.",
+
+  "para9": "Currency moves were modest. The dollar slipped to 152.88 yen from the previous session. A firmer yen tends to weigh on Japan’s exporters by reducing the value of overseas earnings. The euro also edged slightly lower.",
+
+  "para10": "Bitcoin traded near $68,300 after a small decline, continuing to move largely on its own path compared with traditional assets.",
+
+  "para11": "With liquidity still thin and global signals mixed, investors appear to be in wait-and-see mode. The coming sessions should provide a clearer sense of whether the recent dip is simply a pause after the rally or the start of a broader consolidation.",
+
+  "deatilImage": "/images/asian-markets-quiet-lunar-new-year-nikkei-second-image.webp",
+  "detailAlt": "Commuter walking past large Nikkei 225 electronic market board in Japan",
+
+  "quotes": "With liquidity thin and global signals mixed, investors appear to be in wait-and-see mode.",
+
+  "samplehead": {
+    "title": "Nikkei drops 0.8% as Lunar New Year quiets Asian markets; SoftBank slides",
+    "samplepara1": "Japan’s Nikkei 225 fell to 56,363.39 as investors took profits following a strong post-election rally, while most Asian markets remained closed for Lunar New Year.",
+    "samplePara2": "SoftBank’s sharp decline weighed on sentiment as global investors looked ahead to U.S. market reopening and key economic data."
+  },
+
+  "hashTags": [
+    "AsianMarkets",
+    "LunarNewYear",
+    "Nikkei225",
+    "JapanStocks",
+    "SoftBank",
+    "GlobalMarkets"
+  ]
 }
+
 
 
 
