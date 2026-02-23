@@ -1605,8 +1605,59 @@
     "SoftBank",
     "GlobalMarkets"
   ]
-}
+},
+{
+  "id": 17,
+  "type": "news",
+  "metaTitle": "Supreme Court Strikes Down Trump Tariffs, Markets Remain Calm Amid New Global Levy Uncertainty",
+  "metaDescription": "Supreme Court's ruling invalidates Trump's IEEPA tariffs from 2025, prompting a swift pivot to 15% global duties under alternative law, yet Wall Street and Asian markets show resilience.",
+  "slug": "supreme-court-trump-tariffs-ruling-markets-calm-new-global-levy",
+  "image": "/images/supreme-court-trump-tariffs-ruling-markets-first-image.webp",
+  "alt": "Cargo ships and containers at a major international trade port.",
+  "heading": "Supreme Court Rejects Trump’s Emergency Tariffs, Sparking Shift to New Global Duties While Markets Stay Steady",
+  "date": "23 Feb, 2026",
 
+  "content": "Even though the Supreme Court's recent shocking news about President Donald Trump's aggressive tariff plan is causing a lot of problems in international trade circles, Wall Street and Asian markets are strangely calm—for now, at least.",
+
+  "para2": "The decision on Friday put an end to the high tariffs that Trump put on goods from dozens of countries in April 2025. He used the International Emergency Economic Powers Act (IEEPA) to defend those actions, saying they were necessary to deal with \"national emergencies\" like trade imbalances and security threats. The decision could undo months of careful talks that followed those first statements. Now that governments and businesses are no longer rushing to change agreements or supply lines, they are left wondering what will happen next.",
+
+  "para3": "People in Beijing are not wasting any time. The Chinese Ministry of Commerce said in a statement that they are carefully looking over the court's request. They are putting a lot of pressure on the US to get rid of these unfair tariffs. The state-run Xinhua news agency quoted a ministry spokesperson who repeated the usual talking points: trade wars don't help anyone, these tariffs break both international and even local U.S. laws, and in the long run, no one—at least not consumers on either side—benefits. China has used tough but measured language before, but this time it means more because the Supreme Court agreed with some of that criticism.",
+
+  "para4": "Trump, who never backs down in silence, answered almost right away. By Saturday, he had a new idea: a general 10% tax on almost everything coming into the US, this time backed by Section 122 of the 1974 Trade Act. Then, as is usual, he raised the stakes to 15%. For big players like China and South Korea, who had to pay much higher tariffs under the old IEEPA structure, this change may actually feel like a break. The very high taxes on everything from steel to electronics gave their exporters a little break. But if you change things up for close allies like Japan, the UK, or other long-time U.S. allies, things get worse. In fact, their tariffs could go up under this new, all-encompassing plan, which would make already tense relationships even worse.",
+
+  "para5": "That mix of results has trade watchers on edge. On the one hand, the choice gets rid of what many legal experts called an abuse of the president's power during peacetime. On the other hand, it leaves room for new ideas that could keep the tariff pressure on in different ways. It's a common move in Washington chess to lose one battle, switch to another statute, and keep playing.",
+
+  "para6": "On Sunday, U.S. Trade Representative Jamieson Greer spoke with CBS News and tried to give the impression that things were stable. He said that this legal fight does not put the administration's current trade deals at risk. Greer said, \"The fact that the emergency tariffs stayed in place was not a deciding factor in these agreements.\" \"No one has come to me and told me that everything is wrong so far. They are waiting to see what happens next. The practical tone helps convince allies that Washington won't suddenly change the rules. But the uncertainty is still a problem for the world economy, like a low-grade illness.",
+
+  "para7": "On Monday, Kim Jung-kwan, South Korea's trade minister, was more careful. He said that the misunderstanding will get worse if the White House keeps adding new taxes under different legal authority. Seoul has already set up \"friendly\" talks with U.S. officials to lessen the effects on big Korean companies like Hyundai, Samsung, and POSCO. Adding another layer may be painful because steel and cars, which are the main exports of South Korea, were already subject to tariffs under different rules. Kim told government agencies and private companies to work together, increase competition, look for new markets in Europe or Southeast Asia, and basically protect themselves from risk. When the foundations of their biggest trading partner start to shake, governments give this kind of smart advice.",
+
+  "para8": "Scott Bessent, the Secretary of the Treasury, said again on Fox News from Washington that he was sure of this. He told viewers that tariff money would keep coming into the U.S. and that trading partners would honor the deals that had already been made. Bessent said, \"Revenues will stay the same this year and in the future,\" and then he linked that prediction to Trump's plan to cut global tariffs by 15%. He made it clear that the government would follow the courts' decisions when it came to giving businesses back money for duties that were now voidable. No drama, no problems, just respect for the courts.",
+
+  "para9": "At first, it seemed like the markets didn't care about the whole thing. On Monday morning, U.S. market futures fell a little. The Dow was down 0.5 percent and the S&P 500 contract was down about 0.6 percent. The dollar lost some value compared to the yen and euro, and oil prices also went down. Things, on the other hand, looked better in Asia. Most other regional stock markets were up, but Hong Kong's Hang Seng index jumped 2.4%. Investors seem to be betting that this legal problem won't lead to a full-blown trade war 2.0 or bring down the whole US economy. Maybe they remember that the first round of Trump tariffs during his last term led to new agreements instead of the complete collapse of the economy. Or maybe they're looking at the bigger picture, which includes a stable U.S. GDP, falling inflation, and the fact that tariffs don't always completely change whole industries at once; they sometimes only affect consumers in small ways.",
+
+  "para10": "But the effects can be bigger than what the news stories say. Global supply chains that have spent the past year rerouting around the April 2025 tariffs now have to deal with a new set of \"what-ifs.\" For example, semiconductor companies are moving production, automakers are hoarding parts, and retailers are rewriting contracts. Small businesses may be the first to feel the effects, especially importers who have a hard time dealing with higher costs. Farmers in the American Midwest who were hurt by China's retaliatory tariffs last time are probably also worried about the new system, even if it promises to stabilize some revenue.",
+
+  "para11": "This moment is so interesting because it sets a legal precedent. For decades, presidents from both parties have used emergency powers like IEEPA to deal with financial problems and sanctions. The Supreme Court recently made it clearer what trade policy can and can't do. Politicians on both sides have talked about it, but they haven't done much to make it happen. At the same time, Trump's staff is showing that a legal loss won't stop their \"America First\" agenda. As a sign that tariffs aren't going away, they're just changing how they work, they're already trying out new legal options.",
+
+  "deatilImage": "/images/supreme-court-trump-tariffs-ruling-markets-second-image.webp",
+  "detailAlt": "U.S. officials in a meeting discussing tariff and trade policy.",
+
+  "quotes": "The uncertainty is still a problem for the world economy, like a low-grade illness.",
+
+  "samplehead": {
+  "title": "Supreme Court invalidates Trump’s IEEPA tariffs; president pivots to 15% global levy under 1974 Trade Act",
+  "samplepara1": "Markets hold steady despite legal setback on emergency tariffs, with Asian gains offsetting modest U.S. futures dip as new duties loom.",
+  "samplePara2": "Trade partners from China to South Korea assess impacts while U.S. officials stress continuity in existing deals. Meanwhile, businesses brace for potential shifts in global supply chains as the administration explores fresh tariff avenues."
+},
+
+  "hashTags": [
+    "SupremeCourt",
+    "TrumpTariffs",
+    "GlobalTrade",
+    "USMarkets",
+    "TradePolicy"
+  ]
+}
 
 
 
