@@ -3222,7 +3222,44 @@
       "FBI Raid",
       "EspionageAct"
       ]
-      }    
+      },
+      {
+        "id": 11,
+        "type": "news",
+        "metaTitle": "Three Dead, 14 Injured in Austin Sixth Street Shooting; Suspect Killed by Police",
+        "metaDescription": "Three people were killed and 14 injured in a mass shooting in Austin’s Sixth Street district. Police shot the suspect as authorities investigate a possible motive.",
+        "slug": "austin-sixth-street-shooting-three-dead-investigation",
+        "image": "/images/austin-sixth-street-shooting-three-dead-first-image.webp",
+        "alt": "Austin police secure the Sixth Street entertainment district after a mass shooting left three people dead and multiple others injured.",
+        "heading": "Three Dead, 14 Injured in Austin Sixth Street Shooting; Suspect Killed by Police",
+        "date": "02 Mar, 2026",
+        "content": "Authorities say three people were murdered and 14 others were injured in a shooting at an Austin, Texas, club. A shooting outside a beer garden in Austin's busiest entertainment district early Sunday killed two people and injured more than a dozen others before police fatally shot the suspect, increasing the death toll to three.",
+        "para2": "Police got a report of a man shooting from a large SUV outside Buford's Backyard Beer Garden on West Sixth and Rio Grande streets, an area noted for its dense concentration of clubs and live music venues popular with University of Texas students. The SUV had been circling the neighborhood prior to the attack.",
+        "para3": "At one time, the suspect activated his danger lights, rolled down his window, and discharged a revolver at people on the patio and sidewalk. He then parked, exited with a gun, and started firing at persons passing by. Officers who had previously been deployed downtown for weekend patrol encountered the suspect and returned fire, killing him. 14 of the survivors were sent to hospitals, with three in critical condition.",
+        "para4": "This wasn't just another crime; it happened in one of Austin's busiest nightlife areas, where students and weekend crowds were always present. People feel less safe in their neighborhoods when things like this happen. They also raise bigger questions about public safety, possible extremist motives, and how tensions between countries or around the world can lead to violence in your own neighborhood. The police's quick response probably saved even more lives.",
+        "para5": "The alleged gunman was later identified by the Austin Police Department as Ndiaga Diagne, a 53-year-old naturalized US citizen originally from Senegal who obtained citizenship in 2013. Investigators are attempting to ascertain whether the attack was motivated by Saturday's US and Israeli strikes on Iran, although officials emphasized that it is too early to draw conclusions.",
+        "para6": "Diagne was dressed in a hoodie proclaiming \"Property of Allah\" and a shirt with an Iranian flag design, and investigators stated there were signs on the suspect and inside his vehicle indicating a possible link to terrorism. The FBI's Joint Terrorism Task Force has entered the probe. Authorities raided his residence and are looking at computers, phones, potential propaganda exposure, and any writings indicating purpose.",
+      "para7": "Officials are also looking into his previous mental health issues and history of various addresses in Texas, including a connection to Pflugerville and San Antonio where he had resided in recent years. A pistol and an assault weapon were found, with records indicating the firearms were legally purchased in San Antonio in 2017. A bomb squad cleared the suspect's car after initially raising concerns, certifying that no explosives were present. Diagne, originally from Senegal, entered the U.S. on a tourist visa in March 2000, became a lawful permanent resident in 2006 after marrying a U.S. citizen, and was naturalized as a U.S. citizen in April 2013. Authorities noted he had no known prior criminal history tied to violence or extremism, though he faced a 2022 arrest in Texas related to a vehicle collision, and court records from Bexar County show his second wife filed for divorce in 2022, finalized amid allegations of cruel treatment and a pattern of family violence over the prior two years, resulting in supervised visitation with their children and child support obligations. Importantly, Diagne was not previously on the radar of Austin police, the FBI, or other federal agencies before the attack, according to officials at press briefings.",
+        "para8": "Because police and emergency medical teams had already been positioned in the entertainment district, officials were able to apprehend the man in less than a minute. More than 20 EMS units responded, removing all critical patients within 24 minutes and transporting all victims in 47 minutes. Officials stated that the prompt response considerably lowered the potential death toll.",
+        "para9": "Austin Police Chief Lisa Davis called the incident unfortunate and said the scene took hours to process, with federal partners aiding. Austin Mayor Kirk Watson hailed law enforcement's quick response, stating that cops reached the culprit in just 57 seconds and \"definitely saved lives.\" Texas Governor Greg Abbott has ordered greater patrols and law police presence in the Sixth Street area on weekends, warning that the state will respond firmly to anyone using the present Middle East situation to endanger Texans. US President Donald Trump was briefed on the event, and Senator Ted Cruz praised the authorities' rapid response.",
+        "para10": "The shooting had a significant impact on Austin's downtown community and the University of Texas, which is less than two miles away from the scene. East and West Sixth Streets are popular weekend attractions among the city's sizable student population. Witnesses reported scenes of panic and confusion as shooting erupted.",
+        "para11": "According to a University of Texas student, the bar was packed with hundreds of college students when the attack began. Another witness saw seven or eight people on the floor and recounted feeling helpless in the midst of turmoil. Some people mistook the sound of gunfire for fireworks or a motorcycle backfiring. According to University of Texas President Jim Davis, some of the victims were Longhorns, and he sent prayers to those affected. Officials reported at least 56 mass shootings in the United States this year, defined as occurrences in which four or more persons are shot, excluding the perpetrator.",
+        "deatilImage": "/images/austin-sixth-street-shooting-three-dead-second-image.webp",
+        "detailAlt": "Emergency responders and police at the scene of the Sixth Street shooting in Austin, Texas.",
+        "quotes": "Cops reached the culprit in just 57 seconds and definitely saved lives. - Austin Mayor Kirk Watson",
+        "samplehead": {
+          "title": "Nightlife District Violence and Potential Terrorism Links in Austin Shooting",
+          "samplepara1": "This tragic event in Austin’s iconic Sixth Street entertainment district has left the community shaken, especially given its proximity to the University of Texas and the heavy presence of students on weekends. The rapid police response likely prevented a far higher casualty count, but the emerging details about the suspect’s attire, vehicle markings, and possible connection to recent geopolitical events have prompted a federal terrorism investigation. As authorities examine mental health history, online activity, and potential extremist influences, the incident underscores growing concerns about how international conflicts can spill over into American cities and affect public spaces where people gather to relax and socialize.",
+          "samplePara2": "While it is still too early to confirm motive, the involvement of the FBI’s Joint Terrorism Task Force highlights the seriousness with which officials are treating any indication of ideological or terror-related drivers, even as community leaders and state officials pledge increased security to restore confidence in one of Texas’s most vibrant nightlife areas."
+        },
+        "hashTags": [
+          "AustinShooting",
+          "SixthStreet",
+          "MassShooting",
+          "TerrorismProbe",
+          "PublicSafety"
+        ]
+      }
 
   ]
 }
