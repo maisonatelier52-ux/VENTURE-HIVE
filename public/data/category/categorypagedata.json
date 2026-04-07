@@ -1892,6 +1892,58 @@
     "OilPrices",
     "EnergyCrisis"
   ]
+},
+{
+  "id": 20,
+  "type": "news",
+  "metaTitle": "Gina Maria's Pizza Files Chapter 7 Bankruptcy After 50 Years, Closes All Minneapolis Locations",
+  "metaDescription": "Gina Maria's Pizza, a beloved Minneapolis pizza chain founded in 1975, has filed for Chapter 7 bankruptcy after abruptly closing all four locations in October 2025.",
+  "slug": "ginas-marias-pizza-bankruptcy-closes-minneapolis-locations-50-years",
+  "image": "/images/ginas-marias-pizza-bankruptcy-closes-minneapolis-first-image.webp",
+  "alt": "Gina Maria's Pizza restaurant exterior with illuminated signage on storefront in Minneapolis area",
+  "heading": "Gina Maria's Pizza Shuts Down After 50 Years and Files for Bankruptcy",
+  "date": "07 Apr, 2026",
+
+  "content": "For half a century, Gina Maria's Pizza was more than just a place to grab a slice — it was a fixture of Minneapolis life. Families celebrated birthdays there. Youth sports teams piled in after games. Regulars had their orders memorized by the staff. But in October 2025, without any warning to customers or public announcement ahead of time, all four of its Minneapolis-area locations went dark. Months later, the reason became clearer: the company behind the beloved chain has filed for Chapter 7 bankruptcy, and there is no plan to reopen.",
+
+  "para2": "Northern Brands Inc., the parent company that operated Gina Maria's Pizza, filed for Chapter 7 bankruptcy on March 26, 2026, according to court records reported by The Independent, the Minneapolis/St. Paul Business Journal, and The Street. The financial picture painted in the filings is a stark one — the company listed approximately $2.9 million in liabilities against only around $64,000 in assets. Those numbers tell the story of a business that had been struggling well before the doors were finally locked for good.",
+
+  "para3": "Chapter 7 is the most final form of bankruptcy a company can file. Unlike Chapter 11, which allows a struggling business to restructure its debts and attempt some kind of comeback, Chapter 7 means the business is done. A court-appointed trustee takes over, sells off whatever non-exempt assets remain, and uses those proceeds to pay back creditors as best they can. For Gina Maria's Pizza, there will be no restructuring plan, no new investors riding in at the last minute, and no second act. The chain that served the Minneapolis area for five full decades is being wound down permanently.",
+
+  "para4": "The four locations that closed were spread across well-known Minneapolis suburbs — Chanhassen, Eden Prairie, Edina, and Plymouth. Each of these communities had built its own loyal base of regulars who treated Gina Maria's as their default pizza night destination. The abrupt October closure caught many of them completely off guard. There were no announcements in the weeks leading up to it, no farewell specials or goodbye events, and no opportunity for longtime customers to say a proper goodbye. One day the restaurants were open; the next day, they simply weren't.",
+
+  "para5": "The chain's website, now taken offline, carried a brief farewell message after the closures. According to local outlet Bring Me the News, the statement acknowledged that the decision had not come easily, and expressed pride in what had been built over the years. It pointed to the relationships formed over hot pizzas and warm conversations as memories the team would always carry. It was a gracious way to sign off — but for many customers who showed up to locked doors without any prior heads-up, it raised more questions than it answered.",
+
+  "para6": "The response on social media captured just how deeply the brand was woven into people's lives. After Gina Maria's updated its Facebook page to show 'permanently closed,' loyal customers flooded the comments with memories and condolences. One person wrote that the chain served easily the best pizza anywhere, comparing it favorably even to restaurants in Naples, Florida. Another commenter described living just a block from the Eden Prairie location and visiting for 25 straight years, specifically calling out the pepperoni and green olive combination as the best pizza they had ever eaten. These are not the reactions of casual diners — they are the words of people for whom this restaurant held real meaning.",
+
+  "para7": "Founded in 1975, Gina Maria's Pizza had navigated recessions, the rise of national pizza chains, shifting consumer habits, and the devastating years of the pandemic. Reaching its 50th year in business was itself a rare achievement for any independent regional restaurant in an industry famous for its razor-thin margins and high failure rates. That long track record of survival makes the sudden collapse all the more striking — and raises genuine questions about what combination of pressures finally proved too much to overcome.",
+
+  "para8": "The restaurant industry has been under enormous strain in recent years. Labor costs have climbed significantly, food costs have remained elevated following years of supply chain disruption and inflation, and consumer spending on dining out has become more selective. Many small and mid-size chains that survived the pandemic have found the post-pandemic environment equally punishing. Gina Maria's is far from alone in this story, but that context does little to soften the blow for the communities that lost it.",
+
+  "para9": "One meaningful piece of continuity did emerge from the closure. In November 2025, just a month after Gina Maria's shut its doors, a new restaurant called Pizzas Gina opened in the former Eden Prairie location. Ulises Godinez, who had managed that store along with another Gina Maria's location during his time with the chain, chose to open his own establishment and carry forward the same recipes that made the original so popular. For Eden Prairie residents, it is something — a thread of culinary continuity in a familiar space, even if the name above the door has changed.",
+
+  "para10": "One point worth clarifying for anyone searching for information: Gina Maria's Pizza, the Minneapolis-area chain that has now closed, is a completely separate business from Gina Maria's Pizzeria, which operates in California. The two share a similar name but have absolutely no connection to one another. The Minneapolis/St. Paul Business Journal specifically flagged this distinction in its coverage to avoid any confusion between the two.",
+
+  "para11": "The story of Gina Maria's Pizza is, in many ways, a story about what gets lost when local institutions disappear. A restaurant built from scratch in 1975, run for fifty years, and trusted by generations of families across four communities has now filed its final paperwork and closed its books. There will be no dramatic turnaround, no headline announcing a grand reopening. Just a bankruptcy filing, a wave of Facebook comments from people who genuinely miss the place, and a former manager doing his best to keep the recipes alive a few miles away. In an era when independent restaurants face more pressure than ever, the loss of a place like Gina Maria's is the kind of thing that is felt long after the last slice was served.",
+
+  "deatilImage": "/images/ginas-marias-pizza-bankruptcy-closes-minneapolis-second-image.webp",
+  "detailAlt": "Pepperoni and cheese pizzas in open delivery boxes from Gina Maria's Pizza with melted cheese and crispy crust",
+
+  "quotes": "The decision did not come easily. We're proud of what we built together and will always cherish the relationships formed over hot pizzas, warm smiles, and great conversation.",
+
+  "samplehead": {
+    "title": "Gina Maria's Pizza gone after 50 years — Chapter 7 filing reveals $2.9M in liabilities",
+    "samplepara1": "Gina Maria's Pizza, a Minneapolis institution since 1975, has filed for Chapter 7 bankruptcy after shutting all four suburban locations in October 2025 without warning. Parent company Northern Brands Inc. reported nearly $2.9 million in liabilities and just $64,000 in assets — a gap that tells the story of a chain that had been in serious trouble long before the lights went out.",
+    "samplePara2": "Loyal customers are heartbroken, social media is full of tributes, and one former manager has already opened a new spot using the same recipes. But the original chain is done. Chapter 7 means no comeback — just liquidation, creditor payouts, and the end of a 50-year run that meant something real to the communities it served."
+  },
+
+  "hashTags": [
+    "GinaMariasPizza",
+    "Bankruptcy",
+    "Minneapolis",
+    "SmallBusiness",
+    "RestaurantClosure"
+  ]
 }
 
 
