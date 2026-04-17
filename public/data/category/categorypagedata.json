@@ -811,6 +811,43 @@
     "SexualMisconduct",
     "USPolitics"
   ]
+},
+{
+  "id": 22,
+  "type": "news",
+  "metaTitle": "Trump Nominates Erica Schwartz to Lead CDC",
+  "metaDescription": "Donald Trump nominates Dr. Erica Schwartz to lead the CDC amid leadership turmoil, vaccine debates, and efforts to restore public trust in health agencies.",
+  "slug": "erica-schwartz-cdc-director-nomination",
+  "image": "/images/erica-schwartz-cdc-director-nomination-first-image.webp",
+  "alt": "Dr. Erica Schwartz in official uniform, nominated as CDC Director by Donald Trump",
+  "heading": "Trump Nominates Erica Schwartz to Lead CDC",
+  "date": "17 Apr, 2026",
+  "content": "Following repeated leadership changes at the health agency, US President Donald Trump said on Thursday that Erica Schwartz, who served as deputy surgeon general during the COVID-19 epidemic, would be nominated to become head of the Centers for Disease Control and Prevention.",
+  "para2": "Trump said on Truth Social, “It is my honour to nominate the incredibly talented Dr Erica Schwartz, MD, JD, MPH, as my Director of the CDC. She is a star!”",
+  "para3": "Schwartz, a Coast Guard rear admiral during Trump's first term, was active in the federal COVID response, assisting in the coordination of national preparation and public health activities.",
+  "para4": "She spent 24 years in the Commissioned Corps of the United States Public Health Service and has a medical degree from Brown University and a legal degree from the University of Maryland.",
+  "para5": "If accepted, Schwartz would oversee the Atlanta-based agency that monitors and responds to domestic and international risks to public health.",
+  "para6": "The CDC had gone months without a Senate-confirmed director after the last leader, Susan Monarez, was ousted.",
+  "para7": "Trump fired CDC Director Susan Monarez last August over her objections to vaccine policy changes planned by Health Secretary Robert F Kennedy Jr. The dismissal came after Monarez reportedly resisted several initiatives pushed by Kennedy, including proposed alterations to the existing vaccine recommendations and broader agency reforms. This sudden move intensified criticism from public health experts who viewed it as clear political interference in the agency's scientific operations and decision-making process. Many observers argued that the firing reflected deeper tensions between the Trump administration’s priorities and the traditional independence of the CDC in shaping national health policy.",
+  "para8": "Monarez had served as CDC leader for less than a month after being confirmed.",
+  "para9": "Since then, the agency has experienced a revolving door of leadership, with two acting directors stepping in. Health and Human Services Deputy Secretary Jim O'Neill was followed by Jay Bhattacharya, the director of the U.S. National Institutes of Health.",
+  "para10": "Several key CDC scientific leaders resigned in protest, saying Monarez’s dismissal raised concerns about political interference in scientific research and health recommendations.",
+  "para11": "Under Kennedy’s leadership, the CDC has also seen sweeping changes, including restructuring and staff reductions aimed at reducing what he called “bureaucratic sprawl.”",
+  "deatilImage": "/images/erica-schwartz-cdc-director-nomination-second-image.webp",
+  "detailAlt": "CDC headquarters in Atlanta, main building of the Centers for Disease Control and Prevention",
+  "quotes": "“It is my honour to nominate the incredibly talented Dr Erica Schwartz, MD, JD, MPH, as my Director of the CDC. She is a star!” - Donald Trump",
+  "samplehead": {
+    "title": "Trump Picks Erica Schwartz as CDC Director Amid Agency Turmoil",
+    "samplepara1": "President Donald Trump nominates Dr. Erica Schwartz, former deputy surgeon general and Coast Guard rear admiral, to lead the CDC following multiple leadership changes and controversies under Health Secretary Robert F. Kennedy Jr.",
+    "samplePara2": "The nomination comes as the CDC faces ongoing restructuring, vaccine policy debates, and efforts to restore public trust, with Schwartz seen as a more traditional choice for the role."
+  },
+  "hashTags": [
+    "EricaSchwartz",
+    "CDC",
+    "TrumpNomination",
+    "PublicHealth",
+    "RFKJr"
+  ]
 }
 
 
