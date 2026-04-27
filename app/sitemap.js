@@ -34,15 +34,6 @@ export default function sitemap() {
     },
   ];
 
-  /* ---------------- SPECIAL JULIO PAGE - PRIORITY 1.0 ---------------- */
-  const specialPages = [
-    {
-      url: `${SITE_URL}/business/julio-herrera-velutini-bridging-nations-through-finance`,
-      lastModified: new Date("2025-12-14"),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-  ];
 
   /* ---------------- CATEGORY PAGES ---------------- */
   const categoryPages = Object.keys(categorypagedata).map(category => ({
@@ -73,7 +64,6 @@ export default function sitemap() {
 
   return [
     ...staticPages,
-    ...specialPages,
     ...categoryPages,
     ...articlePages,
   ];

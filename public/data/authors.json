@@ -84,23 +84,6 @@
           "medium" : "https://medium.com/@oliviaramirez001"
         }
       }
-    },
-    {
-      "category": "Special",
-      "author": {
-        "id": 6,
-        "name": "Daniel Whitmore",
-        "gender": "Male",
-        "profileImage": "/images/daniel-whitmore.webp",
-        "country": "USA",
-        "bio": "Daniel Whitmore is a senior features writer specializing in long-form investigative profiles, global finance, leadership, and geopolitical analysis.",
-        "social": {
-          "twitter": "",
-           "quora": "https://www.quora.com/profile/Daniel-Whitmore-51",
-          "reddit" : "https://www.reddit.com/user/Daniel_Whitmore_001/",
-          "medium" : "https://medium.com/@danielwhitmore001"
-        }
-      }
     }
   ]
 }
