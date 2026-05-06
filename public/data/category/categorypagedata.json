@@ -1707,6 +1707,58 @@
     "SmallBusiness",
     "RestaurantClosure"
   ]
+},
+{
+  "id": 20,
+  "type": "news",
+  "metaTitle": "iRobot Co-Founder Unveils AI-Powered Pet Robot Called the Familiar",
+  "metaDescription": "Colin Angle, the robotics pioneer behind the Roomba, has unveiled a new AI-powered companion robot called the Familiar — a plush, four-legged creature designed to live with you like a pet.",
+  "slug": "irobot-founder-ai-pet-robot-familiar-machines",
+  "image": "/images/irobot-founder-ai-pet-robot-familiar-machines-first-image.webp",
+  "alt": "Colin Angle interacting with the Familiar AI-powered companion robot at the WSJ Future of Everything conference.",
+  "heading": "The Man Behind the Roomba Wants to Put an AI-Powered Pet Robot in Your Home",
+  "date": "06 May, 2026",
+
+  "content": "Colin Angle spent more than two decades turning a disc-shaped vacuum cleaner into one of the most recognized household robots in history. Now he is back with a far more ambitious idea — a soft, four-legged robot that looks something like a bear cub, responds to your voice, learns your daily patterns, and follows you from room to room the way a real pet would. He is calling it the Familiar, and he believes it represents something the robotics world has never actually pulled off before.",
+
+  "para2": "Angle formally introduced the Familiar prototype at The Wall Street Journal's Future of Everything conference in New York this week, ending months of quiet development under his new company, Familiar Machines & Magic, based in Woburn, Massachusetts. The startup had been operating in stealth mode since its founding — which came shortly after Angle stepped down as CEO and chairman of iRobot in 2024, following Amazon's decision to walk away from its planned acquisition of the struggling Roomba maker.",
+
+  "para3": "The robot itself is roughly the size of a bulldog. It has wide, doe-like eyes, rounded ears that call to mind a bear cub, and touch-sensitive synthetic fur that invites you to pet it. When it greets you, it stretches out in the way a real animal might after a long nap. Angle was deliberate about keeping the design in that ambiguous zone between species — not quite a dog, not quite a cat, and definitely not human. The goal was to sidestep the baggage that comes with trying to replicate something people already have strong feelings about.",
+
+  "para4": "What makes the Familiar different from earlier attempts at robotic pets is what is running underneath the fur. The robot is powered by modern generative AI — the same wave of technology that gave the world ChatGPT and its successors. It has audio sensors that function like ears, allowing it to process what people around it are saying. Over time, it builds a model of the household it lives in — learning the rhythms of daily life, the preferences of the people in the home, and how to respond in ways that feel natural and consistent rather than scripted.",
+
+  "para5": "Angle is clear that the Familiar will not speak. It communicates through movement, posture, and animal-like sounds rather than words. That choice is intentional. Language, he argues, sets expectations that a robot cannot fully meet. An expressive creature that stretches, nuzzles, and reacts emotionally sidesteps that problem entirely — and taps into something more instinctive in how humans relate to other living things.",
+
+  "para6": "The timing matters here. Angle freely admits that even six months ago, building something like this would not have been feasible. The AI technology required to make a robot genuinely adaptive — one that learns from its environment and grows into the routines of the people around it rather than just running pre-programmed responses — has only recently matured to the point where it can be embedded in a consumer product. That window is what Familiar Machines is trying to step through.",
+
+  "para7": "Angle has assembled an advisory group that reads like a who's who of robotics research. Marc Raibert, the founder of Boston Dynamics and the man who brought Spot and Atlas into the world, is among them. So is Cynthia Breazeal, who built Kismet — a robotic head capable of social expressions — and later Jibo, a tabletop robot designed for household interaction. Maja Matarić, a computer science professor at the University of Southern California who co-founded the field of socially assistive robotics a quarter century ago, is also on board. When Matarić first encountered the Familiar prototype, she got down on the floor next to it and hugged it. That reaction, spontaneous and unscripted, is essentially the validation Angle is looking for.",
+
+  "para8": "The group shares a healthy skepticism of the current craze around humanoid robots — the sleek, two-legged machines that have attracted enormous investment and media attention in recent years but remain limited in what they can actually do in the real world. For Angle and his collaborators, a creature designed around emotional connection and everyday companionship is a more honest and more achievable goal than trying to build something that mimics human movement.",
+
+  "para9": "One demographic Angle is thinking about carefully is older adults. He points out that pet ownership tends to drop off in retirement — not because people stop enjoying the company of animals, but because the physical demands and emotional weight of caring for a living creature become harder to manage. A companion robot that offers the warmth and presence of a pet without those obligations could fill a real gap. Nursing homes and mental health support are also on the table as potential use cases, according to Matarić, whose research over decades has consistently shown that people form genuine emotional bonds with robots that are designed to appear vulnerable and in need of care.",
+
+  "para10": "The name the company landed on carries some history with it. A familiar, in folklore, is the animal companion of a witch or wizard — a creature bound to a person and attuned to their presence. It shows up in everything from medieval mythology to Philip Pullman's beloved fantasy novels. Angle said he was surprised to discover he could trademark the word. It fits the product better than anything from science fiction would have — this is not a robot designed to perform tasks or follow commands. It is designed to simply be there, in the way a pet is there.",
+
+  "para11": "No firm sale date has been announced, and the robot is still in prototype form. But the concept Angle is chasing — a companion that earns a place in your home not through utility but through presence — is one that resonates in ways that spec sheets cannot capture.",
+
+  "deatilImage": "/images/irobot-founder-ai-pet-robot-familiar-machines-second-image.webp",
+  "detailAlt": "Close-up of the Familiar AI pet robot prototype with soft fur, expressive eyes, and animal-inspired design.",
+
+  "quotes": "We chose a form factor that's not a human, not a dog, not a cat — because we wanted to steer away from all of those preconceptions. This is about having something you want to hug, you want to pet. When it's happy, that makes you happy.",
+
+  "samplehead": {
+    "title": "Roomba creator returns with AI pet robot — meet the Familiar",
+    "samplepara1": "Colin Angle, who co-founded iRobot and launched the Roomba in 2002, has unveiled a new AI-powered companion robot through his startup Familiar Machines & Magic. The four-legged creature — roughly the size of a bulldog, covered in touch-sensitive synthetic fur — uses generative AI to learn the habits of the people it lives with and respond to them over time.",
+    "samplePara2": "The Familiar does not talk, does not perform household tasks, and is not designed to look human. It is designed to feel like a pet — and Angle believes advances in AI have only just now made that vision possible. A prototype was unveiled at the Wall Street Journal's Future of Everything conference in New York, with no release date yet announced."
+  },
+
+  "hashTags": [
+    "FamiliarMachines",
+    "AIRobot",
+    "CompanionRobot",
+    "ColinAngle",
+    "Robotics"
+  ]
 }
 
 
