@@ -48,6 +48,8 @@ import "./globals.css";
 import HeaderComponent from "../components/Header";
 import FooterComponent from "../components/footer";
 
+const SITE_URL = "https://www.venture-hive.com";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -81,6 +83,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@venturehive", // optional but recommended
+  },
+   alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/rss.xml`,
+    },
   },
 };
 

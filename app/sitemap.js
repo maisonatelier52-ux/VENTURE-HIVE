@@ -9,6 +9,12 @@ export default function sitemap() {
   /* ---------------- STATIC PAGES ---------------- */
   const staticPages = [
     {
+      url: `${SITE_URL}/rss.xml`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
       url: `${SITE_URL}/`,
       lastModified: now,
       changeFrequency: "daily",
