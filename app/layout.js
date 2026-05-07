@@ -84,16 +84,19 @@ export const metadata = {
     card: "summary_large_image",
     site: "@venturehive", // optional but recommended
   },
-   alternates: {
-    types: {
-      "application/rss+xml": `${SITE_URL}/rss.xml`,
-    },
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="VENTURE HIVE RSS Feed"
+          href="/rss.xml"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-serif`}
       >

@@ -1,79 +1,83 @@
-import categorypagedata from "../../public/data/category/categorypagedata";
+
+import articlesData from "../../public/data/category/categorypagedata";
 
 const SITE_URL = "https://www.venture-hive.com";
 const SITE_NAME = "VENTURE HIVE";
-const SITE_DESCRIPTION =
-  "VENTURE HIVE delivers trusted journalism across politics, business, investigations, sports, and opinion with depth, clarity, and integrity.";
+const SITE_DESCRIPTION = "VENTURE HIVE delivers trusted journalism across politics, business, investigations, sports, and opinion with depth, clarity, and integrity.";
+
+// Helper: parse DD/MM/YYYY → Date object
+function parseDate(dateStr) {
+  if (!dateStr) return new Date(0);
+  if (dateStr.includes("/")) {
+    const [day, month, year] = dateStr.split("/");
+    return new Date(year, month - 1, day);
+  }
+  return new Date(dateStr);
+}
+
+// Helper: escape XML special characters OUTSIDE of CDATA blocks
+// Use this for attributes and plain text nodes
+function escapeXml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
 
 export async function GET() {
-  // Flatten all articles from all categories
-  const allArticles = Object.entries(categorypagedata).flatMap(
-    ([category, posts]) =>
+  // Flatten all articles from all categories and sort by date (newest first)
+  const allArticles = Object.entries(articlesData)
+    .flatMap(([category, posts]) =>
       posts.map((post) => ({
-        ...post,
+        url: `${SITE_URL}/${category}/${post.slug}`,
+        title: post.heading || "",
+        description: post.excerpt || post.metaDescription || "",
+        date: parseDate(post.date),
         category,
+        image: post.image ? `${SITE_URL}${post.image}` : null,
+        imageAlt: post.imageAlt || post.title || "",
       }))
-  );
+    )
+    .sort((a, b) => b.date - a.date)
+    .slice(0, 50); // RSS best practice: keep latest 50
 
-  // Sort by date, newest first
-  const sorted = allArticles.sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
-
-  // Take latest 50 articles
-  const latest = sorted.slice(0, 50);
-
-  const rssItems = latest
-    .map((item) => {
-      const url = `${SITE_URL}/${item.category}/${item.slug}`;
-      const pubDate = item.datePublished
-        ? new Date(item.datePublished).toUTCString()
-        : new Date(item.date).toUTCString();
-
-      const description = (item.metaDescription || item.content || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&apos;");
-
-      const title = item.heading
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-
-      const imageUrl = item.image?.startsWith("http")
-        ? item.image
-        : `${SITE_URL}${item.image}`;
-
-      return `
+  const rssItems = allArticles
+    .map(
+      (article) => `
     <item>
-      <title>${title}</title>
-      <link>${url}</link>
-      <guid isPermaLink="true">${url}</guid>
-      <description>${description}</description>
-      <pubDate>${pubDate}</pubDate>
-      <category>${item.category}</category>
-      <media:content url="${imageUrl}" medium="image" />
-    </item>`;
-    })
+      <title><![CDATA[${article.title}]]></title>
+      <link>${escapeXml(article.url)}</link>
+      <guid isPermaLink="true">${escapeXml(article.url)}</guid>
+      <description><![CDATA[${article.description}]]></description>
+      <pubDate>${article.date.toUTCString()}</pubDate>
+      <category><![CDATA[${article.category}]]></category>
+      ${
+        article.image
+          ? `<enclosure url="${escapeXml(article.image)}" type="image/webp" length="0" />`
+          : ""
+      }
+    </item>`
+    )
     .join("");
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
-  xmlns:media="http://search.yahoo.com/mrss/"
   xmlns:atom="http://www.w3.org/2005/Atom"
->
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>${SITE_NAME}</title>
+    <title><![CDATA[${SITE_NAME}]]></title>
     <link>${SITE_URL}</link>
-    <description>${SITE_DESCRIPTION}</description>
+    <description><![CDATA[${SITE_DESCRIPTION}]]></description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
     <image>
-      <url>${SITE_URL}/images/venture-hive-logo.webp</url>
-      <title>${SITE_NAME}</title>
+      <url>${SITE_URL}/images/newswireninja-logo.webp</url>
+      <title><![CDATA[${SITE_NAME}]]></title>
       <link>${SITE_URL}</link>
     </image>
     ${rssItems}
@@ -83,7 +87,7 @@ export async function GET() {
   return new Response(rss, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+      "Cache-Control": "public, max-age=3600, stale-while-revalidate=600",
     },
   });
 }
