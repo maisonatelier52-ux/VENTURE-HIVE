@@ -4,6 +4,8 @@ import { Facebook, Twitter, Globe, Instagram } from "lucide-react";
 import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
+import { FaReddit } from "react-icons/fa6";
+import { LuInstagram } from "react-icons/lu";
 
 export default function FooterComponent() {
 
@@ -136,18 +138,18 @@ export default function FooterComponent() {
         <div className="flex items-center justify-center gap-4 mt-6">
           <span className="text-2xl">~</span>
          <a
-            href="https://www.facebook.com"
+            href="https://www.reddit.com/user/Venture-hive/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook"
-            title="Visit Venture Hive on Facebook"
-            className="hover:text-blue-600 transition"
+            aria-label="Reddit"
+            title="Visit Venture Hive on Reddit"
+            className="hover:text-orange-600 transition"
           >
-            <Facebook size={18} />
+            <FaReddit  size={18} />
           </a>
 
           <a
-            href="https://www.twitter.com"
+            href="https://x.com/venturehive26"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
@@ -158,7 +160,7 @@ export default function FooterComponent() {
           </a>
 
           <a
-            href="https://www.substack.com"
+            href="https://substack.com/@venturehive"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Substack"
@@ -169,14 +171,14 @@ export default function FooterComponent() {
           </a>
 
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/venturehive26/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
             title="Visit Venture Hive on Instagram"
             className="hover:text-pink-600 transition"
           >
-            <Instagram size={18} />
+            <LuInstagram size={18} />
           </a>
           <span className="text-2xl">~</span>
         </div>

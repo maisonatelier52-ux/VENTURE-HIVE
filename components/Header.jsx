@@ -7,6 +7,9 @@ import categoryData from "../public/data/category/categorypagedata";
 import { Facebook, Twitter, Clock, Globe } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
+import { LuInstagram } from "react-icons/lu";
+import { FaReddit } from "react-icons/fa6";
+
 
 export default function HeaderComponent() {
   const [open, setOpen] = useState(false);
@@ -34,26 +37,37 @@ export default function HeaderComponent() {
         </p>
 
         <div className="flex items-center gap-4 text-black text-lg">
-          <a
-            href="https://www.facebook.com"
-            title="Visit Venture Hive on Facebook"
-            aria-label="Facebook"
+           <a
+            href="https://www.reddit.com/user/Venture-hive/"
+            title="Visit Venture Hive on Reddit"
+            aria-label="Reddit"
+            target="_blank"
           >
-            <Facebook size={18} />
+            <FaReddit size={18} />
+          </a>
+          <a
+            href="https://www.instagram.com/venturehive26/"
+            title="Visit Venture Hive on Instagram"
+            aria-label="Instagram"
+            target="_blank"
+          >
+            <LuInstagram size={18} />
           </a>
 
           <a
-            href="https://www.twitter.com"
+            href="https://x.com/venturehive26"
             title="Visit Venture Hive on Twitter"
             aria-label="Twitter"
+            target="_blank"
           >
             <FaXTwitter size={18} />
           </a>
 
           <a
-            href="https://www.substack.com"
+            href="https://substack.com/@venturehive"
             title="Visit Venture Hive on Substack"
             aria-label="Substack"
+            target="_blank"
           >
             <SiSubstack  size={18} />
           </a>
