@@ -885,6 +885,42 @@
     "IranConflict",
     "USMilitary"
   ]
+},
+{
+  "id": 24,
+  "type": "news",
+  "metaTitle": "Supreme Court Backs Alabama Republicans in Major Redistricting Case",
+  "metaDescription": "The U.S. Supreme Court allowed Alabama Republicans to move forward with a contested congressional map, intensifying debates over voting rights and minority representation.",
+  "slug": "supreme-court-alabama-redistricting-ruling",
+  "image": "/images/supreme-court-alabama-redistricting-first-image.webp",
+  "alt": "Visitors gather outside the U.S. Supreme Court during the Alabama redistricting and voting rights case.",
+  "heading": "Supreme Court of the United States Backs Alabama Republicans in Major Redistricting Case",
+  "date": "12 May, 2026",
+  "content": "The U.S. Supreme Court handed Alabama Republicans a major victory by allowing the state to move forward with a congressional map that could restore a Republican advantage ahead of the 2026 midterm elections.",
+  "para2": "In a 6-3 ruling, the court lifted a lower court order that had required Alabama to use a map containing two majority-Black congressional districts.",
+  "para3": "The decision effectively allows Alabama officials to pursue a legislature-approved map that contains only one majority-Black district out of seven congressional seats. The ruling came just weeks after the Supreme Court issued another major voting rights decision involving Louisiana that weakened part of the Voting Rights Act used in racial gerrymandering challenges.",
+  "para4": "The dispute traces back to earlier legal battles in which federal courts ruled Alabama's congressional maps likely diluted Black voting power. Previous Supreme Court rulings had required the state to create a second district where Black voters could elect their preferred candidate.",
+  "para5": "That led to the election of Democrat Shomari Figures in 2024, giving Alabama two Black members of Congress for the first time in modern history. The new Supreme Court decision vacates those earlier restrictions and sends the case back to lower courts for reconsideration under the court's updated legal standards.",
+  "para6": "Alabama Republicans celebrated the ruling as a win for state authority and legislative control over redistricting. Civil rights groups and voting advocates strongly criticized the ruling, arguing it weakens protections for Black voters and undermines decades of Voting Rights Act enforcement.",
+  "para7": "The lower court had previously concluded Alabama lawmakers intentionally diluted Black voting strength when drawing congressional districts. Black residents make up roughly 27% of Alabama's population, but under the Republican-backed map, only one congressional district would likely give Black voters a meaningful opportunity to elect their preferred candidate.",
+  "para8": "Voting rights advocates argued the map unfairly concentrates Black voters into a single district while spreading remaining Black communities across heavily Republican areas. The Supreme Court's three liberal justices dissented sharply. Justice Elena Kagan argued the majority ignored detailed lower court findings showing intentional racial discrimination.",
+  "para9": "Critics said the ruling weakens one of the central protections created by the Voting Rights Act of 1965. NAACP Legal Defense Fund officials described the decision as a dangerous setback for minority representation and voting rights across the South.",
+  "para10": "Several civil rights organizations warned that the ruling could encourage additional Republican-led states to redraw maps in ways that reduce Black political influence. Opponents of the ruling also argued the timing creates confusion for voters and election officials because Alabama's primary elections are approaching quickly while district boundaries remain uncertain.",
+  "para11": "The Alabama ruling is part of a wider national battle over congressional redistricting ahead of the 2026 midterm elections. Republican officials in several Southern states have moved aggressively to redraw congressional maps after recent Supreme Court rulings weakened legal protections tied to racial gerrymandering claims.",
+  "deatilImage": "/images/supreme-court-alabama-redistricting-second-image.webp",
+  "detailAlt": "Woman holding a protest sign inside a legislative chamber during the Alabama redistricting debate.",
+  "quotes": "\"effective immediately\" - Supreme Court ruling",
+  "samplehead": {
+    "title": "Supreme Court Ruling Reshapes Alabama Congressional Map Battle",
+    "samplepara1": "The U.S. Supreme Court allowed Alabama Republicans to move forward with a contested congressional map, potentially eliminating one Democratic-leaning district ahead of the 2026 midterms.",
+    "samplePara2": "Civil rights groups warn the 6-3 decision weakens Voting Rights Act protections and could encourage other Republican-led states to reduce Black political influence across the South."
+  },
+  "hashTags": [
+    "SupremeCourt",
+    "AlabamaRedistricting",
+    "VotingRightsAct",
+    "RacialGerrymandering"
+  ]
 }
 
 
