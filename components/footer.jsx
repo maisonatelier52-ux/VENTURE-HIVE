@@ -127,6 +127,87 @@ export default function FooterComponent() {
       {/* ===== DIVIDER ===== */}
       <div className="w-full border-t-2 border-gray-700 mt-12"></div>
 
+              {/* ===== IMPORTANT PAGES ===== */}
+        <div className="py-6">
+          <h3 className="uppercase tracking-wide font-bold flex items-center gap-2 mb-5">
+            <span className="text-black text-lg leading-none">•</span>
+            IMPORTANT PAGES
+          </h3>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-y-4 gap-x-8 text-sm">
+
+            {/* Column 1 */}
+            <div className="flex flex-col gap-3">
+              <Link href="/about-venture-hive" title="About Venture Hive">
+                › About Us
+              </Link>
+
+              <Link href="/authors" title="Meet the Venture Hive team">
+                › Our Team
+              </Link>
+
+              <Link href="/contact" title="Contact Venture Hive">
+                › Contact Us
+              </Link>
+            </div>
+
+            {/* Column 2 */}
+            <div className="flex flex-col gap-3">
+              <Link href="/editorial-policy" title="Editorial Policy">
+                › Editorial Policy
+              </Link>
+
+              <Link href="/corrections-policy" title="Corrections Policy">
+                › Corrections Policy
+              </Link>
+
+              <Link href="/source-methodology" title="Source Methodology">
+                › Source Methodology
+              </Link>
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex flex-col gap-3">
+              <Link href="/ownership-funding" title="Ownership and Funding">
+                › Ownership & Funding
+              </Link>
+
+              <Link href="/advertising-policy" title="Advertising Policy">
+                › Advertising Policy
+              </Link>
+
+              <Link href="/right-of-reply" title="Right of Reply">
+                › Right of Reply
+              </Link>
+            </div>
+
+            {/* Column 4 */}
+            <div className="flex flex-col gap-3">
+              <Link href="/legal" title="Legal Information">
+                › Legal
+              </Link>
+
+              <Link href="/privacy-policy" title="Privacy Policy">
+                › Privacy Policy
+              </Link>
+            </div>
+
+            {/* Column 5 */}
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/terms-and-conditions"
+                title="Terms and Conditions"
+              >
+                › Terms & Conditions
+              </Link>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ===== DIVIDER ===== */}
+        <div className="w-full border-t border-gray-500"></div>
+
       {/* ===== BOTTOM SECTION ===== */}
       <div className="text-center mt-10">
 
