@@ -957,6 +957,40 @@
     "KarenBass",
     "CaliforniaElections"
   ]
+},
+{
+  "id": 26,
+  "type": "news",
+  "metaTitle": "FISA Spy Program at Risk of Collapse as Trump Refuses to Drop Pulte as Acting Intelligence Chief",
+  "metaDescription": "A rare FISA Section 702 lapse looms after Trump resists calls from both parties to replace acting DNI Bill Pulte. Democrats block renewal. Deadline midnight Friday.",
+  "slug": "fisa-spy-program-risk-trump-pulte-acting-director-national-intelligence",
+  "image": "/images/fisa-spy-program-risk-trump-pulte-acting-director-national-first-image.webp",
+  "alt": "Trump discusses FISA Section 702 renewal amid Bill Pulte controversy.",
+  "heading": "FISA Spy Program Teeters on the Brink as Trump Stands Firm on Unconventional Pick Pulte",
+  "date": "11 June, 2026",
+  "content": "A high-stakes standoff between the White House and Capitol Hill is pushing one of America's most powerful foreign surveillance tools toward an unprecedented shutdown. The Intelligence Community is bracing for a potential blackout just as World Cup matches draw global attention to US cities and the nation's 250th anniversary celebrations loom.",
+  "para2": "At the center of the turmoil is President Donald Trump's refusal to withdraw the acting appointment of Bill Pulte, a federal housing regulator with little to no intelligence experience, to serve as temporary director of national intelligence (DNI). Lawmakers from both parties are now warning that unless Trump backs down, they will not renew Section 702 of the Foreign Intelligence Surveillance Act — better known as FISA — which expires at midnight Friday.",
+  "para3": "The FISA program, long debated over privacy concerns but rarely allowed to lapse, had enjoyed broad bipartisan support for renewal just weeks ago. Republicans and Democrats had even hammered out a compromise bill. That fragile consensus has shattered over a single name: Bill Pulte. House Democrats, led by Intelligence Committee Ranking Member Jim Himes of Connecticut, have drawn a firm line. In a sharply worded letter to the president, they called Pulte a 'uniquely poor choice' to lead the nation's spy agencies, even temporarily.",
+  "para4": "Behind closed doors, Republican leaders have lobbied the White House all week to quickly nominate a permanent, Senate-confirmable replacement for former DNI Tulsi Gabbard. So far, those efforts have gone nowhere. Senate Majority Leader John Thune admitted tersely that GOP leadership has 'made our views known' — to no avail. House Speaker Mike Johnson tried to calm waters, insisting Pulte's role is meant to be 'a very short term — a sort of renovation role' to downsize intelligence agencies. But that message has failed to reassure anyone.",
+  "para5": "Democrats point not only to Pulte's lack of intelligence credentials but also to his controversial tenure at the Federal Housing Finance Agency. During his time there, Pulte has been linked to criminal referrals involving allegations of mortgage fraud — targeting public officials Trump has sought to punish, including New York Attorney General Letitia James, Congressman Adam Schiff, and Federal Reserve Board member Lisa Cook. Himes and other lawmakers wrote that Pulte 'has distinguished himself only as someone who will do or say anything to stay in your good graces — qualities that are precisely the opposite of what our nation needs.'",
+  "para6": "On Thursday morning, the House will attempt to pass a short-term extension of FISA Section 702. Passage is widely considered unlikely. The Senate may follow with its own attempt, but the mood in the Capitol is grim. One senior congressional aide, speaking anonymously, put it bluntly: 'Nobody wants to be the one to let this lapse, but right now nobody blinks.'",
+  "para7": " Senator Mark Warner, the top Democrat on the Senate Intelligence Committee, called Pulte's appointment 'a live hand grenade' tossed into a delicate process. Warner has offered an off-ramp: he will only support a short-term extension if the acting director during that period is principal deputy DNI Aaron Lukas, not Pulte. The White House has not responded.",
+  "para8": "Senate Intelligence Committee Chairman Tom Cotton and Senate Judiciary Chairman Chuck Grassley jointly warned the administration this week to prepare 'for a potential significant gap in foreign intelligence collection.' In a letter to the president, they noted bluntly that the spy tool is very likely to lapse. If Section 702 expires, the CIA, NSA, and FBI would lose the ability to collect communications from foreign targets overseas without a warrant — a restriction that officials say would blind them to emerging terrorist plots and cyberattacks. The timing couldn't be worse, with World Cup crowds filling American cities and 250th anniversary planning underway. Trump has remained defiant. 'We can't let them extort us,' he said of Democrats. He has told reporters he is interviewing five permanent candidates but needs more time. Meanwhile, he accelerated Pulte's start date to June 19, a day earlier than planned. House Democratic Leader Hakeem Jeffries didn't mince words: 'If President Trump wants a shot at a short-term extension, he needs to pull the Pulte appointment immediately. This is a disgraceful individual — a partisan political hack who is deeply unqualified.' Behind the scenes, the White House has reached out to former House Intelligence Committee chairman Pete Hoekstra, currently ambassador to Canada, about taking the job. Conversations are ongoing. But with the clock nearing midnight Friday, that feels to many on the Hill like a plan arriving far too late. For now, the FISA program hangs by a thread — and the man at the center of the storm is a housing regulator most Americans had never heard of two weeks ago.",
+  "deatilImage": "/images/fisa-spy-program-risk-trump-pulte-acting-director-national-second-image.webp",
+  "detailAlt": "Bill Pulte faces bipartisan criticism over acting DNI appointment.",
+  "quotes": "\"Nobody wants to be the one to let this lapse, but right now nobody blinks.\" — Senior congressional aide",
+  "samplehead": {
+    "title": "FISA Spy Program Faces Midnight Friday Shutdown as Trump Defies Both Parties on Pulte",
+    "samplepara1": "A rare and potentially dangerous lapse in the US government's foreign intelligence-gathering authority is growing more likely by the hour. President Trump has ignored urgent pleas from Republicans and Democrats alike to withdraw the acting appointment of Bill Pulte as director of national intelligence. Without a permanent, Senate-confirmed leader, Democrats say they will block renewal of FISA Section 702 — the legal backbone for warrantless foreign surveillance.",
+    "samplePara2": "The law expires at midnight Friday. The House will try Thursday morning to pass a short-term extension, but passage is unlikely. Senate leaders warn the administration to prepare for a 'significant gap' in intelligence collection just as World Cup games begin across the country and the nation gears up for its 250th anniversary. Republicans have lobbied Trump all week. He has refused to budge, insisting Pulte will downsize intelligence agencies. Democrats call Pulte a 'partisan political hack.' The clock is running out."
+  },
+  "hashTags": [
+    "FISA",
+    "Section702",
+    "BillPulte",
+    "Trump",
+    "CapitolHill"
+  ]
 }
 
 
