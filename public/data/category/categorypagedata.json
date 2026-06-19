@@ -1917,6 +1917,58 @@
     "FedIndependence",
     "USEconomy"
   ]
+},
+{
+  "id": 22,
+  "type": "business",
+  "metaTitle": "U.S. Raises Concerns With ASML Over Reports of Advanced Chip Tool in China",
+  "metaDescription": "U.S. officials have reportedly raised concerns with ASML over the possibility that one of its advanced chipmaking tools may have reached China, intensifying scrutiny of semiconductor export controls.",
+  "slug": "us-asml-china-chip-tool-concerns-2026",
+  "image": "/images/us-asml-china-chip-tool-concerns-first-image.webp",
+  "alt": "ASML headquarters as U.S. raises concerns over advanced chip technology reaching China",
+  "heading": "U.S. Raises Concerns With ASML Over Reports of Advanced Chip Tool in China",
+  "date": "19 June, 2026",
+
+  "content": "The United States has reportedly informed Dutch semiconductor equipment manufacturer ASML that Washington is concerned one of the company’s most advanced chipmaking tools may have found its way into China despite years of export restrictions aimed at limiting Beijing’s access to cutting-edge semiconductor technology. According to reports, U.S. Commerce Secretary Howard Lutnick raised the issue during discussions with senior ASML executives.",
+
+  "para2": "The concerns represent the latest development in the ongoing technology competition between the United States and China, where advanced semiconductor manufacturing capabilities have become a central strategic priority. U.S. officials have spent years working with allies to restrict China's access to the most sophisticated chipmaking equipment.",
+
+  "para3": "The reported discussions did not include public evidence that a restricted machine had actually reached China. The matter was of such importance, however, that it was brought directly to the attention of ASML leadership, underlining the delicacy of advanced semiconductor technology.",
+
+  "para4": "The development immediately attracted attention across the global chip industry because ASML occupies a unique position as the sole producer of the world's most advanced lithography systems.",
+
+  "para5": "ASML pushed back against the concerns, emphasizing that its most advanced extreme ultraviolet (EUV) lithography systems have never been shipped to China. The company stated that no EUV machine, component, module or equipment specifically designed for EUV systems has been exported to Chinese customers.",
+
+  "para6": "The company noted that EUV machines are extraordinarily complex systems that are produced in very limited quantities and require ongoing maintenance and support from ASML personnel. These machines are roughly the size of a school bus and weigh approximately 180 tons, making them difficult to move, conceal or operate without extensive technical assistance.",
+
+  "para7": "ASML's defense reflects its longstanding position that export controls governing advanced lithography equipment are closely monitored and enforced. The company has repeatedly stated that it complies with regulations imposed by the Dutch government and international trade restrictions.",
+
+  "para8": "The reported concerns come amid broader efforts by Washington to tighten restrictions on China's access to advanced semiconductor technology. Over the past several years, the United States has encouraged allies including the Netherlands, Japan and South Korea to strengthen controls on sensitive chipmaking equipment and materials.",
+
+  "para9": "Semiconductors have become a critical battleground because advanced chips are essential for artificial intelligence, high-performance computing, telecommunications and military applications. U.S. policymakers say it is necessary to limit access to advanced manufacturing equipment to protect national security interests.",
+
+  "para10": "The report comes as China’s push to develop domestic alternatives to Western semiconductor technology faces increasing scrutiny. Recent reports have described Chinese initiatives aimed at building indigenous lithography capabilities and reducing dependence on foreign suppliers.",
+
+  "para11": "For now, there is no public confirmation that any ASML EUV machine has entered China. Nevertheless, the concerns raised by U.S. officials underscore the sensitivity of advanced chipmaking technology, and why governments still treat semiconductor equipment as a strategic asset.",
+
+  "deatilImage": "/images/us-asml-china-chip-tool-concerns-second-image.webp",
+  "detailAlt": "ASML EUV lithography machine used in advanced semiconductor manufacturing amid U.S.-China tensions",
+
+  "quotes": "ASML occupies a unique position as the sole producer of the world's most advanced lithography systems.",
+
+  "samplehead": {
+    "title": "U.S. questions ASML over possible advanced chip tool in China",
+    "samplepara1": "Washington has raised concerns with ASML that one of its most advanced chipmaking tools may have reached China, despite strict export controls. U.S. Commerce Secretary Howard Lutnick discussed the issue with ASML executives.",
+    "samplePara2": "ASML firmly stated that no EUV machines or related components have been shipped to China. The incident highlights the ongoing U.S.-China semiconductor rivalry and the strategic importance of advanced lithography technology."
+  },
+
+  "hashTags": [
+    "ASML",
+    "China",
+    "Semiconductors",
+    "EUV",
+    "USChinaTech"
+  ]
 }
 
 
