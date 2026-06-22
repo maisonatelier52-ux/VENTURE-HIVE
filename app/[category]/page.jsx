@@ -63,51 +63,14 @@
 //     (item) => item.category.toLowerCase() === category.toLowerCase()
 //   )?.author;
 
-//   // Client news slug that should always be included in business category
-//   const CLIENT_NEWS_SLUG = "julio-herrera-velutini-bridging-nations-through-finance";
-
-//   let categoryArticles;
-
-//   if (category === "business") {
-//     // Find the client news article
-//     const clientNewsArticle = articles.find(
-//       (article) => article.slug === CLIENT_NEWS_SLUG
-//     );
-
-//     // Filter out the client news from regular articles
-//     const regularArticles = articles.filter(
-//       (article) => article.slug !== CLIENT_NEWS_SLUG
-//     );
-
-//     // Sort regular articles by date and take the latest 9
-//     const latestRegularArticles = regularArticles
-//       .sort((a, b) => {
-//         const dateA = new Date(a.date);
-//         const dateB = new Date(b.date);
-//         return dateB - dateA; // Descending order (newest first)
-//       })
-//       .slice(0, 9);
-
-//     // If client news exists, add it at the beginning, otherwise just show 10 regular articles
-//     categoryArticles = clientNewsArticle
-//       ? [clientNewsArticle, ...latestRegularArticles]
-//       : regularArticles
-//           .sort((a, b) => {
-//             const dateA = new Date(a.date);
-//             const dateB = new Date(b.date);
-//             return dateB - dateA;
-//           })
-//           .slice(0, 10);
-//   } else {
-//     // For other categories, just sort by date and take the latest 10
-//     categoryArticles = articles
-//       .sort((a, b) => {
-//         const dateA = new Date(a.date);
-//         const dateB = new Date(b.date);
-//         return dateB - dateA;
-//       })
-//       .slice(0, 10);
-//   }
+//   // Sort articles by date and take the latest 10
+//   const categoryArticles = articles
+//     .sort((a, b) => {
+//       const dateA = new Date(a.date);
+//       const dateB = new Date(b.date);
+//       return dateB - dateA;
+//     })
+//     .slice(0, 10);
 
 //   const formatted = category.charAt(0).toUpperCase() + category.slice(1);
 
@@ -221,9 +184,7 @@
 //                       </div>
 
 //                       <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
-//                         {item.type !== "client-news"
-//                           ? item.content.slice(0, 180)
-//                           : item.content.slice(0, 180)}
+//                         {item.content.slice(0, 180)}
 //                       </p>
 //                     </article>
 //                   </Link>
@@ -254,6 +215,13 @@ import categorypagedata from "../../public/data/category/categorypagedata";
 import authorsPageData from "../../public/data/authors";
 
 const SITE_URL = "https://www.venture-hive.com";
+
+// ✅ ADDED: Tells Next.js to pre-build all category pages at build time.
+// Without this, category pages are server-rendered on demand — Google may
+// get slow/inconsistent responses and choose not to index them.
+export async function generateStaticParams() {
+  return Object.keys(categorypagedata).map((category) => ({ category }));
+}
 
 export async function generateMetadata({ params }) {
   const { category } = await params;

@@ -33,7 +33,7 @@
 //   return params;
 // }
 
-// // ✅ FIXED: Removed ALL FAQ schema from metadata - it's now ONLY in the page body
+// // ✅ Basic metadata only - NO FAQ schema here
 // export async function generateMetadata({ params }) {
 //   const { category, slug } = await params;
 
@@ -41,7 +41,6 @@
 
 //   if (!article) return {};
 
-//   // ✅ Basic metadata only - NO FAQ schema here
 //   return {
 //     title: article.metaTitle,
 //     description: article.metaDescription,
@@ -86,24 +85,12 @@
 //     (item) => item.category.toLowerCase() === (article.authorCategory || category).toLowerCase()
 //   )?.author;
 
-//   // Related posts logic
-//   const specialSlug = "julio-herrera-velutini-bridging-nations-through-finance";
-
+//   // Related posts logic - simplified without special handling
 //   const filteredCategoryPosts = categoryPosts.filter(
 //     (item) => item.slug !== slug
 //   );
 
-//   const relatedPosts =
-//     category === "business"
-//       ? [
-//           ...filteredCategoryPosts
-//             .filter((item) => item.slug !== specialSlug)
-//             .slice(0, 3),
-//           filteredCategoryPosts.find(
-//             (item) => item.slug === specialSlug
-//           ),
-//         ].filter(Boolean)
-//       : filteredCategoryPosts.slice(0, 4);
+//   const relatedPosts = filteredCategoryPosts.slice(0, 4);
 
 //   const currentIndex = categoryPosts.findIndex(p => p.slug === slug);
 //   const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
@@ -296,29 +283,7 @@
 
 //                 <p className="text-justify">{article.para9}</p>
 //                 <p className="text-justify">{article.para10}</p>
-
-//                 {category === "investigation" && slug === "banker-julio-herrera-velutini-charges-dropped" ? (
-//                   <p className="text-justify">
-//                     {article.para11.split("Julio Herrera Velutini").map((part, index) => (
-//                       <>
-//                         {part}
-//                         {index < article.para11.split("Julio Herrera Velutini").length - 1 && (
-//                           <a
-//                             href="https://www.houseofherrera.com/"
-//                             target="_blank"
-//                             rel="noopener noreferrer"
-//                             className="font-bold text-blue-600"
-//                             title="Visit Julio Herrera Velutini's official site"
-//                           >
-//                             Julio Herrera Velutini
-//                           </a>
-//                         )}
-//                       </>
-//                     ))}
-//                   </p>
-//                 ) : (
-//                   <p className="text-justify">{article.para11}</p>
-//                 )}
+//                 <p className="text-justify">{article.para11}</p>
 
 //                 <h2 className="text-xl font-semibold">{article.samplehead.title}</h2>
 //                 <p className="text-justify">{article.samplehead.samplepara1}</p>
@@ -615,7 +580,7 @@
 //     ],
 //   };
 
-//   // ✅ FIXED: FAQ schema ONLY as <script> tag in page body (NOT in metadata)
+//   // ✅ FAQ schema ONLY as <script> tag in page body (NOT in metadata)
 //   const faqJsonLd = article.faq ? {
 //     "@context": "https://schema.org",
 //     "@type": "FAQPage",
@@ -628,19 +593,6 @@
 //       },
 //     })),
 //   } : null;
-
-// // const faqJsonLd = { 
-// //   "@context": "https://schema.org", 
-// //   "@type": "FAQPage", 
-// //   mainEntity: [ {
-// //      "@type": "Question", 
-// //      name: "What makes Julio Herrera Velutini's approach to global finance different?", 
-// //      acceptedAnswer: { 
-// //       "@type": "Answer", 
-// //       text: "His approach prioritizes long-term economic stability, ethical governance, and cross-border collaboration rather than short-term profit maximization.", 
-// //     }, 
-// //   }, 
-// //   { "@type": "Question", name: "What influence has his work had on emerging markets?", acceptedAnswer: { "@type": "Answer", text: "By facilitating access to international capital and modern financial infrastructure, he has helped emerging economies stabilize currencies and attract sustainable investment.", }, }, { "@type": "Question", name: "Why is cross-border finance important today?", acceptedAnswer: { "@type": "Answer", text: "It enables diversification of risk, faster recovery from shocks, and inclusive global growth.", }, }, ], };
 
 //   // Helper function to render paragraph with mixed content (text and links)
 //   const renderParagraph = (para, pIndex) => {
@@ -798,7 +750,7 @@
 //         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
 //       />
 
-//       {/* ✅ FIXED: FAQ Schema rendered as <script> in page body (NOT in metadata) */}
+//       {/* ✅ FAQ Schema rendered as <script> in page body (NOT in metadata) */}
 //       {faqJsonLd && (
 //         <script
 //           type="application/ld+json"
@@ -1151,12 +1103,13 @@ import { FaQuora } from "react-icons/fa";
 
 const SITE_URL = "https://www.venture-hive.com";
 
-// ✅ generateStaticParams for better crawl efficiency
+// ✅ Pre-builds every article page at build time so Googlebot always gets
+// a fast, fully-rendered HTML response (no server-side execution delay).
 export async function generateStaticParams() {
   const params = [];
 
   Object.entries(categorypagedata).forEach(([category, posts]) => {
-    posts.forEach(post => {
+    posts.forEach((post) => {
       params.push({
         category,
         slug: post.slug,
@@ -1167,7 +1120,6 @@ export async function generateStaticParams() {
   return params;
 }
 
-// ✅ Basic metadata only - NO FAQ schema here
 export async function generateMetadata({ params }) {
   const { category, slug } = await params;
 
@@ -1216,19 +1168,23 @@ export default async function ArticlePage({ params }) {
   }
 
   const authorData = authorsPageData.categories.find(
-    (item) => item.category.toLowerCase() === (article.authorCategory || category).toLowerCase()
+    (item) =>
+      item.category.toLowerCase() ===
+      (article.authorCategory || category).toLowerCase()
   )?.author;
 
-  // Related posts logic - simplified without special handling
+  // Related posts — exclude current article
   const filteredCategoryPosts = categoryPosts.filter(
     (item) => item.slug !== slug
   );
-
   const relatedPosts = filteredCategoryPosts.slice(0, 4);
 
-  const currentIndex = categoryPosts.findIndex(p => p.slug === slug);
+  const currentIndex = categoryPosts.findIndex((p) => p.slug === slug);
   const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null;
+  const nextPost =
+    currentIndex < categoryPosts.length - 1
+      ? categoryPosts[currentIndex + 1]
+      : null;
 
   const shareUrl = `${SITE_URL}/${category}/${slug}`;
   const encodedUrl = encodeURIComponent(shareUrl);
@@ -1236,18 +1192,21 @@ export default async function ArticlePage({ params }) {
 
   // Route to correct render component based on article type
   if (article.type === "client-news") {
-    return <ClientNewsArticle 
-      article={article} 
-      category={category} 
-      slug={slug}
-      authorData={authorData}
-      encodedUrl={encodedUrl}
-      shareTitle={shareTitle}
-      shareUrl={shareUrl}
-    />;
+    return (
+      <ClientNewsArticle
+        article={article}
+        category={category}
+        slug={slug}
+        authorData={authorData}
+        encodedUrl={encodedUrl}
+        shareTitle={shareTitle}
+        shareUrl={shareUrl}
+      />
+    );
   }
 
-  // Regular news article rendering with schema
+  // ── Regular news article ──────────────────────────────────────────────────
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -1315,21 +1274,24 @@ export default async function ArticlePage({ params }) {
 
       <div className="flex flex-col font-serif min-h-screen bg-zinc-50 font-sans px-5 md:px-20">
         <div className="text-sm text-gray-500 mt-4 mb-2">
-          <Link href="/" className="hover:text-black">Home</Link>
+          <Link href="/" className="hover:text-black">
+            Home
+          </Link>
           <span className="mx-2">›</span>
-          <Link href={`/${category}`} className="hover:text-black capitalize">
+          <Link
+            href={`/${category}`}
+            className="hover:text-black capitalize"
+          >
             {category}
           </Link>
           <span className="mx-2">›</span>
-          <span className="font-medium text-black">
-            {article.heading}
-          </span>
+          <span className="font-medium text-black">{article.heading}</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-4 mb-5">
           <div>
             <div className="flex flex-col items-center text-center space-y-4">
-              {/* HERO IMAGE - CRITICAL: Priority loading for LCP */}
+              {/* HERO IMAGE */}
               <div className="relative w-full max-w-3xl aspect-[16/9]">
                 <Image
                   src={article.image}
@@ -1348,9 +1310,10 @@ export default async function ArticlePage({ params }) {
               </h1>
 
               <p className="text-sm text-gray-600 max-w-3xl mt-2">
-                This report by <strong>Venture Hive</strong>, an independent news organization,
-                provides investigative journalism and in-depth analysis on major political
-                developments shaping the United States.
+                This report by <strong>Venture Hive</strong>, an independent
+                news organization, provides investigative journalism and
+                in-depth analysis on major political developments shaping the
+                United States.
               </p>
 
               <div className="flex flex-wrap justify-center items-center gap-4 text-center">
@@ -1365,15 +1328,19 @@ export default async function ArticlePage({ params }) {
                       loading="lazy"
                     />
                   </div>
-                  <Link href={`/authors`} title={authorData.name}>
+                  <Link href="/authors" title={authorData.name}>
                     <span className="font-medium text-xs text-gray-600 hover:text-blue-600 hover:underline transition cursor-pointer">
                       {authorData.name.toUpperCase()}
                     </span>
                   </Link>
                 </div>
 
-                <span className="text-gray-600 text-xs">{category.toUpperCase()}</span>
-                <span className="text-gray-600 text-xs">{article.date.toUpperCase()}</span>
+                <span className="text-gray-600 text-xs">
+                  {category.toUpperCase()}
+                </span>
+                <span className="text-gray-600 text-xs">
+                  {article.date.toUpperCase()}
+                </span>
               </div>
 
               <hr className="w-full border border-gray-700 border-solid" />
@@ -1419,7 +1386,9 @@ export default async function ArticlePage({ params }) {
                 <p className="text-justify">{article.para10}</p>
                 <p className="text-justify">{article.para11}</p>
 
-                <h2 className="text-xl font-semibold">{article.samplehead.title}</h2>
+                <h2 className="text-xl font-semibold">
+                  {article.samplehead.title}
+                </h2>
                 <p className="text-justify">{article.samplehead.samplepara1}</p>
                 <p className="text-justify">{article.samplehead.samplePara2}</p>
               </div>
@@ -1430,7 +1399,8 @@ export default async function ArticlePage({ params }) {
                 {article.hashTags.map((tag, index) => (
                   <span
                     key={index}
-                    className="text-xs md:text-sm px-3 py-1 rounded-full text-gray-700 whitespace-nowrap">
+                    className="text-xs md:text-sm px-3 py-1 rounded-full text-gray-700 whitespace-nowrap"
+                  >
                     #{tag}
                   </span>
                 ))}
@@ -1503,7 +1473,7 @@ export default async function ArticlePage({ params }) {
                 </div>
 
                 <div className="w-full md:w-3/4 flex flex-col gap-4 p-2 md:p-6">
-                  <Link href={`/authors`} title={authorData.name}>
+                  <Link href="/authors" title={authorData.name}>
                     <h2 className="text-xl md:text-2xl font-semibold text-gray-900 cursor-pointer hover:underline">
                       {authorData.name}
                     </h2>
@@ -1578,7 +1548,9 @@ export default async function ArticlePage({ params }) {
                         key={`${item.slug}-${index}`}
                         className="flex items-start gap-4 border-b border-gray-300 pb-3"
                       >
-                        <span className="text-xl font-semibold">{index + 1}.</span>
+                        <span className="text-xl font-semibold">
+                          {index + 1}.
+                        </span>
                         <p className="text-sm text-gray-700">{item.heading}</p>
                       </Link>
                     );
@@ -1593,7 +1565,11 @@ export default async function ArticlePage({ params }) {
                   </h2>
 
                   {prevPost ? (
-                    <Link href={`/${category}/${prevPost.slug}`} title={prevPost.heading} className="flex gap-4 items-start">
+                    <Link
+                      href={`/${category}/${prevPost.slug}`}
+                      title={prevPost.heading}
+                      className="flex gap-4 items-start"
+                    >
                       <div className="w-1/4">
                         <div className="relative w-full h-24">
                           <Image
@@ -1608,8 +1584,12 @@ export default async function ArticlePage({ params }) {
                       </div>
 
                       <div className="w-3/4">
-                        <h3 className="text-sm font-semibold">{prevPost.heading}</h3>
-                        <p className="text-xs text-gray-500 mt-1">{prevPost.date}</p>
+                        <h3 className="text-sm font-semibold">
+                          {prevPost.heading}
+                        </h3>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {prevPost.date}
+                        </p>
                       </div>
                     </Link>
                   ) : (
@@ -1623,7 +1603,11 @@ export default async function ArticlePage({ params }) {
                   </h2>
 
                   {nextPost ? (
-                    <Link href={`/${category}/${nextPost.slug}`} title={nextPost.heading} className="flex gap-4 items-start">
+                    <Link
+                      href={`/${category}/${nextPost.slug}`}
+                      title={nextPost.heading}
+                      className="flex gap-4 items-start"
+                    >
                       <div className="w-1/4">
                         <div className="relative w-full h-24">
                           <Image
@@ -1638,8 +1622,12 @@ export default async function ArticlePage({ params }) {
                       </div>
 
                       <div className="w-3/4">
-                        <h3 className="text-sm font-semibold">{nextPost.heading}</h3>
-                        <p className="text-xs text-gray-500 mt-1">{nextPost.date}</p>
+                        <h3 className="text-sm font-semibold">
+                          {nextPost.heading}
+                        </h3>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {nextPost.date}
+                        </p>
                       </div>
                     </Link>
                   ) : (
@@ -1651,7 +1639,10 @@ export default async function ArticlePage({ params }) {
           </div>
 
           <div className="lg:sticky lg:top-5 h-max self-start">
-            <RightSidebar categoryData={categorypagedata} authors={authorsPageData} />
+            <RightSidebar
+              categoryData={categorypagedata}
+              authors={authorsPageData}
+            />
           </div>
         </div>
       </div>
@@ -1659,9 +1650,16 @@ export default async function ArticlePage({ params }) {
   );
 }
 
-// ✅ Client News Article Component - FAQ Schema ONLY rendered here in body
-function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, shareTitle, shareUrl }) {
-  // Article Schema with all required fields
+// ── Client News Article Component ─────────────────────────────────────────────
+function ClientNewsArticle({
+  article,
+  category,
+  slug,
+  authorData,
+  encodedUrl,
+  shareTitle,
+  shareUrl,
+}) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -1669,8 +1667,10 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     description: article.metaDescription,
     articleSection: category,
     image: [`${SITE_URL}${article.image}`],
-    datePublished: article.datePublished || new Date(article.date).toISOString(),
-    dateModified: article.dateModified || new Date(article.date).toISOString(),
+    datePublished:
+      article.datePublished || new Date(article.date).toISOString(),
+    dateModified:
+      article.dateModified || new Date(article.date).toISOString(),
     author: {
       "@type": "Person",
       name: authorData?.name || "Venture Hive Staff",
@@ -1693,12 +1693,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: SITE_URL,
-      },
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       {
         "@type": "ListItem",
         position: 2,
@@ -1714,23 +1709,21 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     ],
   };
 
-  // ✅ FAQ schema ONLY as <script> tag in page body (NOT in metadata)
-  const faqJsonLd = article.faq ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: article.faq.map(item => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  } : null;
+  const faqJsonLd = article.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: article.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
 
-  // Helper function to render paragraph with mixed content (text and links)
+  // ── Render helpers ────────────────────────────────────────────────────────
+
   const renderParagraph = (para, pIndex) => {
-    // If paragraph has parts (mixed text and links)
     if (para.parts) {
       return (
         <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
@@ -1749,28 +1742,20 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                     {part.text}
                   </a>
                 );
-              } else {
-                return (
-                  <Link
-                    key={partIndex}
-                    href={part.href}
-                    title={part.title}
-                  >
-                    <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
-                      {part.text}
-                    </span>
-                  </Link>
-                );
               }
-            } else {
-              return <span key={partIndex}>{part.content}</span>;
+              return (
+                <Link key={partIndex} href={part.href} title={part.title}>
+                  <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                    {part.text}
+                  </span>
+                </Link>
+              );
             }
+            return <span key={partIndex}>{part.content}</span>;
           })}
         </p>
       );
     }
-    
-    // If paragraph is just text
     if (para.text) {
       return (
         <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
@@ -1778,8 +1763,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
         </p>
       );
     }
-    
-    // Fallback for plain string
     return (
       <p key={pIndex} className={pIndex > 0 ? "mt-2" : ""}>
         {para}
@@ -1787,9 +1770,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     );
   };
 
-  // Helper function to render list items with mixed content
   const renderListItem = (item, lIndex) => {
-    // If list item has parts (mixed text and links)
     if (item.parts) {
       return (
         <li key={lIndex}>
@@ -1808,61 +1789,47 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                     {part.text}
                   </a>
                 );
-              } else {
-                return (
-                  <Link
-                    key={partIndex}
-                    href={part.href}
-                    title={part.title}
-                  >
-                    <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
-                      {part.text}
-                    </span>
-                  </Link>
-                );
               }
-            } else {
-              return <span key={partIndex}>{part.content}</span>;
+              return (
+                <Link key={partIndex} href={part.href} title={part.title}>
+                  <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                    {part.text}
+                  </span>
+                </Link>
+              );
             }
+            return <span key={partIndex}>{part.content}</span>;
           })}
         </li>
       );
     }
-    
-    // If list item is just text
-    if (item.text) {
-      return <li key={lIndex}>{item.text}</li>;
-    }
-    
-    // Fallback for plain string
+    if (item.text) return <li key={lIndex}>{item.text}</li>;
     return <li key={lIndex}>{item}</li>;
   };
 
-  // Helper function to render intro with mixed content
   const renderIntro = () => {
     const intro = article.detailcontents?.intro;
     if (!intro) return null;
 
-    // If intro has links (complex structure)
     if (intro.text || intro.links) {
       return (
         <p className="text-base leading-relaxed text-justify drop-cap mb-6">
           {intro.text}
-          {intro.links && intro.links.map((link, index) => (
-            <React.Fragment key={index}>
-              <Link href={link.href} title={link.title}>
-                <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
-                  {link.text}
-                </span>
-              </Link>
-            </React.Fragment>
-          ))}
+          {intro.links &&
+            intro.links.map((link, index) => (
+              <React.Fragment key={index}>
+                <Link href={link.href} title={link.title}>
+                  <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                    {link.text}
+                  </span>
+                </Link>
+              </React.Fragment>
+            ))}
           {intro.textAfter}
         </p>
       );
     }
-    
-    // If intro is just a string
+
     return (
       <p className="text-base leading-relaxed text-justify drop-cap mb-6">
         {intro}
@@ -1870,21 +1837,18 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
     );
   };
 
+  // ── JSX ───────────────────────────────────────────────────────────────────
+
   return (
     <>
-      {/* Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
-      
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-
-      {/* ✅ FAQ Schema rendered as <script> in page body (NOT in metadata) */}
       {faqJsonLd && (
         <script
           type="application/ld+json"
@@ -1892,7 +1856,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
         />
       )}
 
-      {/* VISIBLE BREADCRUMB */}
+      {/* Visible breadcrumb */}
       <div className="px-5 md:px-20 pt-4 text-sm text-gray-600">
         <Link href="/" className="hover:text-black">
           Home
@@ -1902,22 +1866,19 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
           {category}
         </Link>
         <span className="mx-2">›</span>
-        <span className="font-medium text-black">
-          {article.heading}
-        </span>
+        <span className="font-medium text-black">{article.heading}</span>
       </div>
 
       <div className="min-h-screen font-serif text-gray-900 px-5 md:px-20">
-        {/* Newspaper texture */}
         <div className="fixed inset-0 opacity-5 pointer-events-none">
           <div className="absolute inset-0 bg-repeat" />
         </div>
 
         <div className="relative max-w-7xl mx-auto py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-10">
-            {/* ================= LEFT COLUMN ================= */}
+            {/* ── LEFT COLUMN ── */}
             <div>
-              {/* ===== HERO ===== */}
+              {/* Hero */}
               <div className="relative w-full h-72 md:h-96 mb-8 overflow-hidden rounded shadow-xl">
                 <Image
                   src={article.image}
@@ -1934,7 +1895,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 </div>
               </div>
 
-              {/* ===== SUBTITLE ===== */}
+              {/* Subtitle */}
               <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-lg md:text-xl font-medium mb-2">
                   {article.subtitle}
@@ -1946,28 +1907,25 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
               </div>
 
               <article className="text-sm leading-relaxed text-gray-800">
-                {/* INTRO */}
                 {renderIntro()}
 
-                {/* SECTIONS */}
                 <div className="flex flex-col space-y-10 text-justify">
                   {article.detailcontents?.sections?.map((section, index) => (
                     <section key={index}>
                       <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
                         {section.title}
                       </h2>
-                      
-                      {/* Paragraphs */}
-                      {section.paragraphs?.map((para, pIndex) => renderParagraph(para, pIndex))}
-                      
-                      {/* Quote */}
+
+                      {section.paragraphs?.map((para, pIndex) =>
+                        renderParagraph(para, pIndex)
+                      )}
+
                       {section.quote && (
                         <blockquote className="my-6 pl-4 border-l-4 border-gray-700 italic text-gray-600">
                           {section.quote}
                         </blockquote>
                       )}
-                      
-                      {/* List */}
+
                       {section.list && (
                         <>
                           {section.listTitle && (
@@ -1976,12 +1934,13 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                             </h3>
                           )}
                           <ul className="list-disc pl-5 space-y-1">
-                            {section.list.map((item, lIndex) => renderListItem(item, lIndex))}
+                            {section.list.map((item, lIndex) =>
+                              renderListItem(item, lIndex)
+                            )}
                           </ul>
                         </>
                       )}
-                      
-                      {/* After List Text */}
+
                       {section.afterList && (
                         <>
                           {section.afterList.parts ? (
@@ -2001,46 +1960,48 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                                         {part.text}
                                       </a>
                                     );
-                                  } else {
-                                    return (
-                                      <Link
-                                        key={partIndex}
-                                        href={part.href}
-                                        title={part.title}
-                                      >
-                                        <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
-                                          {part.text}
-                                        </span>
-                                      </Link>
-                                    );
                                   }
-                                } else {
-                                  return <span key={partIndex}>{part.content}</span>;
+                                  return (
+                                    <Link
+                                      key={partIndex}
+                                      href={part.href}
+                                      title={part.title}
+                                    >
+                                      <span className="font-semibold underline decoration-blue-600 underline-offset-4 cursor-pointer">
+                                        {part.text}
+                                      </span>
+                                    </Link>
+                                  );
                                 }
+                                return (
+                                  <span key={partIndex}>{part.content}</span>
+                                );
                               })}
                             </p>
                           ) : (
-                            <p className="mt-2">{section.afterList.text || section.afterList}</p>
+                            <p className="mt-2">
+                              {section.afterList.text || section.afterList}
+                            </p>
                           )}
                         </>
                       )}
-                      
-                      {/* Highlight Quote (for special formatting) */}
+
                       {section.highlightQuote && (
                         <div className="my-8 py-6 px-6 bg-gray-900 text-white text-lg text-center italic rounded">
                           {section.highlightQuote}
                         </div>
                       )}
-                      
-                      {/* After Quote Text */}
+
                       {section.afterQuote && (
-                        <p className="mt-2">{section.afterQuote.text || section.afterQuote}</p>
+                        <p className="mt-2">
+                          {section.afterQuote.text || section.afterQuote}
+                        </p>
                       )}
                     </section>
                   ))}
                 </div>
 
-                {/* FAQ SECTION */}
+                {/* FAQ section */}
                 {article.faq && article.faq.length > 0 && (
                   <section className="mt-10">
                     <h2 className="text-xl font-semibold mb-3 border-b border-black inline-block">
@@ -2082,7 +2043,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 >
                   <FaXTwitter size={14} className="text-white -rotate-45" />
                 </a>
-
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                   target="_blank"
@@ -2093,7 +2053,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 >
                   <Linkedin size={14} className="text-white -rotate-45" />
                 </a>
-
                 <a
                   href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${shareTitle}`}
                   target="_blank"
@@ -2108,7 +2067,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                 <span className="text-2xl">~</span>
               </div>
 
-              {/* Author Box */}
+              {/* Author box */}
               {authorData && (
                 <div className="bg-blue-100 p-4 mt-10">
                   <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-stretch">
@@ -2125,7 +2084,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                     </div>
 
                     <div className="w-full md:w-3/4 flex flex-col gap-4 p-2 md:p-6">
-                      <Link href={`/authors`} title={authorData.name}>
+                      <Link href="/authors" title={authorData.name}>
                         <h2 className="text-xl md:text-2xl font-semibold text-gray-900 hover:underline">
                           {authorData.name}
                         </h2>
@@ -2148,7 +2107,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                             <FaQuora size={18} />
                           </Link>
                         )}
-
                         {authorData.social.twitter && (
                           <Link
                             href={authorData.social.twitter}
@@ -2161,7 +2119,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                             <FaXTwitter size={18} />
                           </Link>
                         )}
-
                         {authorData.social.medium && (
                           <Link
                             href={authorData.social.medium}
@@ -2174,7 +2131,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
                             <SiMedium size={18} />
                           </Link>
                         )}
-
                         {authorData.social.reddit && (
                           <Link
                             href={authorData.social.reddit}
@@ -2194,7 +2150,7 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
               )}
             </div>
 
-            {/* ================= SIDEBAR ================= */}
+            {/* ── SIDEBAR ── */}
             <aside className="lg:sticky lg:top-20 h-fit">
               <RightSidebar
                 categoryData={categorypagedata}
@@ -2204,7 +2160,6 @@ function ClientNewsArticle({ article, category, slug, authorData, encodedUrl, sh
           </div>
         </div>
 
-        {/* Drop cap */}
         <style>{`
           .drop-cap::first-letter {
             float: left;
