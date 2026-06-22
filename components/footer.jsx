@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import { FaReddit } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function FooterComponent() {
 
@@ -260,6 +261,17 @@ export default function FooterComponent() {
             className="hover:text-pink-600 transition"
           >
             <LuInstagram size={18} />
+          </a>
+
+           <a
+            href="https://www.linkedin.com/in/venture-hive-bb2014418"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Linkedin"
+            title="Visit Venture Hive on Linkedin"
+            className="hover:text-blue-900 transition"
+          >
+            <FaLinkedin size={18} />
           </a>
           <span className="text-2xl">~</span>
         </div>

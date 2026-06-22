@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import { LuInstagram } from "react-icons/lu";
 import { FaReddit } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 
 export default function HeaderComponent() {
@@ -70,6 +71,15 @@ export default function HeaderComponent() {
             target="_blank"
           >
             <SiSubstack  size={18} />
+          </a>
+
+           <a
+            href="https://www.linkedin.com/in/venture-hive-bb2014418"
+            title="Visit Venture Hive on Linkedin"
+            aria-label="Linkedin"
+            target="_blank"
+          >
+            <FaLinkedin  size={18} />
           </a>
 
         </div>
