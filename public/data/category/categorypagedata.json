@@ -3716,7 +3716,43 @@
           "FederalJudge",
           "JudicialAccountability"
         ]
-      }
+      },
+      {
+        "id": 12,
+        "type": "news",
+        "metaTitle": "Trump Orders DOJ Investigation Into Oil Companies Over Alleged Gas Price Gouging",
+        "metaDescription": "President Donald Trump has directed the Department of Justice to investigate major oil companies over alleged gasoline price gouging, citing a mismatch between falling crude oil prices and retail fuel costs.",
+        "slug": "trump-doj-oil-price-gouging-investigation-2026",
+        "image": "/images/trump-doj-oil-price-gouging-investigation-first-image.webp",
+        "alt": "Fuel nozzle inserted into car at gas station showing gasoline pricing concerns.",
+        "heading": "Trump Orders DOJ Investigation Into Oil Companies Over Alleged Gas Price Gouging",
+        "date": "24 June, 2026",
+        "content": "President Donald Trump has instructed the Department of Justice to launch an investigation into major oil companies over claims of gasoline price gouging. This comes at a time when fuel prices are still fluctuating and many drivers are feeling the pinch.",
+        "para2": "Trump made the announcement on June 24, 2026. He pointed out that big oil producers haven’t been passing along the savings from lower crude oil costs to regular consumers at the pump. According to him, the drop in global oil prices just isn’t showing up in what people actually pay for gas, and he called it unfair to American drivers.",
+        "para3": "The Justice Department will now look into whether these oil companies have been involved in any anti-competitive behavior or if they’ve taken advantage of current market conditions to keep gasoline prices higher than they should be. So far, the administration hasn’t named specific targets, but big names like ExxonMobil and Chevron have come up in news coverage.",
+        "para4": "This decision lands right in the middle of heated discussions about energy costs. Inflation and family budgets are still very sensitive to even small changes in what people pay for fuel.",
+        "para5": "At the center of all this is a pretty straightforward but very political issue: crude oil prices have been dropping, yet gasoline prices at gas stations haven’t come down nearly as quickly.",
+        "para6": "Trump believes drivers should already be seeing bigger savings. Recent market reports show crude oil prices fell quite a bit in the last few weeks, thanks to calmer geopolitical situations and better global supply.",
+        "para7": "Gasoline prices in the U.S. have decreased some, but the drop has been slower, and they’re still higher than they were earlier this year. The administration argues this lag suggests there might be inefficiencies or unfair practices somewhere in the supply chain. ",
+        "para8": "Energy experts, on the other hand, often note that pump prices don’t always move exactly in line with crude oil costs.  Things like refinery schedules, shipping expenses, and fuel bought earlier at higher prices can all slow things down.",
+        "para9": "The investigation shows how much political pressure there is right now to do something about everyday living costs, especially fuel prices that hit commuting, shipping, and household expenses hard.",
+        "para10": "Oil companies have pushed back, saying their pricing takes into account a lot more than just crude oil — including refining costs, logistics, taxes, and shifting supply and demand across different regions of the country.",
+        "para11": "The Justice Department hasn’t shared many details yet about how broad the investigation will be, when it might wrap up, or what results to expect. For the moment, it sends a clear signal that the federal government is taking a fresh look at energy pricing and how these big corporations operate.",
+        "deatilImage": "/images/trump-doj-oil-price-gouging-investigation-second-image.webp",
+        "detailAlt": "Gas station pumps with oil refinery background showing fuel price and energy supply chain.",
+        "quotes": "The large oil producers have not passed on lower costs of crude oil to consumers.",
+        "samplehead": {
+            "title": "Energy Pricing, Consumer Protection, and Political Accountability",
+            "samplepara1": "Trump’s move to have the DOJ investigate oil companies brings attention to the gap between falling crude prices and what drivers actually pay at the pump. It shows the administration is serious about tackling complaints over possible price gouging in the energy industry.",
+            "samplePara2": "This situation raises real questions about how fuel markets work, what role government should play, and how to make sure American families aren’t getting squeezed unfairly when global oil prices drop."
+        },
+        "hashTags": [
+            "TrumpDOJ",
+            "OilPriceGouging",
+            "GasolinePrices",
+            "EnergyPolicy"
+        ]
+    }
 
   ]
 }
