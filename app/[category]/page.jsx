@@ -1,5 +1,6 @@
 
 
+
 // import { notFound } from "next/navigation";
 // import Link from "next/link";
 // import Image from "next/image";
@@ -9,6 +10,13 @@
 // import authorsPageData from "../../public/data/authors";
 
 // const SITE_URL = "https://www.venture-hive.com";
+
+// // ✅ ADDED: Tells Next.js to pre-build all category pages at build time.
+// // Without this, category pages are server-rendered on demand — Google may
+// // get slow/inconsistent responses and choose not to index them.
+// export async function generateStaticParams() {
+//   return Object.keys(categorypagedata).map((category) => ({ category }));
+// }
 
 // export async function generateMetadata({ params }) {
 //   const { category } = await params;
@@ -205,7 +213,6 @@
 //   );
 // }
 
-
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -216,9 +223,6 @@ import authorsPageData from "../../public/data/authors";
 
 const SITE_URL = "https://www.venture-hive.com";
 
-// ✅ ADDED: Tells Next.js to pre-build all category pages at build time.
-// Without this, category pages are server-rendered on demand — Google may
-// get slow/inconsistent responses and choose not to index them.
 export async function generateStaticParams() {
   return Object.keys(categorypagedata).map((category) => ({ category }));
 }
@@ -351,6 +355,16 @@ export default async function CategoryPage({ params }) {
                 // First 2 images get priority loading
                 const isAboveFold = index < 2;
 
+                // ✅ FIX: client-news items (e.g. culture) don't carry a
+                // `content` field — they use `metaDescription` /
+                // `detailcontents.intro.text` instead. Fall back safely so
+                // `.slice()` never runs on `undefined`.
+                const previewText =
+                  item.content ||
+                  item.metaDescription ||
+                  item.detailcontents?.intro?.text ||
+                  "";
+
                 return (
                   <Link
                     key={item.slug}
@@ -397,7 +411,7 @@ export default async function CategoryPage({ params }) {
                       </div>
 
                       <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
-                        {item.content.slice(0, 180)}
+                        {previewText.slice(0, 180)}
                       </p>
                     </article>
                   </Link>

@@ -84,6 +84,24 @@
           "medium" : "https://medium.com/@oliviaramirez001"
         }
       }
+    },
+     {
+      "category": "Culture",
+      "author": {
+        "id": 1,
+        "name": "Charlotte Reynoldstt",
+        "gender": "Female",
+        "position": "Political & Cultural Affairs",
+        "profileImage": "/images/charlotte-reynolds.webp",
+        "country": "USA",
+        "bio": "Charlotte covers culture, politics and international affairs for Venture Hive.",
+        "social": {
+          "twitter": "https://twitter.com/charlottereynolds",
+          "quora": "https://www.quora.com/profile/Charlotte-Reynolds-159",
+          "reddit": "https://www.reddit.com/user/Charlotte_Reynolds/",
+          "medium": "https://medium.com/@charlottereynolds001"
+        }
+      }
     }
   ]
 }
