@@ -145,8 +145,8 @@ export default function SourceMethodology() {
           </div>
           <p className="text-gray-700 leading-relaxed">
             Where verification is incomplete, that limitation is stated explicitly in
-            the article. We use language like "could not be independently verified" or
-            "according to a single source" rather than presenting uncertain information
+            the article. We use language like &quot;could not be independently verified&quot; or
+            &quot;according to a single source&quot; rather than presenting uncertain information
             as confirmed fact.
           </p>
 
@@ -157,7 +157,7 @@ export default function SourceMethodology() {
             Anonymity is a last resort at VENTURE HIVE — not a default. We grant source
             anonymity only when the information is in the public interest and cannot be
             obtained on the record without exposing the source to genuine risk. Before
-            anonymity is granted, an editor assesses the source's firsthand knowledge,
+            anonymity is granted, an editor assesses the source&apos;s firsthand knowledge,
             their potential bias, and whether documentary corroboration exists.
           </p>
           <p className="text-gray-700 leading-relaxed">

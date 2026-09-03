@@ -6,7 +6,9 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://www.venture-hive.com/sitemap.xml",
-    host: "https://www.venture-hive.com",
+    sitemap: [
+      "https://www.venture-hive.com/sitemap.xml",
+      "https://www.venture-hive.com/news-sitemap.xml",
+    ],
   };
 }

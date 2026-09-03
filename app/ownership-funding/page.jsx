@@ -128,7 +128,7 @@ export default function OwnershipFunding() {
 
           <h2 className="text-2xl font-semibold">The Editorial Firewall</h2>
           <p className="text-gray-700 leading-relaxed">
-            The separation between VENTURE HIVE's commercial operations and its newsroom
+            The separation between VENTURE HIVE&apos;s commercial operations and its newsroom
             is non-negotiable. Here is what that means in practice:
           </p>
 

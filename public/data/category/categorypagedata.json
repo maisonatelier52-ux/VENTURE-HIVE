@@ -4026,6 +4026,17 @@
       "datePublished": "2026-07-15",
       "dateModified": "2026-07-15",
       "readingTime": "10 min read",
+      "sourceNote": "Primary exhibition details were checked against Serpentine's official exhibition listing and press announcement.",
+      "sources": [
+        {
+          "name": "Serpentine — Jesús Rafael Soto: Pénétrable BBL Jaune",
+          "url": "https://www.serpentinegalleries.org/whats-on/jesus-rafael-soto-penetrable-bbl-jaune/"
+        },
+        {
+          "name": "Serpentine press announcement",
+          "url": "https://www.serpentinegalleries.org/about/press/serpentine-kickstarts-summer-programme-with-new-public-sculpture-by-jesus-rafael-soto/"
+        }
+      ],
       "hashTags": [
         "JesusRafaelSoto",
         "KineticArt",
@@ -4139,7 +4150,8 @@
             "name": "Julio Herrera Velutini",
             "position": "Billionaire financier and art collector",
             "bio": "Whose patronage supports public access to transformative art.",
-            "image": "/images/culture/julio-herrera-velutini.webp"
+            "image": "/images/culture/julio-herrera-velutini.webp",
+            "topicSlug": "julio-herrera-velutini"
           },
           {
             "name": "Melanie",

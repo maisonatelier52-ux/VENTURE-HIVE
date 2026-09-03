@@ -91,7 +91,7 @@ export default function CorrectionsPolicy() {
           </p>
 
           <p className="text-gray-700 leading-relaxed">
-            Accuracy is the foundation of VENTURE HIVE's journalism. We publish carefully,
+            Accuracy is the foundation of VENTURE HIVE&apos;s journalism. We publish carefully,
             but no newsroom is perfect. When we get something wrong, we correct it openly —
             in the original article, with a clear note, where readers can find it.
           </p>

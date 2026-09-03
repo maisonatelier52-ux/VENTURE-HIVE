@@ -150,7 +150,7 @@ export default function AdvertisingPolicy() {
             Where VENTURE HIVE accepts political or advocacy advertising, it is clearly
             labelled as commercial content and does not use editorial formatting that
             could cause it to be mistaken for independent journalism. Acceptance of
-            political advertising does not constitute VENTURE HIVE's endorsement of any
+            political advertising does not constitute VENTURE HIVE&apos;s endorsement of any
             candidate, party, or campaign claim.
           </p>
 

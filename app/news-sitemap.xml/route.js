@@ -12,28 +12,31 @@ function parseDate(dateStr) {
   return new Date(dateStr);
 }
 
+function escapeXml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
+
 export async function GET() {
   const now = new Date();
   const twoDaysAgo = new Date(now);
   twoDaysAgo.setDate(now.getDate() - 2);
 
   // For news sitemaps Google only indexes articles published within the last 2 days.
-  // If you have no articles that recent, widen the window to 30 days so the
-  // sitemap always has content and Google can discover your pages.
-  const thirtyDaysAgo = new Date(now);
-  thirtyDaysAgo.setDate(now.getDate() - 30);
-
   const articles = Object.entries(articlesData).flatMap(([category, posts]) =>
     posts
       .filter((post) => {
-        const postDate = parseDate(post.date);
-        // Use 30-day window so the sitemap is never empty
-        return postDate >= thirtyDaysAgo;
+        const postDate = parseDate(post.datePublished || post.date);
+        return postDate >= twoDaysAgo && postDate <= now;
       })
       .map((post) => ({
         url: `${SITE_URL}/${category}/${post.slug}`,
         title: post.heading,
-        date: parseDate(post.date).toISOString(),
+        date: parseDate(post.datePublished || post.date).toISOString(),
       }))
   );
 
@@ -43,14 +46,14 @@ export async function GET() {
     .map(
       (article) => `
   <url>
-    <loc>${article.url}</loc>
+    <loc>${escapeXml(article.url)}</loc>
     <news:news>
       <news:publication>
-        <news:name>Newswireninja</news:name>
+        <news:name>Venture Hive</news:name>
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>${article.date}</news:publication_date>
-      <news:title><![CDATA[${article.title}]]></news:title>
+      <news:title>${escapeXml(article.title)}</news:title>
     </news:news>
   </url>`
     )

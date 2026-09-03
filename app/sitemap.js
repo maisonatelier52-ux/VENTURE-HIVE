@@ -4,67 +4,73 @@ import categorypagedata from "../public/data/category/categorypagedata.json";
 const SITE_URL = "https://www.venture-hive.com";
 
 export default function sitemap() {
-  const now = new Date();
+  const parseArticleDate = (article) => {
+    const value = article.dateModified || article.datePublished || article.date;
+    const parsed = value ? new Date(value) : null;
+    return parsed && !Number.isNaN(parsed.getTime()) ? parsed : undefined;
+  };
 
   /* ---------------- STATIC PAGES ---------------- */
-  const staticPages = [
-    {
-      url: `${SITE_URL}/`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${SITE_URL}/about-venture-hive`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/privacy-policy`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${SITE_URL}/authors`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
+  const staticPaths = [
+    "",
+    "/about-venture-hive",
+    "/advertising-policy",
+    "/authors",
+    "/contact",
+    "/corrections-policy",
+    "/editorial-policy",
+    "/legal",
+    "/ownership-funding",
+    "/privacy-policy",
+    "/right-of-reply",
+    "/source-methodology",
+    "/terms-and-conditions",
   ];
+
+  const staticPages = staticPaths.map((path) => ({
+    url: `${SITE_URL}${path || "/"}`,
+  }));
 
 
   /* ---------------- CATEGORY PAGES ---------------- */
-  const categoryPages = Object.keys(categorypagedata).map(category => ({
-    url: `${SITE_URL}/${category}`,
-    lastModified: now,
-    changeFrequency: "daily",
-    priority: 0.7,
-  }));
+  const categoryPages = Object.entries(categorypagedata).map(
+    ([category, articles]) => {
+      const latestDate = articles
+        .map(parseArticleDate)
+        .filter(Boolean)
+        .sort((a, b) => b - a)[0];
+
+      return {
+        url: `${SITE_URL}/${category}`,
+        ...(latestDate ? { lastModified: latestDate } : {}),
+      };
+    }
+  );
 
   /* ---------------- ARTICLE DETAIL PAGES ---------------- */
   const articlePages = Object.entries(categorypagedata).flatMap(
     ([category, articles]) =>
-      articles
-        .filter(article => article.slug !== "julio-herrera-velutini-bridging-nations-through-finance") // Exclude special page from duplicates
-        .map(article => ({
+      articles.map((article) => {
+        const lastModified = parseArticleDate(article);
+
+        return {
           url: `${SITE_URL}/${category}/${article.slug}`,
-          lastModified: article.datePublished
-            ? new Date(article.datePublished)
-            : article.date
-            ? new Date(article.date)
-            : now,
-          changeFrequency: "weekly",
-          priority: 0.8,
-        }))
+          ...(lastModified ? { lastModified } : {}),
+        };
+      })
   );
 
- 
+  const topicPages = [
+    {
+      url: `${SITE_URL}/topics/julio-herrera-velutini`,
+      lastModified: new Date("2026-07-15"),
+    },
+  ];
 
   return [
     ...staticPages,
     ...categoryPages,
     ...articlePages,
+    ...topicPages,
   ];
 }

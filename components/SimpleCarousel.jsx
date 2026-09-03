@@ -6,18 +6,20 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function SimpleCarousel({ items = [] }) {
-  if (!items.length) return null;
-
   const [index, setIndex] = useState(0);
 
   // Auto slide every 4 seconds
   useEffect(() => {
+    if (!items.length) return undefined;
+
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % items.length);
     }, 4000);
 
     return () => clearInterval(timer);
   }, [items.length]);
+
+  if (!items.length) return null;
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -100,7 +102,7 @@ export default function SimpleCarousel({ items = [] }) {
               {/* Description */}
               <div>
                 <p className="text-gray-500 leading-relaxed text-xs md:text-sm px-10">
-                  {(item.content || "").slice(0, 150)}...
+                  {(item.content || item.metaDescription || "").slice(0, 150)}...
                 </p>
               </div>
             </div>

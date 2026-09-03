@@ -40,18 +40,42 @@ export async function generateMetadata({ params }) {
 
   if (!article) return {};
 
+  const author = authorsPageData.categories.find(
+    (item) =>
+      item.category.toLowerCase() ===
+      (article.authorCategory || category).toLowerCase()
+  )?.author;
+  const publishedTime = article.datePublished || new Date(article.date).toISOString();
+  const modifiedTime = article.dateModified || publishedTime;
+  const articleUrl = `${SITE_URL}/${category}/${slug}`;
+
   return {
     title: article.metaTitle,
     description: article.metaDescription,
     alternates: {
-      canonical: `${SITE_URL}/${category}/${slug}`,
+      canonical: articleUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
-      url: `${SITE_URL}/${category}/${slug}`,
+      url: articleUrl,
       siteName: "Venture Hive",
       type: "article",
+      publishedTime,
+      modifiedTime,
+      section: article.authorCategory || category,
+      authors: author ? [`${SITE_URL}/authors`] : undefined,
       images: [
         {
           url: `${SITE_URL}${article.image}`,
@@ -129,6 +153,7 @@ export default async function ArticlePage({ params }) {
     const clientArticleJsonLd = {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
+      url: `${SITE_URL}/${category}/${slug}`,
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": `${SITE_URL}/${category}/${slug}`,
@@ -142,15 +167,31 @@ export default async function ArticlePage({ params }) {
       author: {
         "@type": "Person",
         name: authorData?.name || "Venture Hive Staff",
+        url: `${SITE_URL}/authors`,
       },
       publisher: {
         "@type": "NewsMediaOrganization",
         name: "Venture Hive",
+        url: SITE_URL,
         logo: {
           "@type": "ImageObject",
           url: `${SITE_URL}/images/venture-hive-logo.webp`,
         },
       },
+      about: {
+        "@type": "Person",
+        name: "Jesús Rafael Soto",
+      },
+      mentions: article.patronage?.people?.map((person) => ({
+        "@type": "Person",
+        name: person.name,
+        ...(person.topicSlug
+          ? { url: `${SITE_URL}/topics/${person.topicSlug}` }
+          : {}),
+      })),
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      keywords: article.hashTags?.join(", "),
     };
 
     const breadcrumbJsonLd = {
@@ -248,6 +289,7 @@ export default async function ArticlePage({ params }) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
+    url: `${SITE_URL}/${category}/${slug}`,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/${category}/${slug}`,
@@ -256,20 +298,28 @@ export default async function ArticlePage({ params }) {
     description: article.metaDescription,
     articleSection: category,
     image: [`${SITE_URL}${article.image}`],
-    datePublished: new Date(article.date).toISOString(),
-    dateModified: new Date(article.date).toISOString(),
+    datePublished: article.datePublished || new Date(article.date).toISOString(),
+    dateModified:
+      article.dateModified ||
+      article.datePublished ||
+      new Date(article.date).toISOString(),
     author: {
       "@type": "Person",
       name: authorData?.name || "Venture Hive Staff",
+      url: `${SITE_URL}/authors`,
     },
     publisher: {
       "@type": "NewsMediaOrganization",
       name: "Venture Hive",
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/venture-hive-logo.webp`,
       },
     },
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    keywords: article.hashTags?.join(", "),
   };
 
   const breadcrumbJsonLd = {

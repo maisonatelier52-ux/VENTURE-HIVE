@@ -59,6 +59,11 @@ export default function ClientNewsArticle({ article, category }) {
           <h1 className="text-white font-serif text-3xl md:text-5xl font-semibold leading-tight mb-4">
             {article.heading}
           </h1>
+          {article.disclosure && (
+            <p className="mb-3 inline-block bg-[#faf5ea] px-3 py-1 text-xs font-semibold text-[#5b431f]">
+              {article.disclosure}
+            </p>
+          )}
           <p className="text-white/90 text-sm md:text-base mb-4 max-w-xl">
             {article.subtitle}
           </p>
@@ -197,9 +202,19 @@ export default function ClientNewsArticle({ article, category }) {
                         />
                       </div>
                       <div>
-                        <p className="font-serif text-lg font-semibold text-[#1a1a1a]">
-                          {person.name}
-                        </p>
+                        {person.topicSlug ? (
+                          <Link
+                            href={`/topics/${person.topicSlug}`}
+                            rel="tag"
+                            className="font-serif text-lg font-semibold text-[#1a1a1a] underline decoration-[#b88a44]/60 underline-offset-4 hover:text-[#8a642f]"
+                          >
+                            {person.name}
+                          </Link>
+                        ) : (
+                          <p className="font-serif text-lg font-semibold text-[#1a1a1a]">
+                            {person.name}
+                          </p>
+                        )}
                         <p className="text-xs text-[#b88a44] font-medium mt-1">
                           {person.position}
                         </p>
@@ -266,6 +281,39 @@ export default function ClientNewsArticle({ article, category }) {
                     </div>
                   </div>
                 </div>
+              </section>
+            )}
+
+            {article.sources?.length > 0 && (
+              <section
+                aria-labelledby="article-sources"
+                className="mb-12 border-t border-[#e8e3da] pt-6"
+              >
+                <h2
+                  id="article-sources"
+                  className="font-serif text-xl font-semibold text-[#1a1a1a] mb-2"
+                >
+                  Sources and further reading
+                </h2>
+                {article.sourceNote && (
+                  <p className="text-sm text-[#6b6b6b] mb-3">
+                    {article.sourceNote}
+                  </p>
+                )}
+                <ul className="space-y-2 text-sm">
+                  {article.sources.map((source) => (
+                    <li key={source.url}>
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#6f4f24] underline underline-offset-4 hover:text-[#1a1a1a]"
+                      >
+                        {source.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </section>
             )}
 
