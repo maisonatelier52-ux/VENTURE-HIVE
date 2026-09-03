@@ -7,7 +7,6 @@ import Image from "next/image";
 import RightSidebar from "../../components/RightSidebar";
 import authorsData from "../../public/data/authors.json";
 import categoryData from "../../public/data/category/categorypagedata";
-import specialPillars from "../../public/data/special/pillarContents.json";
 
 export default function AuthorClient() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
@@ -15,18 +14,8 @@ export default function AuthorClient() {
   // Build author → articles mapping
   const authorArticles = authorsData.categories.map(({ category, author }) => {
     const normalizedCategory = category.toLowerCase();
-    let posts = [];
 
-    if (normalizedCategory === "special") {
-      posts = specialPillars.map((item) => ({
-        slug: item.slug,
-        heading: item.hero?.title,
-        image: item.hero?.imageSrc,
-        date: item.subtitle?.meta || "Special Feature",
-      }));
-    } else {
-      posts = categoryData[normalizedCategory] || [];
-    }
+    const posts = categoryData[normalizedCategory] || [];
 
     return {
       ...author,
@@ -37,43 +26,48 @@ export default function AuthorClient() {
 
   return (
     <div className="flex flex-col min-h-screen bg-zinc-50 px-4 sm:px-6 md:px-20">
-        {/* Breadcrumb for SEO tools (hidden, semantic) */}
-        <nav aria-label="Breadcrumb" className="sr-only">
-            <ol>
-            <li>VENTURE HIVE</li>
-            <li>Authors & Journalists</li>
-            </ol>
-        </nav>
 
-          {/* SEO keyword reinforcement */}
-        <p className="sr-only">
-            Browse all Venture Hive authors and journalists publishing independent
-            news and investigative reporting across politics, business, sports,
-            opinion, and global affairs.
-        </p>
-        
+      {/* Breadcrumb for SEO tools (hidden, semantic) */}
+      <nav aria-label="Breadcrumb" className="sr-only">
+        <ol>
+          <li>VENTURE HIVE</li>
+          <li>Authors & Journalists</li>
+        </ol>
+      </nav>
+
+      {/* SEO keyword reinforcement */}
+      <p className="sr-only">
+        Browse all Venture Hive authors and journalists publishing independent
+        news and investigative reporting across politics, business, sports,
+        opinion, and global affairs.
+      </p>
+
       <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-6 mb-10">
-        
+
         {/* LEFT CONTENT */}
         <div>
 
-             <p className="text-sm text-gray-600 max-w-4xl mx-auto text-start mt-6 mb-10">
-        VENTURE HIVE is an independent news and investigative journalism
-        publication powered by experienced reporters and contributors covering
-        politics, business, sports, opinion, and in-depth investigations.
-      </p>
+          <p className="text-sm text-gray-600 max-w-4xl mx-auto text-start mt-6 mb-10">
+            VENTURE HIVE is an independent news and investigative journalism
+            publication powered by experienced reporters and contributors
+            covering politics, business, sports, opinion, and in-depth
+            investigations.
+          </p>
+
           {/* PAGE TITLE */}
           <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
             {selectedAuthor
-                ? "Author Articles"
-                : "VENTURE HIVE Authors"}
-            </h1>
-            {/* SEO-friendly subheading */}
-                {!selectedAuthor && (
-                <p className="text-sm text-gray-600 text-center mb-6">
-                    Journalists and contributors publishing independent news and investigative reporting
-                </p>
-                )}
+              ? "Author Articles"
+              : "VENTURE HIVE Authors"}
+          </h1>
+
+          {/* SEO-friendly subheading */}
+          {!selectedAuthor && (
+            <p className="text-sm text-gray-600 text-center mb-6">
+              Journalists and contributors publishing independent news and
+              investigative reporting
+            </p>
+          )}
 
           {/* ================= ALL AUTHORS ================= */}
           {!selectedAuthor && (
@@ -84,7 +78,9 @@ export default function AuthorClient() {
                   onClick={() => setSelectedAuthor(author)}
                   className="cursor-pointer border rounded p-5 bg-white hover:shadow transition"
                 >
+
                   <div className="flex items-center gap-4">
+
                     <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
                       <Image
                         src={author.profileImage}
@@ -94,14 +90,17 @@ export default function AuthorClient() {
                         sizes="(max-width: 640px) 56px, 64px"
                       />
                     </div>
+
                     <div>
                       <h2 className="text-lg font-semibold">
                         {author.name}
                       </h2>
+
                       <p className="text-xs text-gray-500 uppercase">
                         {author.category}
                       </p>
                     </div>
+
                   </div>
 
                   <p className="text-sm text-gray-600 mt-4 line-clamp-3">
@@ -111,6 +110,7 @@ export default function AuthorClient() {
                   <p className="text-xs text-blue-600 mt-3">
                     View Articles →
                   </p>
+
                 </div>
               ))}
             </div>
@@ -119,6 +119,7 @@ export default function AuthorClient() {
           {/* ================= AUTHOR ARTICLES ================= */}
           {selectedAuthor && (
             <>
+
               {/* BACK BUTTON */}
               <button
                 onClick={() => setSelectedAuthor(null)}
@@ -127,8 +128,10 @@ export default function AuthorClient() {
                 ← Back to all authors
               </button>
 
+
               {/* AUTHOR HEADER */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mb-8">
+
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 shrink-0">
                   <Image
                     src={selectedAuthor.profileImage}
@@ -138,33 +141,37 @@ export default function AuthorClient() {
                     sizes="(max-width: 640px) 80px, 96px"
                   />
                 </div>
+
                 <div>
                   <h2 className="text-xl sm:text-2xl font-semibold">
                     {selectedAuthor.name}
                   </h2>
+
                   <p className="text-gray-500 text-sm mt-1">
                     {selectedAuthor.bio}
                   </p>
                 </div>
+
               </div>
+
 
               {/* ARTICLES LIST */}
               <div className="space-y-6">
+
                 {selectedAuthor.posts.map((post) => (
+
                   <Link
                     key={post.slug}
-                    href={
-                      selectedAuthor.category === "special"
-                        ? `/julio-herrera-velutini/${post.slug}`
-                        : `/${selectedAuthor.category}/${post.slug}`
-                    }
+                    href={`/${selectedAuthor.category}/${post.slug}`}
                     title={post.heading}
                     className="block border-b pb-4 hover:bg-gray-50 p-3 rounded transition"
                   >
+
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                      
+
                       {/* ARTICLE IMAGE */}
                       <div className="relative w-full sm:w-28 h-44 sm:h-20 shrink-0">
+
                         <Image
                           src={post.image}
                           alt={post.heading}
@@ -172,33 +179,49 @@ export default function AuthorClient() {
                           className="object-cover rounded"
                           sizes="(max-width: 640px) 100vw, 112px"
                         />
+
                       </div>
+
 
                       {/* ARTICLE CONTENT */}
                       <div>
+
                         <h3 className="font-semibold text-sm sm:text-base">
                           {post.heading}
                         </h3>
+
                         <p className="text-xs text-gray-500 mt-1">
                           {post.date}
                         </p>
+
                       </div>
+
                     </div>
+
                   </Link>
+
                 ))}
+
               </div>
+
             </>
           )}
+
         </div>
+
 
         {/* RIGHT SIDEBAR */}
         <div className="lg:sticky lg:top-5 h-max">
+
           <RightSidebar
             categoryData={categoryData}
             authors={authorsData}
           />
+
         </div>
+
       </div>
+
     </div>
   );
 }
