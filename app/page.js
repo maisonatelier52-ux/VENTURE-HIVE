@@ -4,7 +4,6 @@ import Image from "next/image";
 import categorypagedata from '../public/data/category/categorypagedata';
 import authors from '../public/data/authors.json';
 import Link from "next/link";
-import JsonLd from "../components/JsonLd";
 
 
 export const metadata = {
@@ -185,6 +184,22 @@ Object.keys(categoryData).forEach((cat) => {
 });
 
   
+// ✅ TASK 2 — Sitewide "Latest News" hub: every article across every
+// category, date-sorted, most recent first. This is intentionally NOT
+// deduplicated against recentFour/threeCategoryPosts/fourCategoryPosts —
+// the goal is one large, frequently-updated block of real internal links
+// deep into the site, not a curated "don't repeat yourself" section.
+const allArticlesSorted = Object.keys(categoryData)
+  .flatMap((cat) =>
+    (categoryData[cat] || []).map((post) => ({ ...post, category: cat }))
+  )
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const latestNewsArticles = allArticlesSorted.slice(0, 30).map((post) => ({
+  ...post,
+  author: post.author || getAuthor(post.category),
+}));
+
   return (
     
     <div className="flex flex-col min-h-screen font-serif bg-zinc-50 font-sans px-5 md:px-20">
@@ -357,8 +372,57 @@ Object.keys(categoryData).forEach((cat) => {
       <RightSidebar  categoryData={categorypagedata} authors={authorsPageData}/>
 
       </div>
-      <JsonLd />
 
+      {/* ✅ Latest News / More Stories — large, frequently-updated internal
+          linking hub across every category so Google always has a
+          crawlable path into every recent article, not just the ~11
+          curated slots above. */}
+      {latestNewsArticles.length > 0 && (
+        <section className="mt-4 mb-10">
+          <hr className="border border-gray-300 mb-8" />
+          <h2 className="font-medium text-2xl md:text-3xl text-center p-3 pb-8">
+            LATEST NEWS
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latestNewsArticles.map((item, i) => (
+              <Link
+                href={`/${item.category}/${item.slug}`}
+                title={item.heading}
+                key={`${item.slug}-${i}`}
+                className="flex items-start gap-4 bg-white p-3 rounded shadow-sm"
+              >
+                <div className="relative w-20 h-20 shrink-0">
+                  <Image
+                    src={item.image}
+                    alt={item.heading}
+                    fill
+                    className="object-cover rounded"
+                    sizes="80px"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="flex flex-col min-w-0">
+                  <h3 className="text-sm font-medium leading-snug">
+                    {item.heading.length > 70
+                      ? item.heading.slice(0, 70) + "..."
+                      : item.heading}
+                  </h3>
+
+                  <div className="flex items-center gap-2 text-xs text-gray-500 mt-2">
+                    <span className="uppercase truncate">{item.category}</span>
+                    <span>•</span>
+                    <time dateTime={new Date(item.date).toISOString()}>
+                      {item.date}
+                    </time>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

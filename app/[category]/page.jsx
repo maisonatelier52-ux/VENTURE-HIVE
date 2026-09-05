@@ -1,9 +1,9 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 import RightSidebar from "../../components/RightSidebar";
+import CategoryArticleList from "../../components/CategoryArticleList";
 import categorypagedata from "../../public/data/category/categorypagedata";
 import authorsPageData from "../../public/data/authors";
 
@@ -66,14 +66,15 @@ export default async function CategoryPage({ params }) {
     (item) => item.category.toLowerCase() === category.toLowerCase()
   )?.author;
 
-  // Sort articles by date and take the latest 10
-  const categoryArticles = articles
-    .sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateB - dateA;
-    })
-    .slice(0, 10);
+  // ✅ Server-render EVERY article for this category (no slicing on the
+  // server) so each one has a real crawlable <Link href> in the initial
+  // HTML. Pagination beyond ~10 is handled client-side purely via visibility
+  // toggling inside CategoryArticleList — see that component for details.
+  const categoryArticles = [...articles].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
 
   const formatted = category.charAt(0).toUpperCase() + category.slice(1);
 
@@ -135,75 +136,11 @@ export default async function CategoryPage({ params }) {
               investigative reporting from <strong>Venture Hive</strong>.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {categoryArticles.map((item, index) => {
-                const itemAuthor = item.author || authorData;
-                // First 2 images get priority loading
-                const isAboveFold = index < 2;
-
-                // ✅ FIX: client-news items (e.g. culture) don't carry a
-                // `content` field — they use `metaDescription` /
-                // `detailcontents.intro.text` instead. Fall back safely so
-                // `.slice()` never runs on `undefined`.
-                const previewText =
-                  item.content ||
-                  item.metaDescription ||
-                  item.detailcontents?.intro?.text ||
-                  "";
-
-                return (
-                  <Link
-                    key={item.slug}
-                    href={`/${category}/${item.slug}`}
-                    aria-label={`Read ${item.heading}`}
-                    title={item.heading}
-                  >
-                    <article className="h-full flex flex-col bg-white p-3 rounded shadow-sm">
-                      <div className="relative w-full h-40">
-                        <Image
-                          src={item.image}
-                          alt={item.heading}
-                          fill
-                          className="object-cover rounded"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          priority={isAboveFold}
-                          loading={isAboveFold ? "eager" : "lazy"}
-                          quality={75}
-                        />
-                        <span className="absolute bottom-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
-                          {category}
-                        </span>
-                      </div>
-
-                      <h2 className="text-lg font-medium mt-2">{item.heading}</h2>
-
-                      <div className="flex justify-between items-center text-sm text-gray-500 mt-1">
-                        <div className="flex items-center gap-2">
-                          <div className="relative w-8 h-8">
-                            <Image
-                              src={itemAuthor?.profileImage}
-                              alt={itemAuthor?.name}
-                              width={32}
-                              height={32}
-                              className="rounded-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-                          <span>{itemAuthor?.name}</span>
-                        </div>
-                        <time dateTime={new Date(item.date).toISOString()}>
-                          {item.date}
-                        </time>
-                      </div>
-
-                      <p className="text-gray-600 text-sm line-clamp-3 mt-auto">
-                        {previewText.slice(0, 180)}
-                      </p>
-                    </article>
-                  </Link>
-                );
-              })}
-            </div>
+            <CategoryArticleList
+              articles={categoryArticles}
+              category={category}
+              authorData={authorData}
+            />
           </div>
 
           <aside className="lg:sticky lg:top-6 h-max">

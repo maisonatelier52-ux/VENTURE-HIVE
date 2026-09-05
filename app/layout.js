@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HeaderComponent from "../components/Header";
 import FooterComponent from "../components/footer";
+import JsonLd from "../components/JsonLd";
 
 const SITE_URL = "https://www.venture-hive.com";
 
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-serif`}
       >
+        <JsonLd />
         <HeaderComponent />
         {children}
         <FooterComponent />

@@ -269,17 +269,28 @@ export default async function ArticlePage({ params }) {
 
   // ── Regular news article ──────────────────────────────────────────────────
 
+  // ✅ Sort chronologically (newest first) before deriving related / prev-next
+  // links, so "related articles" rotates through the whole category over
+  // time instead of always surfacing the same 4 raw-array entries, and
+  // prev/next actually walks the category in date order.
+  const dateSortedCategoryPosts = [...categoryPosts].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
   // Related posts — exclude current article
-  const filteredCategoryPosts = categoryPosts.filter(
+  const filteredCategoryPosts = dateSortedCategoryPosts.filter(
     (item) => item.slug !== slug
   );
   const relatedPosts = filteredCategoryPosts.slice(0, 4);
 
-  const currentIndex = categoryPosts.findIndex((p) => p.slug === slug);
-  const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
+  const currentIndex = dateSortedCategoryPosts.findIndex(
+    (p) => p.slug === slug
+  );
+  const prevPost =
+    currentIndex > 0 ? dateSortedCategoryPosts[currentIndex - 1] : null;
   const nextPost =
-    currentIndex < categoryPosts.length - 1
-      ? categoryPosts[currentIndex + 1]
+    currentIndex < dateSortedCategoryPosts.length - 1
+      ? dateSortedCategoryPosts[currentIndex + 1]
       : null;
 
   const shareUrl = `${SITE_URL}/${category}/${slug}`;
