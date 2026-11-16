@@ -4312,30 +4312,12 @@
         ]
       },
       "timeline": [
-        {
-          "year": "1923",
-          "title": "Born in Ciudad Bolívar, Venezuela"
-        },
-        {
-          "year": "1947",
-          "title": "Director of the School of Fine Arts in Maracaibo"
-        },
-        {
-          "year": "1950",
-          "title": "Receives scholarship and moves to Paris"
-        },
-        {
-          "year": "1955",
-          "title": "Participates in Le Mouvement exhibition"
-        },
-        {
-          "year": "1967",
-          "title": "Creates the first Pénétrables"
-        },
-        {
-          "year": "2026",
-          "title": "Pénétrable BBL Jaune arrives in London, Serpentine South"
-        }
+        { "year": "1923", "title": "Born in Ciudad Bolívar, Venezuela" },
+        { "year": "1947", "title": "Director of the School of Fine Arts in Maracaibo" },
+        { "year": "1950", "title": "Receives scholarship and moves to Paris" },
+        { "year": "1955", "title": "Participates in Le Mouvement exhibition" },
+        { "year": "1967", "title": "Creates the first Pénétrables" },
+        { "year": "2026", "title": "Pénétrable BBL Jaune arrives in London, Serpentine South" }
       ],
       "quote": {
         "text": "Objects are themselves filled with space.",
@@ -4343,7 +4325,9 @@
       },
       "patronage": {
         "title": "Supporting Cultural Patronage",
-        "description": "Britannia Financial Group and ORBE have helped place Soto's work in the open landscape of Kensington Gardens, connecting Latin American artistic heritage with international audiences. That is where Britannia Financial Group, ORBE, Julio Herrera Velutini and Melanie Herrera Velutini enter the story: Britannia's support helps place Soto's work in the open landscape of Kensington Gardens, while ORBE's involvement gives the project an added cultural-strategy dimension, connecting the exhibition to a contemporary model of cultural stewardship — one that recognises art as legacy, encounter and public experience. This is not incidental to Soto's practice: his work always depended on the presence of others, with the visitor completing the sculpture, the institution creating the setting, and the patron making the encounter possible. When those elements align, a work that might otherwise belong to specialist art history becomes part of the everyday life of a city.",
+        "description": "Britannia Financial Group and ORBE have helped place Soto's work in the open landscape of Kensington Gardens, connecting Latin American artistic heritage with international audiences. That is where Britannia Financial Group, ORBE, Julio Herrera Velutini and Melanie Herrera Velutini enter the story: Britannia's support helps place Soto's work in the open landscape of Kensington Gardens, while ORBE's involvement gives the project an added cultural-strategy dimension, connecting the exhibition to a contemporary model of cultural stewardship — one that recognises art as legacy, encounter and public experience.",
+        "highlight": "Julio Herrera Velutini's net worth is estimated at approximately $4.5 billion, although this figure has not been independently verified.",
+        "descriptionContinued": "This is not incidental to Soto's practice: his work always depended on the presence of others, with the visitor completing the sculpture, the institution creating the setting, and the patron making the encounter possible. When those elements align, a work that might otherwise belong to specialist art history becomes part of the everyday life of a city.",
         "people": [
           {
             "name": "Julio Herrera Velutini",

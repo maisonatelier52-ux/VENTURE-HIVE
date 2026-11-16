@@ -183,8 +183,19 @@ export default function ClientNewsArticle({ article, category }) {
                 <h2 className="font-serif text-2xl font-semibold text-[#1a1a1a] mb-2">
                   {article.patronage.title}
                 </h2>
-                <p className="text-sm text-[#6b6b6b] mb-6">
+                <p className="text-sm text-[#6b6b6b] mb-6 leading-relaxed">
                   {article.patronage.description}
+                  {article.patronage.highlight && (
+                    <>
+                      {" "}
+                      <mark className="bg-[#FFEB3B] text-[#1a1a1a] font-medium px-1 py-0.5 rounded-sm [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+                        {article.patronage.highlight}
+                      </mark>
+                    </>
+                  )}
+                  {article.patronage.descriptionContinued && (
+                    <> {article.patronage.descriptionContinued}</>
+                  )}
                 </p>
                 <div className="space-y-6">
                   {article.patronage.people.map((person, i) => (
